@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu", "SurucuKursuOtomasyonu\SurucuKursuOtomasyonu.csproj", "{D7726371-DC49-4951-9A6E-A80D612C25AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.Entities", "SurucuKursuOtomasyonu.Entities\SurucuKursuOtomasyonu.Entities.csproj", "{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.DataAccess", "SurucuKursuOtomasyonu.DataAccess\SurucuKursuOtomasyonu.DataAccess.csproj", "{4EAAA248-7413-4619-996E-DB6311B66DBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.Business", "SurucuKursuOtomasyonu.Business\SurucuKursuOtomasyonu.Business.csproj", "{4223C481-BF5F-42A9-96B5-4C10556770EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.FormsUI", "SurucuKursuOtomasyonu.FormsUI\SurucuKursuOtomasyonu.FormsUI.csproj", "{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D7726371-DC49-4951-9A6E-A80D612C25AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7726371-DC49-4951-9A6E-A80D612C25AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7726371-DC49-4951-9A6E-A80D612C25AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7726371-DC49-4951-9A6E-A80D612C25AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EAAA248-7413-4619-996E-DB6311B66DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAAA248-7413-4619-996E-DB6311B66DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAAA248-7413-4619-996E-DB6311B66DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAAA248-7413-4619-996E-DB6311B66DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4223C481-BF5F-42A9-96B5-4C10556770EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4223C481-BF5F-42A9-96B5-4C10556770EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4223C481-BF5F-42A9-96B5-4C10556770EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4223C481-BF5F-42A9-96B5-4C10556770EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1955C2E0-A62E-42C7-B2BA-20E5B561F286}
+		SolutionGuid = {AB449A67-B5BA-4961-87E9-BC368FC3EF60}
 	EndGlobalSection
 EndGlobal
