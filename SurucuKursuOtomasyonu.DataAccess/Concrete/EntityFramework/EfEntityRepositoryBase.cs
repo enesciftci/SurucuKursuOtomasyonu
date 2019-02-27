@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SurucuKursuOtomasyonu.DataAccess.Abstract;
 using SurucuKursuOtomasyonu.Entities.Abstract;
+using  System.ComponentModel.DataAnnotations;
 
 namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
 {
@@ -48,9 +49,9 @@ namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
         {
             using (TContext context = new TContext())
             {
-                return filter == null ?
-                    context.Set<TEntity>().ToList() :
-                    context.Set<TEntity>().Where(filter).ToList();
+              return filter == null ?
+                       context.Set<TEntity>().ToList() :
+                       context.Set<TEntity>().Where(filter).ToList();
             }
         }
 

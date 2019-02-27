@@ -28,180 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbRegistrationSeason = new MetroFramework.Controls.MetroComboBox();
-            this.lblRegistrationSeason = new System.Windows.Forms.Label();
-            this.dgwStudents = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolstripStudentOperations = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolstripStudentRecord = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolstripStudentSearch = new System.Windows.Forms.ToolStripMenuItem();
-            this.maliİşlemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öğrenciBorcSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öğrenciBankaBilgileriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ödemeHatırlatmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gpbStudentSearch = new System.Windows.Forms.GroupBox();
-            this.maskedtxtStudentNationalNumber = new System.Windows.Forms.MaskedTextBox();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.lblStudentName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.toolstripStudentRegulation = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwStudents)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.gpbStudentSearch.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.panelMainPage = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnStudentRecord = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnStudentSearch = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnStudentRegulation = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudentRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudentSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudentRegulation)).BeginInit();
             this.SuspendLayout();
             // 
-            // cmbRegistrationSeason
+            // panelMainPage
             // 
-            this.cmbRegistrationSeason.FormattingEnabled = true;
-            this.cmbRegistrationSeason.ItemHeight = 24;
-            this.cmbRegistrationSeason.Location = new System.Drawing.Point(122, 26);
-            this.cmbRegistrationSeason.Name = "cmbRegistrationSeason";
-            this.cmbRegistrationSeason.Size = new System.Drawing.Size(177, 30);
-            this.cmbRegistrationSeason.TabIndex = 1;
-            this.cmbRegistrationSeason.UseSelectable = true;
+            this.panelMainPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMainPage.Location = new System.Drawing.Point(206, 0);
+            this.panelMainPage.Name = "panelMainPage";
+            this.panelMainPage.Size = new System.Drawing.Size(1341, 585);
+            this.panelMainPage.TabIndex = 5;
             // 
-            // lblRegistrationSeason
+            // panelMenu
             // 
-            this.lblRegistrationSeason.AutoSize = true;
-            this.lblRegistrationSeason.Location = new System.Drawing.Point(6, 30);
-            this.lblRegistrationSeason.Name = "lblRegistrationSeason";
-            this.lblRegistrationSeason.Size = new System.Drawing.Size(98, 17);
-            this.lblRegistrationSeason.TabIndex = 2;
-            this.lblRegistrationSeason.Text = "Eğitim Sezonu";
+            this.panelMenu.Controls.Add(this.btnStudentRegulation);
+            this.panelMenu.Controls.Add(this.bunifuImageButton5);
+            this.panelMenu.Controls.Add(this.bunifuImageButton4);
+            this.panelMenu.Controls.Add(this.bunifuImageButton3);
+            this.panelMenu.Controls.Add(this.btnStudentSearch);
+            this.panelMenu.Controls.Add(this.btnStudentRecord);
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(200, 585);
+            this.panelMenu.TabIndex = 7;
             // 
-            // dgwStudents
+            // btnStudentRecord
             // 
-            this.dgwStudents.AllowUserToAddRows = false;
-            this.dgwStudents.AllowUserToDeleteRows = false;
-            this.dgwStudents.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgwStudents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgwStudents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.dgwStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwStudents.GridColor = System.Drawing.Color.Maroon;
-            this.dgwStudents.Location = new System.Drawing.Point(6, 62);
-            this.dgwStudents.Name = "dgwStudents";
-            this.dgwStudents.ReadOnly = true;
-            this.dgwStudents.RowTemplate.Height = 24;
-            this.dgwStudents.Size = new System.Drawing.Size(1511, 399);
-            this.dgwStudents.TabIndex = 3;
+            this.btnStudentRecord.BackColor = System.Drawing.Color.White;
+            this.btnStudentRecord.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentRecord.Image = ((System.Drawing.Image)(resources.GetObject("btnStudentRecord.Image")));
+            this.btnStudentRecord.ImageActive = null;
+            this.btnStudentRecord.Location = new System.Drawing.Point(0, 0);
+            this.btnStudentRecord.Name = "btnStudentRecord";
+            this.btnStudentRecord.Size = new System.Drawing.Size(200, 84);
+            this.btnStudentRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnStudentRecord.TabIndex = 0;
+            this.btnStudentRecord.TabStop = false;
+            this.btnStudentRecord.Zoom = 20;
+            this.btnStudentRecord.Click += new System.EventHandler(this.btnStudentRecord_Click);
             // 
-            // menuStrip1
+            // btnStudentSearch
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolstripStudentOperations,
-            this.maliİşlemlerToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1547, 28);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnStudentSearch.BackColor = System.Drawing.Color.White;
+            this.btnStudentSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnStudentSearch.Image")));
+            this.btnStudentSearch.ImageActive = null;
+            this.btnStudentSearch.Location = new System.Drawing.Point(0, 84);
+            this.btnStudentSearch.Name = "btnStudentSearch";
+            this.btnStudentSearch.Size = new System.Drawing.Size(200, 84);
+            this.btnStudentSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnStudentSearch.TabIndex = 1;
+            this.btnStudentSearch.TabStop = false;
+            this.btnStudentSearch.Zoom = 20;
+            this.btnStudentSearch.Click += new System.EventHandler(this.btnStudentSearch_Click);
             // 
-            // toolstripStudentOperations
+            // bunifuImageButton3
             // 
-            this.toolstripStudentOperations.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolstripStudentRecord,
-            this.toolstripStudentSearch,
-            this.toolstripStudentRegulation});
-            this.toolstripStudentOperations.Name = "toolstripStudentOperations";
-            this.toolstripStudentOperations.Size = new System.Drawing.Size(133, 24);
-            this.toolstripStudentOperations.Text = "Öğrenci İşlemleri";
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.White;
+            this.bunifuImageButton3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(0, 501);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(200, 84);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.TabIndex = 2;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 20;
             // 
-            // toolstripStudentRecord
+            // bunifuImageButton4
             // 
-            this.toolstripStudentRecord.Name = "toolstripStudentRecord";
-            this.toolstripStudentRecord.Size = new System.Drawing.Size(216, 26);
-            this.toolstripStudentRecord.Text = "Öğrenci Kayıt";
-            this.toolstripStudentRecord.Click += new System.EventHandler(this.toolstripStudentRecord_Click);
+            this.bunifuImageButton4.BackColor = System.Drawing.Color.White;
+            this.bunifuImageButton4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
+            this.bunifuImageButton4.ImageActive = null;
+            this.bunifuImageButton4.Location = new System.Drawing.Point(0, 418);
+            this.bunifuImageButton4.Name = "bunifuImageButton4";
+            this.bunifuImageButton4.Size = new System.Drawing.Size(200, 83);
+            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton4.TabIndex = 3;
+            this.bunifuImageButton4.TabStop = false;
+            this.bunifuImageButton4.Zoom = 20;
             // 
-            // toolstripStudentSearch
+            // bunifuImageButton5
             // 
-            this.toolstripStudentSearch.Name = "toolstripStudentSearch";
-            this.toolstripStudentSearch.Size = new System.Drawing.Size(216, 26);
-            this.toolstripStudentSearch.Text = "Öğrenci Sorgulama";
+            this.bunifuImageButton5.BackColor = System.Drawing.Color.White;
+            this.bunifuImageButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
+            this.bunifuImageButton5.ImageActive = null;
+            this.bunifuImageButton5.Location = new System.Drawing.Point(0, 335);
+            this.bunifuImageButton5.Name = "bunifuImageButton5";
+            this.bunifuImageButton5.Size = new System.Drawing.Size(200, 83);
+            this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton5.TabIndex = 4;
+            this.bunifuImageButton5.TabStop = false;
+            this.bunifuImageButton5.Zoom = 20;
             // 
-            // maliİşlemlerToolStripMenuItem
+            // btnStudentRegulation
             // 
-            this.maliİşlemlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.öğrenciBorcSorgulamaToolStripMenuItem,
-            this.öğrenciBankaBilgileriToolStripMenuItem,
-            this.ödemeHatırlatmaToolStripMenuItem});
-            this.maliİşlemlerToolStripMenuItem.Name = "maliİşlemlerToolStripMenuItem";
-            this.maliİşlemlerToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
-            this.maliİşlemlerToolStripMenuItem.Text = "Mali İşlemler";
-            // 
-            // öğrenciBorcSorgulamaToolStripMenuItem
-            // 
-            this.öğrenciBorcSorgulamaToolStripMenuItem.Name = "öğrenciBorcSorgulamaToolStripMenuItem";
-            this.öğrenciBorcSorgulamaToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.öğrenciBorcSorgulamaToolStripMenuItem.Text = "Öğrenci Borç Sorgulama";
-            // 
-            // öğrenciBankaBilgileriToolStripMenuItem
-            // 
-            this.öğrenciBankaBilgileriToolStripMenuItem.Name = "öğrenciBankaBilgileriToolStripMenuItem";
-            this.öğrenciBankaBilgileriToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.öğrenciBankaBilgileriToolStripMenuItem.Text = "Öğrenci Banka Bilgileri";
-            // 
-            // ödemeHatırlatmaToolStripMenuItem
-            // 
-            this.ödemeHatırlatmaToolStripMenuItem.Name = "ödemeHatırlatmaToolStripMenuItem";
-            this.ödemeHatırlatmaToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.ödemeHatırlatmaToolStripMenuItem.Text = "Ödeme Hatırlatma";
-            // 
-            // gpbStudentSearch
-            // 
-            this.gpbStudentSearch.Controls.Add(this.maskedtxtStudentNationalNumber);
-            this.gpbStudentSearch.Controls.Add(this.txtStudentName);
-            this.gpbStudentSearch.Controls.Add(this.lblStudentName);
-            this.gpbStudentSearch.Controls.Add(this.label2);
-            this.gpbStudentSearch.Controls.Add(this.cmbRegistrationSeason);
-            this.gpbStudentSearch.Controls.Add(this.lblRegistrationSeason);
-            this.gpbStudentSearch.Controls.Add(this.dgwStudents);
-            this.gpbStudentSearch.Location = new System.Drawing.Point(12, 32);
-            this.gpbStudentSearch.Name = "gpbStudentSearch";
-            this.gpbStudentSearch.Size = new System.Drawing.Size(1523, 467);
-            this.gpbStudentSearch.TabIndex = 6;
-            this.gpbStudentSearch.TabStop = false;
-            this.gpbStudentSearch.Text = "Öğrenci Sorgulama";
-            // 
-            // maskedtxtStudentNationalNumber
-            // 
-            this.maskedtxtStudentNationalNumber.Location = new System.Drawing.Point(516, 26);
-            this.maskedtxtStudentNationalNumber.Mask = "00000000000";
-            this.maskedtxtStudentNationalNumber.Name = "maskedtxtStudentNationalNumber";
-            this.maskedtxtStudentNationalNumber.Size = new System.Drawing.Size(156, 22);
-            this.maskedtxtStudentNationalNumber.TabIndex = 8;
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.Location = new System.Drawing.Point(857, 26);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(156, 22);
-            this.txtStudentName.TabIndex = 7;
-            // 
-            // lblStudentName
-            // 
-            this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Location = new System.Drawing.Point(759, 29);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(82, 17);
-            this.lblStudentName.TabIndex = 6;
-            this.lblStudentName.Text = "Öğrenci Adı";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(365, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "T.C Kimlik Numarası";
-            // 
-            // toolstripStudentRegulation
-            // 
-            this.toolstripStudentRegulation.Name = "toolstripStudentRegulation";
-            this.toolstripStudentRegulation.Size = new System.Drawing.Size(216, 26);
-            this.toolstripStudentRegulation.Text = "Öğrenci Düzenleme";
+            this.btnStudentRegulation.BackColor = System.Drawing.Color.White;
+            this.btnStudentRegulation.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnStudentRegulation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentRegulation.Image = ((System.Drawing.Image)(resources.GetObject("btnStudentRegulation.Image")));
+            this.btnStudentRegulation.ImageActive = null;
+            this.btnStudentRegulation.Location = new System.Drawing.Point(0, 168);
+            this.btnStudentRegulation.Name = "btnStudentRegulation";
+            this.btnStudentRegulation.Size = new System.Drawing.Size(200, 84);
+            this.btnStudentRegulation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnStudentRegulation.TabIndex = 6;
+            this.btnStudentRegulation.TabStop = false;
+            this.btnStudentRegulation.Zoom = 20;
+            this.btnStudentRegulation.Click += new System.EventHandler(this.btnStudentRegulation_Click);
             // 
             // MainPage
             // 
@@ -209,40 +163,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1547, 585);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.gpbStudentSearch);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.panelMainPage);
             this.Name = "MainPage";
             this.Load += new System.EventHandler(this.MainPage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwStudents)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.gpbStudentSearch.ResumeLayout(false);
-            this.gpbStudentSearch.PerformLayout();
+            this.SizeChanged += new System.EventHandler(this.MainPage_SizeChanged);
+            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudentRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudentSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudentRegulation)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroComboBox cmbRegistrationSeason;
-        private System.Windows.Forms.Label lblRegistrationSeason;
-        private System.Windows.Forms.DataGridView dgwStudents;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolstripStudentOperations;
-        private System.Windows.Forms.ToolStripMenuItem toolstripStudentRecord;
-        private System.Windows.Forms.ToolStripMenuItem toolstripStudentSearch;
-        private System.Windows.Forms.ToolStripMenuItem maliİşlemlerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem öğrenciBorcSorgulamaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem öğrenciBankaBilgileriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ödemeHatırlatmaToolStripMenuItem;
-        private System.Windows.Forms.GroupBox gpbStudentSearch;
-        private System.Windows.Forms.MaskedTextBox maskedtxtStudentNationalNumber;
-        private System.Windows.Forms.TextBox txtStudentName;
-        private System.Windows.Forms.Label lblStudentName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStripMenuItem toolstripStudentRegulation;
+        private System.Windows.Forms.Panel panelMainPage;
+        private System.Windows.Forms.Panel panelMenu;
+        private Bunifu.Framework.UI.BunifuImageButton btnStudentRegulation;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private Bunifu.Framework.UI.BunifuImageButton btnStudentSearch;
+        private Bunifu.Framework.UI.BunifuImageButton btnStudentRecord;
     }
 }
 

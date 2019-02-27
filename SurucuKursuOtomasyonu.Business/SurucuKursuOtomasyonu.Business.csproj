@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICityService.cs" />
+    <Compile Include="Abstract\ILicenceTypeService.cs" />
     <Compile Include="Abstract\IRegistrationSeasonService.cs" />
     <Compile Include="Abstract\IStudentService.cs" />
+    <Compile Include="Concrete\CityManager.cs" />
+    <Compile Include="Concrete\LicenceTypeManager.cs" />
     <Compile Include="Concrete\RegistrationSeasonManager.cs" />
     <Compile Include="Concrete\StudentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

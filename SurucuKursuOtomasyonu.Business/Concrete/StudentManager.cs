@@ -27,12 +27,12 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
        public List<Student> GetBySeason()
        {
-           return _studentDal.GetAll(p => p.RegistrationSeason == 4);
+           return _studentDal.GetAll(p => p.RegistrationSeason ==1);
        }
 
         public Student Get(int id)
         {
-            throw new NotImplementedException();
+            return _studentDal.Get(p => p.RegistrationSeason == id);
         }
     }
 }

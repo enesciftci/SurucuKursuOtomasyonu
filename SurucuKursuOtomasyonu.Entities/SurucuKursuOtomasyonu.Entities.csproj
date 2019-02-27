@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IEntity.cs" />
+    <Compile Include="Concrete\City.cs" />
+    <Compile Include="Concrete\LicenceType.cs" />
     <Compile Include="Concrete\RegistrationSeason.cs" />
     <Compile Include="Concrete\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

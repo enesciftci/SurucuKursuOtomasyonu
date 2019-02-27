@@ -26,6 +26,9 @@ namespace SurucuKursuOtomasyonu.Entities.Concrete
         public string StudentPhoneNumber { get; set; }
         public string StudentAdress { get; set; }
         public string StudentIbanNumber { get; set; }
+        public bool StudentHaveLicence { get; set; }
+        public string StudentHaveLicenceType { get; set; }
+        public string StudentWantLicenceType { get; set; }
         
     }
 }
