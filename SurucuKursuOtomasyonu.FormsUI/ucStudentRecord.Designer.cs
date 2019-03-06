@@ -30,47 +30,50 @@
         {
             this.gpbStudentRecord = new DevExpress.XtraEditors.GroupControl();
             this.panelStudentRegister = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnRegisterToday = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbPlaceofBirth = new System.Windows.Forms.ComboBox();
+            this.lblPlaceofBirth = new System.Windows.Forms.Label();
+            this.cmbQuantityInstallment = new System.Windows.Forms.ComboBox();
+            this.cmbLicenceType = new System.Windows.Forms.ComboBox();
             this.cmbRegistrationSeason = new System.Windows.Forms.ComboBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedtxtRegisterDate = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
+            this.radioMale = new System.Windows.Forms.RadioButton();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.maskedTxtIbanNumber = new System.Windows.Forms.MaskedTextBox();
+            this.txtRegistrationDebt = new DevExpress.XtraEditors.TextEdit();
+            this.maskedTxtPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.maskedtxtRegistrationDate = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTxtBirthdate = new System.Windows.Forms.MaskedTextBox();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.richTxtAdress = new System.Windows.Forms.RichTextBox();
+            this.lblIbanNumber = new System.Windows.Forms.Label();
+            this.lblAdress = new System.Windows.Forms.Label();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblLicenceType = new System.Windows.Forms.Label();
+            this.lblQuantityInstallment = new System.Windows.Forms.Label();
+            this.lblRegistrationDebt = new System.Windows.Forms.Label();
+            this.lblRegistrationDate = new System.Windows.Forms.Label();
+            this.lblBirthdate = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblNationalNumber = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.txtStudentSurname = new DevExpress.XtraEditors.TextEdit();
+            this.txtStudentName = new DevExpress.XtraEditors.TextEdit();
             this.btnRegister = new DevExpress.XtraEditors.SimpleButton();
-            this.maskedtxtStudentNationalNumber = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.maskedTxtNationalNumber = new System.Windows.Forms.MaskedTextBox();
+            this.lblStudentSurname = new System.Windows.Forms.Label();
             this.lblRegistrationSeason = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnRegisterToday = new DevExpress.XtraEditors.SimpleButton();
+            this.checkHaveLicence = new System.Windows.Forms.CheckBox();
+            this.cmbHaveLicenceType = new System.Windows.Forms.ComboBox();
+            this.lblHaveLicenceType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gpbStudentRecord)).BeginInit();
             this.gpbStudentRecord.SuspendLayout();
             this.panelStudentRegister.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationDebt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentSurname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbStudentRecord
@@ -79,86 +82,118 @@
             this.gpbStudentRecord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gpbStudentRecord.Location = new System.Drawing.Point(0, 0);
             this.gpbStudentRecord.Name = "gpbStudentRecord";
-            this.gpbStudentRecord.Size = new System.Drawing.Size(975, 606);
+            this.gpbStudentRecord.Size = new System.Drawing.Size(1153, 606);
             this.gpbStudentRecord.TabIndex = 0;
             this.gpbStudentRecord.Text = "Öğrenci Kayıt";
             // 
             // panelStudentRegister
             // 
             this.panelStudentRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panelStudentRegister.Controls.Add(this.lblHaveLicenceType);
+            this.panelStudentRegister.Controls.Add(this.cmbHaveLicenceType);
+            this.panelStudentRegister.Controls.Add(this.checkHaveLicence);
             this.panelStudentRegister.Controls.Add(this.btnRegisterToday);
-            this.panelStudentRegister.Controls.Add(this.comboBox3);
-            this.panelStudentRegister.Controls.Add(this.label7);
-            this.panelStudentRegister.Controls.Add(this.comboBox2);
-            this.panelStudentRegister.Controls.Add(this.comboBox1);
+            this.panelStudentRegister.Controls.Add(this.cmbPlaceofBirth);
+            this.panelStudentRegister.Controls.Add(this.lblPlaceofBirth);
+            this.panelStudentRegister.Controls.Add(this.cmbQuantityInstallment);
+            this.panelStudentRegister.Controls.Add(this.cmbLicenceType);
             this.panelStudentRegister.Controls.Add(this.cmbRegistrationSeason);
             this.panelStudentRegister.Controls.Add(this.simpleButton1);
-            this.panelStudentRegister.Controls.Add(this.radioButton2);
-            this.panelStudentRegister.Controls.Add(this.radioButton1);
-            this.panelStudentRegister.Controls.Add(this.label14);
-            this.panelStudentRegister.Controls.Add(this.maskedTextBox4);
-            this.panelStudentRegister.Controls.Add(this.textEdit4);
-            this.panelStudentRegister.Controls.Add(this.maskedTextBox3);
-            this.panelStudentRegister.Controls.Add(this.maskedtxtRegisterDate);
-            this.panelStudentRegister.Controls.Add(this.maskedTextBox1);
-            this.panelStudentRegister.Controls.Add(this.textEdit3);
-            this.panelStudentRegister.Controls.Add(this.richTextBox1);
-            this.panelStudentRegister.Controls.Add(this.label13);
-            this.panelStudentRegister.Controls.Add(this.label12);
-            this.panelStudentRegister.Controls.Add(this.label11);
-            this.panelStudentRegister.Controls.Add(this.label10);
-            this.panelStudentRegister.Controls.Add(this.label9);
-            this.panelStudentRegister.Controls.Add(this.label8);
-            this.panelStudentRegister.Controls.Add(this.label6);
-            this.panelStudentRegister.Controls.Add(this.label5);
-            this.panelStudentRegister.Controls.Add(this.label4);
-            this.panelStudentRegister.Controls.Add(this.label3);
-            this.panelStudentRegister.Controls.Add(this.label1);
-            this.panelStudentRegister.Controls.Add(this.textEdit2);
-            this.panelStudentRegister.Controls.Add(this.textEdit1);
+            this.panelStudentRegister.Controls.Add(this.radioFemale);
+            this.panelStudentRegister.Controls.Add(this.radioMale);
+            this.panelStudentRegister.Controls.Add(this.lblGender);
+            this.panelStudentRegister.Controls.Add(this.maskedTxtIbanNumber);
+            this.panelStudentRegister.Controls.Add(this.txtRegistrationDebt);
+            this.panelStudentRegister.Controls.Add(this.maskedTxtPhoneNumber);
+            this.panelStudentRegister.Controls.Add(this.maskedtxtRegistrationDate);
+            this.panelStudentRegister.Controls.Add(this.maskedTxtBirthdate);
+            this.panelStudentRegister.Controls.Add(this.txtEmail);
+            this.panelStudentRegister.Controls.Add(this.richTxtAdress);
+            this.panelStudentRegister.Controls.Add(this.lblIbanNumber);
+            this.panelStudentRegister.Controls.Add(this.lblAdress);
+            this.panelStudentRegister.Controls.Add(this.lblPhoneNumber);
+            this.panelStudentRegister.Controls.Add(this.lblLicenceType);
+            this.panelStudentRegister.Controls.Add(this.lblQuantityInstallment);
+            this.panelStudentRegister.Controls.Add(this.lblRegistrationDebt);
+            this.panelStudentRegister.Controls.Add(this.lblRegistrationDate);
+            this.panelStudentRegister.Controls.Add(this.lblBirthdate);
+            this.panelStudentRegister.Controls.Add(this.lblEmail);
+            this.panelStudentRegister.Controls.Add(this.lblNationalNumber);
+            this.panelStudentRegister.Controls.Add(this.lblStudentName);
+            this.panelStudentRegister.Controls.Add(this.txtStudentSurname);
+            this.panelStudentRegister.Controls.Add(this.txtStudentName);
             this.panelStudentRegister.Controls.Add(this.btnRegister);
-            this.panelStudentRegister.Controls.Add(this.maskedtxtStudentNationalNumber);
-            this.panelStudentRegister.Controls.Add(this.label2);
+            this.panelStudentRegister.Controls.Add(this.maskedTxtNationalNumber);
+            this.panelStudentRegister.Controls.Add(this.lblStudentSurname);
             this.panelStudentRegister.Controls.Add(this.lblRegistrationSeason);
             this.panelStudentRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStudentRegister.Location = new System.Drawing.Point(2, 25);
             this.panelStudentRegister.Name = "panelStudentRegister";
-            this.panelStudentRegister.Size = new System.Drawing.Size(971, 579);
+            this.panelStudentRegister.Size = new System.Drawing.Size(1149, 579);
             this.panelStudentRegister.TabIndex = 45;
             // 
-            // comboBox2
+            // btnRegisterToday
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 16;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.btnRegisterToday.Location = new System.Drawing.Point(918, 13);
+            this.btnRegisterToday.Name = "btnRegisterToday";
+            this.btnRegisterToday.Size = new System.Drawing.Size(75, 23);
+            this.btnRegisterToday.TabIndex = 10;
+            this.btnRegisterToday.Text = "Bugün";
+            this.btnRegisterToday.Click += new System.EventHandler(this.btnRegisterToday_Click);
+            // 
+            // cmbPlaceofBirth
+            // 
+            this.cmbPlaceofBirth.FormattingEnabled = true;
+            this.cmbPlaceofBirth.ItemHeight = 16;
+            this.cmbPlaceofBirth.Location = new System.Drawing.Point(165, 333);
+            this.cmbPlaceofBirth.Name = "cmbPlaceofBirth";
+            this.cmbPlaceofBirth.Size = new System.Drawing.Size(170, 24);
+            this.cmbPlaceofBirth.TabIndex = 8;
+            // 
+            // lblPlaceofBirth
+            // 
+            this.lblPlaceofBirth.AutoSize = true;
+            this.lblPlaceofBirth.ForeColor = System.Drawing.Color.White;
+            this.lblPlaceofBirth.Location = new System.Drawing.Point(3, 332);
+            this.lblPlaceofBirth.Name = "lblPlaceofBirth";
+            this.lblPlaceofBirth.Size = new System.Drawing.Size(80, 17);
+            this.lblPlaceofBirth.TabIndex = 83;
+            this.lblPlaceofBirth.Text = "Doğum Yeri";
+            // 
+            // cmbQuantityInstallment
+            // 
+            this.cmbQuantityInstallment.FormattingEnabled = true;
+            this.cmbQuantityInstallment.ItemHeight = 16;
+            this.cmbQuantityInstallment.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4",
             "5",
             "6"});
-            this.comboBox2.Location = new System.Drawing.Point(681, 245);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(170, 24);
-            this.comboBox2.TabIndex = 81;
+            this.cmbQuantityInstallment.Location = new System.Drawing.Point(741, 213);
+            this.cmbQuantityInstallment.Name = "cmbQuantityInstallment";
+            this.cmbQuantityInstallment.Size = new System.Drawing.Size(170, 24);
+            this.cmbQuantityInstallment.TabIndex = 15;
             // 
-            // comboBox1
+            // cmbLicenceType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 16;
-            this.comboBox1.Location = new System.Drawing.Point(681, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 24);
-            this.comboBox1.TabIndex = 80;
+            this.cmbLicenceType.FormattingEnabled = true;
+            this.cmbLicenceType.ItemHeight = 16;
+            this.cmbLicenceType.Location = new System.Drawing.Point(741, 134);
+            this.cmbLicenceType.Name = "cmbLicenceType";
+            this.cmbLicenceType.Size = new System.Drawing.Size(170, 24);
+            this.cmbLicenceType.TabIndex = 13;
             // 
             // cmbRegistrationSeason
             // 
             this.cmbRegistrationSeason.FormattingEnabled = true;
             this.cmbRegistrationSeason.ItemHeight = 16;
-            this.cmbRegistrationSeason.Location = new System.Drawing.Point(681, 126);
+            this.cmbRegistrationSeason.Location = new System.Drawing.Point(741, 94);
             this.cmbRegistrationSeason.Name = "cmbRegistrationSeason";
             this.cmbRegistrationSeason.Size = new System.Drawing.Size(170, 24);
-            this.cmbRegistrationSeason.TabIndex = 79;
+            this.cmbRegistrationSeason.TabIndex = 12;
+            this.cmbRegistrationSeason.SelectedIndexChanged += new System.EventHandler(this.cmbRegistrationSeason_SelectedIndexChanged);
             // 
             // simpleButton1
             // 
@@ -169,233 +204,233 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(518, 387);
+            this.simpleButton1.Location = new System.Drawing.Point(519, 436);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(176, 68);
-            this.simpleButton1.TabIndex = 78;
+            this.simpleButton1.TabIndex = 18;
             this.simpleButton1.Text = "Temizle";
             // 
-            // radioButton2
+            // radioFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(255, 129);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(62, 21);
-            this.radioButton2.TabIndex = 77;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Kadın";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.ForeColor = System.Drawing.Color.White;
+            this.radioFemale.Location = new System.Drawing.Point(255, 129);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(62, 21);
+            this.radioFemale.TabIndex = 4;
+            this.radioFemale.TabStop = true;
+            this.radioFemale.Text = "Kadın";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(165, 129);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 21);
-            this.radioButton1.TabIndex = 76;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Erkek";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioMale.AutoSize = true;
+            this.radioMale.ForeColor = System.Drawing.Color.White;
+            this.radioMale.Location = new System.Drawing.Point(165, 129);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(63, 21);
+            this.radioMale.TabIndex = 3;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Erkek";
+            this.radioMale.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // lblGender
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, 134);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 17);
-            this.label14.TabIndex = 75;
-            this.label14.Text = "Soyisim";
+            this.lblGender.AutoSize = true;
+            this.lblGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblGender.ForeColor = System.Drawing.Color.White;
+            this.lblGender.Location = new System.Drawing.Point(3, 134);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(55, 17);
+            this.lblGender.TabIndex = 75;
+            this.lblGender.Text = "Cinsiyet";
             // 
-            // maskedTextBox4
+            // maskedTxtIbanNumber
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(681, 281);
-            this.maskedTextBox4.Mask = "TR 0000-0000-0000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(170, 23);
-            this.maskedTextBox4.TabIndex = 73;
+            this.maskedTxtIbanNumber.Location = new System.Drawing.Point(741, 249);
+            this.maskedTxtIbanNumber.Mask = "TR 0000-0000-0000-0000";
+            this.maskedTxtIbanNumber.Name = "maskedTxtIbanNumber";
+            this.maskedTxtIbanNumber.Size = new System.Drawing.Size(170, 23);
+            this.maskedTxtIbanNumber.TabIndex = 16;
             // 
-            // textEdit4
+            // txtRegistrationDebt
             // 
-            this.textEdit4.Location = new System.Drawing.Point(681, 207);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(170, 22);
-            this.textEdit4.TabIndex = 69;
+            this.txtRegistrationDebt.Location = new System.Drawing.Point(741, 175);
+            this.txtRegistrationDebt.Name = "txtRegistrationDebt";
+            this.txtRegistrationDebt.Size = new System.Drawing.Size(170, 22);
+            this.txtRegistrationDebt.TabIndex = 14;
             // 
-            // maskedTextBox3
+            // maskedTxtPhoneNumber
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(681, 85);
-            this.maskedTextBox3.Mask = "(999) 000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(170, 23);
-            this.maskedTextBox3.TabIndex = 67;
+            this.maskedTxtPhoneNumber.Location = new System.Drawing.Point(741, 53);
+            this.maskedTxtPhoneNumber.Mask = "(999) 000-0000";
+            this.maskedTxtPhoneNumber.Name = "maskedTxtPhoneNumber";
+            this.maskedTxtPhoneNumber.Size = new System.Drawing.Size(170, 23);
+            this.maskedTxtPhoneNumber.TabIndex = 11;
             // 
-            // maskedtxtRegisterDate
+            // maskedtxtRegistrationDate
             // 
-            this.maskedtxtRegisterDate.Location = new System.Drawing.Point(681, 45);
-            this.maskedtxtRegisterDate.Mask = "00/00/0000";
-            this.maskedtxtRegisterDate.Name = "maskedtxtRegisterDate";
-            this.maskedtxtRegisterDate.Size = new System.Drawing.Size(170, 23);
-            this.maskedtxtRegisterDate.TabIndex = 66;
-            this.maskedtxtRegisterDate.ValidatingType = typeof(System.DateTime);
+            this.maskedtxtRegistrationDate.Location = new System.Drawing.Point(741, 13);
+            this.maskedtxtRegistrationDate.Mask = "00/00/0000";
+            this.maskedtxtRegistrationDate.Name = "maskedtxtRegistrationDate";
+            this.maskedtxtRegistrationDate.Size = new System.Drawing.Size(170, 23);
+            this.maskedtxtRegistrationDate.TabIndex = 9;
+            this.maskedtxtRegistrationDate.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox1
+            // maskedTxtBirthdate
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(167, 287);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(170, 23);
-            this.maskedTextBox1.TabIndex = 65;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTxtBirthdate.Location = new System.Drawing.Point(167, 287);
+            this.maskedTxtBirthdate.Mask = "00/00/0000";
+            this.maskedTxtBirthdate.Name = "maskedTxtBirthdate";
+            this.maskedTxtBirthdate.Size = new System.Drawing.Size(170, 23);
+            this.maskedTxtBirthdate.TabIndex = 7;
+            this.maskedTxtBirthdate.ValidatingType = typeof(System.DateTime);
             // 
-            // textEdit3
+            // txtEmail
             // 
-            this.textEdit3.Location = new System.Drawing.Point(167, 248);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(170, 22);
-            this.textEdit3.TabIndex = 64;
+            this.txtEmail.Location = new System.Drawing.Point(167, 248);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(170, 22);
+            this.txtEmail.TabIndex = 6;
             // 
-            // richTextBox1
+            // richTxtAdress
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(167, 169);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(349, 55);
-            this.richTextBox1.TabIndex = 62;
-            this.richTextBox1.Text = "";
+            this.richTxtAdress.Location = new System.Drawing.Point(167, 169);
+            this.richTxtAdress.Name = "richTxtAdress";
+            this.richTxtAdress.Size = new System.Drawing.Size(349, 55);
+            this.richTxtAdress.TabIndex = 5;
+            this.richTxtAdress.Text = "";
             // 
-            // label13
+            // lblIbanNumber
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(561, 287);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 17);
-            this.label13.TabIndex = 60;
-            this.label13.Text = "IBAN Numarası";
+            this.lblIbanNumber.AutoSize = true;
+            this.lblIbanNumber.ForeColor = System.Drawing.Color.White;
+            this.lblIbanNumber.Location = new System.Drawing.Point(563, 255);
+            this.lblIbanNumber.Name = "lblIbanNumber";
+            this.lblIbanNumber.Size = new System.Drawing.Size(97, 17);
+            this.lblIbanNumber.TabIndex = 60;
+            this.lblIbanNumber.Text = "IBAN Numarası";
             // 
-            // label12
+            // lblAdress
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 172);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 17);
-            this.label12.TabIndex = 59;
-            this.label12.Text = "Adres";
+            this.lblAdress.AutoSize = true;
+            this.lblAdress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblAdress.ForeColor = System.Drawing.Color.White;
+            this.lblAdress.Location = new System.Drawing.Point(3, 172);
+            this.lblAdress.Name = "lblAdress";
+            this.lblAdress.Size = new System.Drawing.Size(42, 17);
+            this.lblAdress.TabIndex = 59;
+            this.lblAdress.Text = "Adres";
             // 
-            // label11
+            // lblPhoneNumber
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(561, 90);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 17);
-            this.label11.TabIndex = 58;
-            this.label11.Text = "Telefon Numarası";
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(563, 58);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(112, 17);
+            this.lblPhoneNumber.TabIndex = 58;
+            this.lblPhoneNumber.Text = "Telefon Numarası";
             // 
-            // label10
+            // lblLicenceType
             // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(561, 172);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 17);
-            this.label10.TabIndex = 57;
-            this.label10.Text = "Ehliyet Tipi";
+            this.lblLicenceType.AutoSize = true;
+            this.lblLicenceType.ForeColor = System.Drawing.Color.White;
+            this.lblLicenceType.Location = new System.Drawing.Point(563, 140);
+            this.lblLicenceType.Name = "lblLicenceType";
+            this.lblLicenceType.Size = new System.Drawing.Size(72, 17);
+            this.lblLicenceType.TabIndex = 57;
+            this.lblLicenceType.Text = "Ehliyet Tipi";
             // 
-            // label9
+            // lblQuantityInstallment
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(561, 252);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 17);
-            this.label9.TabIndex = 56;
-            this.label9.Text = "Taksit Sayısı";
+            this.lblQuantityInstallment.AutoSize = true;
+            this.lblQuantityInstallment.ForeColor = System.Drawing.Color.White;
+            this.lblQuantityInstallment.Location = new System.Drawing.Point(563, 220);
+            this.lblQuantityInstallment.Name = "lblQuantityInstallment";
+            this.lblQuantityInstallment.Size = new System.Drawing.Size(80, 17);
+            this.lblQuantityInstallment.TabIndex = 56;
+            this.lblQuantityInstallment.Text = "Taksit Sayısı";
             // 
-            // label8
+            // lblRegistrationDebt
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(561, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 17);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Kayıt Ücreti";
+            this.lblRegistrationDebt.AutoSize = true;
+            this.lblRegistrationDebt.ForeColor = System.Drawing.Color.White;
+            this.lblRegistrationDebt.Location = new System.Drawing.Point(563, 178);
+            this.lblRegistrationDebt.Name = "lblRegistrationDebt";
+            this.lblRegistrationDebt.Size = new System.Drawing.Size(77, 17);
+            this.lblRegistrationDebt.TabIndex = 55;
+            this.lblRegistrationDebt.Text = "Kayıt Ücreti";
             // 
-            // label6
+            // lblRegistrationDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(561, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 17);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "Kayıt Tarihi";
+            this.lblRegistrationDate.AutoSize = true;
+            this.lblRegistrationDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblRegistrationDate.ForeColor = System.Drawing.Color.White;
+            this.lblRegistrationDate.Location = new System.Drawing.Point(563, 19);
+            this.lblRegistrationDate.Name = "lblRegistrationDate";
+            this.lblRegistrationDate.Size = new System.Drawing.Size(74, 17);
+            this.lblRegistrationDate.TabIndex = 54;
+            this.lblRegistrationDate.Text = "Kayıt Tarihi";
             // 
-            // label5
+            // lblBirthdate
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 290);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 17);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Doğum Tarihi";
+            this.lblBirthdate.AutoSize = true;
+            this.lblBirthdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblBirthdate.ForeColor = System.Drawing.Color.White;
+            this.lblBirthdate.Location = new System.Drawing.Point(3, 290);
+            this.lblBirthdate.Name = "lblBirthdate";
+            this.lblBirthdate.Size = new System.Drawing.Size(90, 17);
+            this.lblBirthdate.TabIndex = 53;
+            this.lblBirthdate.Text = "Doğum Tarihi";
             // 
-            // label4
+            // lblEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 253);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 17);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "E-Mail";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(3, 253);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 52;
+            this.lblEmail.Text = "E-Mail";
             // 
-            // label3
+            // lblNationalNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 17);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "T.C Kimlik Numarası";
+            this.lblNationalNumber.AutoSize = true;
+            this.lblNationalNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblNationalNumber.ForeColor = System.Drawing.Color.White;
+            this.lblNationalNumber.Location = new System.Drawing.Point(3, 91);
+            this.lblNationalNumber.Name = "lblNationalNumber";
+            this.lblNationalNumber.Size = new System.Drawing.Size(126, 17);
+            this.lblNationalNumber.TabIndex = 51;
+            this.lblNationalNumber.Text = "T.C Kimlik Numarası";
             // 
-            // label1
+            // lblStudentName
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "İsim";
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblStudentName.ForeColor = System.Drawing.Color.White;
+            this.lblStudentName.Location = new System.Drawing.Point(3, 13);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(32, 17);
+            this.lblStudentName.TabIndex = 50;
+            this.lblStudentName.Text = "İsim";
             // 
-            // textEdit2
+            // txtStudentSurname
             // 
-            this.textEdit2.Location = new System.Drawing.Point(165, 50);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(170, 22);
-            this.textEdit2.TabIndex = 45;
+            this.txtStudentSurname.Location = new System.Drawing.Point(165, 50);
+            this.txtStudentSurname.Name = "txtStudentSurname";
+            this.txtStudentSurname.Size = new System.Drawing.Size(170, 22);
+            this.txtStudentSurname.TabIndex = 1;
             // 
-            // textEdit1
+            // txtStudentName
             // 
-            this.textEdit1.Location = new System.Drawing.Point(165, 10);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(170, 22);
-            this.textEdit1.TabIndex = 44;
+            this.txtStudentName.Location = new System.Drawing.Point(165, 10);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(170, 22);
+            this.txtStudentName.TabIndex = 0;
             // 
             // btnRegister
             // 
@@ -406,68 +441,74 @@
             this.btnRegister.Appearance.Options.UseFont = true;
             this.btnRegister.Appearance.Options.UseForeColor = true;
             this.btnRegister.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnRegister.Location = new System.Drawing.Point(211, 387);
+            this.btnRegister.Location = new System.Drawing.Point(212, 436);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(176, 68);
-            this.btnRegister.TabIndex = 49;
+            this.btnRegister.TabIndex = 17;
             this.btnRegister.Text = "Kayıt";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // maskedtxtStudentNationalNumber
+            // maskedTxtNationalNumber
             // 
-            this.maskedtxtStudentNationalNumber.Location = new System.Drawing.Point(165, 88);
-            this.maskedtxtStudentNationalNumber.Mask = "00000000000";
-            this.maskedtxtStudentNationalNumber.Name = "maskedtxtStudentNationalNumber";
-            this.maskedtxtStudentNationalNumber.Size = new System.Drawing.Size(170, 23);
-            this.maskedtxtStudentNationalNumber.TabIndex = 47;
+            this.maskedTxtNationalNumber.Location = new System.Drawing.Point(165, 88);
+            this.maskedTxtNationalNumber.Mask = "00000000000";
+            this.maskedTxtNationalNumber.Name = "maskedTxtNationalNumber";
+            this.maskedTxtNationalNumber.Size = new System.Drawing.Size(170, 23);
+            this.maskedTxtNationalNumber.TabIndex = 2;
             // 
-            // label2
+            // lblStudentSurname
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Soyisim";
+            this.lblStudentSurname.AutoSize = true;
+            this.lblStudentSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.lblStudentSurname.ForeColor = System.Drawing.Color.White;
+            this.lblStudentSurname.Location = new System.Drawing.Point(1, 53);
+            this.lblStudentSurname.Name = "lblStudentSurname";
+            this.lblStudentSurname.Size = new System.Drawing.Size(54, 17);
+            this.lblStudentSurname.TabIndex = 48;
+            this.lblStudentSurname.Text = "Soyisim";
             // 
             // lblRegistrationSeason
             // 
             this.lblRegistrationSeason.AutoSize = true;
             this.lblRegistrationSeason.ForeColor = System.Drawing.Color.White;
-            this.lblRegistrationSeason.Location = new System.Drawing.Point(561, 132);
+            this.lblRegistrationSeason.Location = new System.Drawing.Point(563, 100);
             this.lblRegistrationSeason.Name = "lblRegistrationSeason";
             this.lblRegistrationSeason.Size = new System.Drawing.Size(94, 17);
             this.lblRegistrationSeason.TabIndex = 46;
             this.lblRegistrationSeason.Text = "Eğitim Sezonu";
             // 
-            // comboBox3
+            // checkHaveLicence
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 16;
-            this.comboBox3.Location = new System.Drawing.Point(681, 10);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(170, 24);
-            this.comboBox3.TabIndex = 84;
+            this.checkHaveLicence.AutoSize = true;
+            this.checkHaveLicence.ForeColor = System.Drawing.Color.White;
+            this.checkHaveLicence.Location = new System.Drawing.Point(741, 289);
+            this.checkHaveLicence.Name = "checkHaveLicence";
+            this.checkHaveLicence.Size = new System.Drawing.Size(132, 21);
+            this.checkHaveLicence.TabIndex = 17;
+            this.checkHaveLicence.Text = "Ehliyet Sahibi Mi?";
+            this.checkHaveLicence.UseVisualStyleBackColor = true;
+            this.checkHaveLicence.CheckedChanged += new System.EventHandler(this.checkHaveLicence_CheckedChanged);
             // 
-            // label7
+            // cmbHaveLicenceType
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(561, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 17);
-            this.label7.TabIndex = 83;
-            this.label7.Text = "Doğum Yeri";
+            this.cmbHaveLicenceType.FormattingEnabled = true;
+            this.cmbHaveLicenceType.ItemHeight = 16;
+            this.cmbHaveLicenceType.Location = new System.Drawing.Point(741, 325);
+            this.cmbHaveLicenceType.Name = "cmbHaveLicenceType";
+            this.cmbHaveLicenceType.Size = new System.Drawing.Size(170, 24);
+            this.cmbHaveLicenceType.TabIndex = 18;
+            this.cmbHaveLicenceType.Visible = false;
             // 
-            // btnRegisterToday
+            // lblHaveLicenceType
             // 
-            this.btnRegisterToday.Location = new System.Drawing.Point(858, 45);
-            this.btnRegisterToday.Name = "btnRegisterToday";
-            this.btnRegisterToday.Size = new System.Drawing.Size(75, 23);
-            this.btnRegisterToday.TabIndex = 85;
-            this.btnRegisterToday.Text = "Bugün";
-            this.btnRegisterToday.Click += new System.EventHandler(this.btnRegisterToday_Click);
+            this.lblHaveLicenceType.AutoSize = true;
+            this.lblHaveLicenceType.ForeColor = System.Drawing.Color.White;
+            this.lblHaveLicenceType.Location = new System.Drawing.Point(563, 328);
+            this.lblHaveLicenceType.Name = "lblHaveLicenceType";
+            this.lblHaveLicenceType.Size = new System.Drawing.Size(121, 17);
+            this.lblHaveLicenceType.TabIndex = 86;
+            this.lblHaveLicenceType.Text = "Mevcut Ehliyet Tipi";
+            this.lblHaveLicenceType.Visible = false;
             // 
             // ucStudentRecord
             // 
@@ -475,16 +516,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gpbStudentRecord);
             this.Name = "ucStudentRecord";
-            this.Size = new System.Drawing.Size(975, 606);
+            this.Size = new System.Drawing.Size(1153, 606);
             this.Load += new System.EventHandler(this.ucStudentRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gpbStudentRecord)).EndInit();
             this.gpbStudentRecord.ResumeLayout(false);
             this.panelStudentRegister.ResumeLayout(false);
             this.panelStudentRegister.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationDebt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentSurname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,39 +534,42 @@
 
         private DevExpress.XtraEditors.GroupControl gpbStudentRecord;
         private System.Windows.Forms.Panel panelStudentRegister;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private System.Windows.Forms.Label lblIbanNumber;
+        private System.Windows.Forms.Label lblAdress;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblLicenceType;
+        private System.Windows.Forms.Label lblQuantityInstallment;
+        private System.Windows.Forms.Label lblRegistrationDebt;
+        private System.Windows.Forms.Label lblRegistrationDate;
+        private System.Windows.Forms.Label lblBirthdate;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblNationalNumber;
+        private System.Windows.Forms.Label lblStudentName;
+        private DevExpress.XtraEditors.TextEdit txtStudentSurname;
+        private DevExpress.XtraEditors.TextEdit txtStudentName;
         private DevExpress.XtraEditors.SimpleButton btnRegister;
-        private System.Windows.Forms.MaskedTextBox maskedtxtStudentNationalNumber;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox maskedTxtNationalNumber;
+        private System.Windows.Forms.Label lblStudentSurname;
         private System.Windows.Forms.Label lblRegistrationSeason;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedtxtRegisterDate;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RichTextBox richTxtAdress;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private System.Windows.Forms.MaskedTextBox maskedTxtIbanNumber;
+        private DevExpress.XtraEditors.TextEdit txtRegistrationDebt;
+        private System.Windows.Forms.MaskedTextBox maskedTxtPhoneNumber;
+        private System.Windows.Forms.MaskedTextBox maskedtxtRegistrationDate;
+        private System.Windows.Forms.MaskedTextBox maskedTxtBirthdate;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.RadioButton radioMale;
+        private System.Windows.Forms.Label lblGender;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.ComboBox cmbRegistrationSeason;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbQuantityInstallment;
+        private System.Windows.Forms.ComboBox cmbLicenceType;
+        private System.Windows.Forms.ComboBox cmbPlaceofBirth;
+        private System.Windows.Forms.Label lblPlaceofBirth;
         private DevExpress.XtraEditors.SimpleButton btnRegisterToday;
+        private System.Windows.Forms.Label lblHaveLicenceType;
+        private System.Windows.Forms.ComboBox cmbHaveLicenceType;
+        private System.Windows.Forms.CheckBox checkHaveLicence;
     }
 }

@@ -25,14 +25,21 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
             return _studentDal.GetAll();
         }
 
-       public List<Student> GetBySeason()
-       {
-           return _studentDal.GetAll(p => p.RegistrationSeason ==1);
-       }
+        public List<Student> GetBySeason()
+        {
+            return _studentDal.GetAll(p => p.RegistrationSeason == 1);
+        }
 
         public Student Get(int id)
         {
             return _studentDal.Get(p => p.RegistrationSeason == id);
         }
+
+        public void Add(Student student)
+        {
+            _studentDal.Add(student);
+        }
+
+       
     }
 }

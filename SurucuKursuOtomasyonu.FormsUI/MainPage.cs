@@ -44,7 +44,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
             if (!panelMainPage.Controls.Contains(ucStudentRecord.InstanceStudentRecord))
             {
                 panelMainPage.Controls.Add(ucStudentRecord.InstanceStudentRecord);
-                ucStudentRecord.InstanceStudentRecord.Dock = DockStyle.Top;
+                ucStudentRecord.InstanceStudentRecord.Dock = DockStyle.Fill;
                 ucStudentRecord.InstanceStudentRecord.BringToFront();
             }
             else

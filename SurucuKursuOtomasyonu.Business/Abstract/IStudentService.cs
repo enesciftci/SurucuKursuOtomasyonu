@@ -14,5 +14,6 @@ namespace SurucuKursuOtomasyonu.Business.Abstract
         List<Student> GetBySeason();
             //   List<Student> GetBySeason();
         Student Get(int id);
+        void Add(Student student);
     }
 }
