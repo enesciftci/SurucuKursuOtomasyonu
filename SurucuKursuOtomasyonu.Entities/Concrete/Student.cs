@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SurucuKursuOtomasyonu.Entities.Abstract;
@@ -16,6 +15,10 @@ namespace SurucuKursuOtomasyonu.Entities.Concrete
         public string StudentGender { get; set; }
         public string StudentEmail { get; set; }
         public DateTime StudentBirthdate { get; set; }
+        public int StudentPlaceofBirth { get; set; }
+        public string StudentPhoneNumber { get; set; }
+        public string StudentAdress { get; set; }
+
         public DateTime RegistrationDate { get; set; }//öğrenci kayıt tarihi
         public int RegistrationSeason { get; set; }//kayıtlı bulunduğu sezon bu alana göre bulunacak
         public double StudentDebt { get; set; }//Öğrencinin borcu
@@ -23,9 +26,7 @@ namespace SurucuKursuOtomasyonu.Entities.Concrete
         /*Her ayın öğrencinin kayıt olduğu günde borç miktarı taksit sayısına bölünüp
          mail olarak öğrenciye gönderilecek öğrenci borcu ödediğinde ödenen miktar borç toplamından
          düşülecek */
-        public int StudentPlaceofBirth { get; set; }
-        public string StudentPhoneNumber { get; set; }
-        public string StudentAdress { get; set; }
+       
         public string StudentIbanNumber { get; set; }
         public string StudentHaveLicenceType { get; set; }
         public string StudentWantLicenceType { get; set; }

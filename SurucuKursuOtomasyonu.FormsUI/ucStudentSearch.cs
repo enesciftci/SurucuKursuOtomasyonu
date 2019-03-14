@@ -51,5 +51,34 @@ namespace SurucuKursuOtomasyonu.FormsUI
             cmbRegistrationSeason.DisplayMember = "Season";
            
         }
+
+        private void cmbRegistrationSeason_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgwStudentSearch.DataSource =
+                    _studentService.GetBySeason(Convert.ToInt32(cmbRegistrationSeason.SelectedValue));
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void maskedtxtStudentNationalNumber_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedtxtStudentNationalNumber_TextChanged(object sender, EventArgs e)
+        {
+            dgwStudentSearch.DataSource =
+                _studentService.GetByNationalNumber(maskedtxtStudentNationalNumber.Text);
+        }
+
+        private void txtStudentName_TextChanged(object sender, EventArgs e)
+        {
+            dgwStudentSearch.DataSource = _studentService.GetByName(txtStudentName.Text);
+        }
     }
 }

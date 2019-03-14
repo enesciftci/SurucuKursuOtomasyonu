@@ -16,7 +16,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainPage());
+            Application.Run(new MenuPage());
         }
     }
 }

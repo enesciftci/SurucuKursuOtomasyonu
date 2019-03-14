@@ -25,9 +25,20 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
             return _studentDal.GetAll();
         }
 
-        public List<Student> GetBySeason()
+        public List<Student> GetBySeason(int registrationSeason)
         {
-            return _studentDal.GetAll(p => p.RegistrationSeason == 1);
+            return _studentDal.GetAll(p => p.RegistrationSeason == registrationSeason);
+        }
+
+        public List<Student> GetByNationalNumber(string nationalNumber)
+        {
+            return _studentDal.GetAll(p=>p.StudentNationalNumber==nationalNumber);
+
+        }
+
+        public List<Student> GetByName(string name)
+        {
+            return _studentDal.GetAll(p => p.StudentName == name);
         }
 
         public Student Get(int id)
@@ -40,6 +51,14 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
             _studentDal.Add(student);
         }
 
-       
+        public void Update(Student student)
+        {
+            _studentDal.Update(student);
+        }
+
+        public void Delete(Student student)
+        {
+           _studentDal.Delete(student);
+        }
     }
 }

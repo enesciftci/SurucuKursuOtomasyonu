@@ -11,9 +11,14 @@ namespace SurucuKursuOtomasyonu.Business.Abstract
     {
         List<Student> GetAll();
 
-        List<Student> GetBySeason();
+        List<Student> GetBySeason(int registrationSeason);
+
+        List<Student> GetByNationalNumber(string nationalNumber);
+
+        List<Student> GetByName(string name);
             //   List<Student> GetBySeason();
-        Student Get(int id);
         void Add(Student student);
+        void Update(Student student);
+        void Delete(Student student);
     }
 }

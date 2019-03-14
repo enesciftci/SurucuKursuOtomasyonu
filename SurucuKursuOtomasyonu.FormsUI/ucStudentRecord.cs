@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,16 +19,19 @@ namespace SurucuKursuOtomasyonu.FormsUI
 {
     public partial class ucStudentRecord : UserControl
     {
+   
         private string _gender,_haveLicenceType;
-
-        private IRegistrationSeasonService _registrationSeasonService =
-            new RegistrationSeasonManager(new EfRegistrationSeasonDal());
-
+        
+        private IRegistrationSeasonService _registrationSeasonService =new RegistrationSeasonManager(new EfRegistrationSeasonDal());
+        ucStudentRegulation ucStudentRegulation=new ucStudentRegulation();
         private IStudentService _studentService = new StudentManager(new EfStudentDal());
         private ILicenceTypeService _licenceTypeService = new LicenceTypeManager(new EfLicenceTypeDal());
         private ICityService _cityService = new CityManager(new EfCityDal());
         private static ucStudentRecord _instanceStudentRecord;
-
+        public ucStudentRecord()
+        {
+            InitializeComponent();
+        }
         public static ucStudentRecord InstanceStudentRecord
         {
             get
@@ -35,48 +39,54 @@ namespace SurucuKursuOtomasyonu.FormsUI
                 if (_instanceStudentRecord == null)
                 {
                     _instanceStudentRecord = new ucStudentRecord();
+                    
                 }
-
+               
                 return _instanceStudentRecord;
             }
         }
 
-        public ucStudentRecord()
+        void LicenceLoader(ComboBox combo)
         {
-            InitializeComponent();
+            combo.DataSource = _licenceTypeService.GetLicenceTypes();
+            combo.ValueMember = "LicenceTypeId";
+            combo.DisplayMember = "LicenceName";
         }
+
+     
 
         private void ucStudentRecord_Load(object sender, EventArgs e)
         {
-            cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
+            
+            //  cmbRegistrationSeason.SelectedIndex = 0;
+            
             cmbRegistrationSeason.ValueMember = "RegistrationSeasonID";
             cmbRegistrationSeason.DisplayMember = "Season";
-
-            cmbLicenceType.DataSource = _licenceTypeService.GetLicenceTypes();
+            cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
+            LicenceLoader(cmbLicenceType);
+            LicenceLoader(cmbHaveLicenceType);
+           /* cmbLicenceType.DataSource = _licenceTypeService.GetLicenceTypes();
             cmbLicenceType.ValueMember = "LicenceTypeId";
             cmbLicenceType.DisplayMember = "LicenceName";
 
             cmbHaveLicenceType.DataSource = _licenceTypeService.GetLicenceTypes();
             cmbHaveLicenceType.ValueMember = "LicenceTypeId";
-            cmbHaveLicenceType.DisplayMember = "LicenceName";
+            cmbHaveLicenceType.DisplayMember = "LicenceName";*/
 
             cmbPlaceofBirth.DataSource = _cityService.GetCities();
             cmbPlaceofBirth.DisplayMember = "CityName";
             cmbPlaceofBirth.ValueMember = "CityId";
-            
+          
 
         }
 
-        private void btnRegisterToday_Click(object sender, EventArgs e)
-        {
-            DateTime date = DateTime.Today;
-            maskedtxtRegistrationDate.Text = date.ToString("ddMMyyyy");
-
-        }
-
+     
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (radioFemale.Checked)
+            
+            try
+            {
+                if (radioFemale.Checked)
             {
                 _gender = "Kadın";
             }
@@ -99,23 +109,34 @@ namespace SurucuKursuOtomasyonu.FormsUI
             {
                 StudentName = txtStudentName.Text,
                 StudentSurname = txtStudentSurname.Text,
-                StudentNationalNumber = maskedTxtNationalNumber.Text,
+                StudentNationalNumber = txtNationalNumber.Text,
                 StudentGender = _gender,
                 StudentEmail = txtEmail.Text,
-                StudentBirthdate = Convert.ToDateTime(maskedTxtBirthdate.Text),
-                RegistrationDate = Convert.ToDateTime(maskedtxtRegistrationDate.Text),
+                StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
+                RegistrationDate = Convert.ToDateTime(dpcRegistrationDate.Value),
                 RegistrationSeason =Convert.ToInt32(cmbRegistrationSeason.SelectedValue),
                 StudentDebt = Convert.ToDouble(txtRegistrationDebt.Text),
                 QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
                 StudentPlaceofBirth =Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
-                StudentPhoneNumber = maskedTxtPhoneNumber.Text,
+                StudentPhoneNumber = txtPhoneNumber.Text,
                 StudentAdress = richTxtAdress.Text,
-                StudentIbanNumber = maskedTxtIbanNumber.Text,
+                StudentIbanNumber = txtIbanNumber.Text,
                 StudentWantLicenceType = cmbLicenceType.Text,
                 StudentHaveLicenceType =_haveLicenceType
             });
-
+                MessageBox.Show("Üye Kaydı Tamamlandı");
+              
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+   
+            }
+           
+           
         }
+
+       
 
         private void checkHaveLicence_CheckedChanged(object sender, EventArgs e)
         {
@@ -129,13 +150,45 @@ namespace SurucuKursuOtomasyonu.FormsUI
             {
                 cmbHaveLicenceType.Visible = false;
                 lblHaveLicenceType.Visible = false;
-                
+
             }
         }
 
-        private void cmbRegistrationSeason_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-          //  MessageBox.Show("index", cmbRegistrationSeason.SelectedValue.ToString());
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox || control is MaskedTextBox || control is RichTextBox)
+                    {
+                        (control as TextBox)?.Clear();
+                        (control as MaskedTextBox)?.Clear();
+                        (control as RichTextBox)?.Clear();
+                    }
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
+            foreach (Control c in gbpStudentRecord.Controls)
+            {
+                if (c is ComboBox)
+                {
+                    c.ResetText();
+                }
+
+                radioFemale.Checked = false;
+                radioMale.Checked = false;
+            }
         }
+
+        private void gbpStudentRecord_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }
