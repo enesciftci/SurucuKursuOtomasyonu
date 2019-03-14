@@ -38,10 +38,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
 
 
-        private void gbpStudentSearch_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void ucStudentSearch_Load(object sender, EventArgs e)
         {
@@ -65,18 +62,16 @@ namespace SurucuKursuOtomasyonu.FormsUI
             }
         }
 
-        private void maskedtxtStudentNationalNumber_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
+     
 
-        }
 
-        private void maskedtxtStudentNationalNumber_TextChanged(object sender, EventArgs e)
+        private void txtStudentNationalNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             dgwStudentSearch.DataSource =
-                _studentService.GetByNationalNumber(maskedtxtStudentNationalNumber.Text);
+                _studentService.GetByNationalNumber(txtStudentNationalNumber.Text);
         }
 
-        private void txtStudentName_TextChanged(object sender, EventArgs e)
+        private void txtStudentName_KeyPress(object sender, KeyPressEventArgs e)
         {
             dgwStudentSearch.DataSource = _studentService.GetByName(txtStudentName.Text);
         }
