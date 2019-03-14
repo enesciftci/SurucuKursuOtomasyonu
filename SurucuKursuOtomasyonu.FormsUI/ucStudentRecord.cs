@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SurucuKursuOtomasyonu.Business.Abstract;
+﻿using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.Concrete;
-
 using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
 using SurucuKursuOtomasyonu.Entities.Concrete;
+using System;
+using System.Windows.Forms;
 
 
 namespace SurucuKursuOtomasyonu.FormsUI

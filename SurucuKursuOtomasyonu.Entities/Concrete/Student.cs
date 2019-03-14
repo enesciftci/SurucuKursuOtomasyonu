@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using SurucuKursuOtomasyonu.Entities.Abstract;
+﻿using SurucuKursuOtomasyonu.Entities.Abstract;
+using System;
 
 namespace SurucuKursuOtomasyonu.Entities.Concrete
 {
-   public class Student:IEntity
+    public class Student:IEntity
     {
         public int StudentID { get; set; }
         public string StudentName { get; set; }

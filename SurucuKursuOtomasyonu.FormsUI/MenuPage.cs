@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bunifu.Framework.UI;
+using System;
 using System.Windows.Forms;
-using  Bunifu.Framework.UI;
 
 namespace SurucuKursuOtomasyonu.FormsUI
 {
