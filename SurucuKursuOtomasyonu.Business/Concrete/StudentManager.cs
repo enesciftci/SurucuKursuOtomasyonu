@@ -58,7 +58,9 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
         public void Delete(Student student)
         {
-           _studentDal.Delete(student);
+          
+                _studentDal.Delete(student);
+           
         }
     }
 }

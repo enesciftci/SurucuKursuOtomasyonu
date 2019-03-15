@@ -19,6 +19,7 @@ namespace SurucuKursuOtomasyonu.Entities.Concrete
         public DateTime RegistrationDate { get; set; }//öğrenci kayıt tarihi
         public int RegistrationSeason { get; set; }//kayıtlı bulunduğu sezon bu alana göre bulunacak
         public double StudentDebt { get; set; }//Öğrencinin borcu
+        public double StudentTotalDebt { get; set; }
         public int QuantityInstallment { get; set; }//Taksit miktarı 
         /*Her ayın öğrencinin kayıt olduğu günde borç miktarı taksit sayısına bölünüp
          mail olarak öğrenciye gönderilecek öğrenci borcu ödediğinde ödenen miktar borç toplamından

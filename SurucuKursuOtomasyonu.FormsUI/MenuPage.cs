@@ -1,6 +1,7 @@
 ﻿using Bunifu.Framework.UI;
 using System;
 using System.Windows.Forms;
+using DevExpress.Utils.Filtering;
 
 namespace SurucuKursuOtomasyonu.FormsUI
 {
@@ -13,7 +14,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
         }
 
         private bool _menuExpanded = false;
-       
+    
         void texthide(BunifuFlatButton bunifu)
      {       
             bunifu.Text = "";
@@ -88,30 +89,33 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
         private void btnStudentRegister_Click(object sender, EventArgs e)
         {
-          //  panelMainPage.Controls.Clear();
+            
+           
             if (!panelMainPage.Controls.Contains(ucStudentRecord.InstanceStudentRecord))
             {
                 panelMainPage.Controls.Add(ucStudentRecord.InstanceStudentRecord);
                 ucStudentRecord.InstanceStudentRecord.Dock = DockStyle.Fill;
-
+               
                 ucStudentRecord.InstanceStudentRecord.BringToFront();
-
-            }
+                 
+             }
             else
             {
                 ucStudentRecord.InstanceStudentRecord.BringToFront();
 
             }
+           
+
         }
 
         private void MenuPage_SizeChanged(object sender, EventArgs e)
         {
-            this.Text = "Yükselik" + this.Height + "Genişlik" + this.Width;
+           //this.Text = "Yükselik" + this.Height + "Genişlik" + this.Width;
         }
 
         private void MenuPage_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnStudentSearch_Click(object sender, EventArgs e)
@@ -134,17 +138,17 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
         private void btnStudentRegulation_Click(object sender, EventArgs e)
         {
-            if (!panelMainPage.Controls.Contains(ucStudentRegulation.InstanceStudentRegulation))
+            if (!panelMainPage.Controls.Contains(UcStudentRegulation.InstanceStudentRegulation))
             {
-                panelMainPage.Controls.Add(ucStudentRegulation.InstanceStudentRegulation);
-                ucStudentRegulation.InstanceStudentRegulation.Dock = DockStyle.Fill;
+                panelMainPage.Controls.Add(UcStudentRegulation.InstanceStudentRegulation);
+                UcStudentRegulation.InstanceStudentRegulation.Dock = DockStyle.Fill;
 
-                ucStudentRegulation.InstanceStudentRegulation.BringToFront();
+                UcStudentRegulation.InstanceStudentRegulation.BringToFront();
 
             }
             else
             {
-                ucStudentRegulation.InstanceStudentRegulation.BringToFront();
+                UcStudentRegulation.InstanceStudentRegulation.BringToFront();
 
             }
         }

@@ -53,7 +53,6 @@
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.lblGender = new System.Windows.Forms.Label();
-            this.richTxtAdress = new System.Windows.Forms.RichTextBox();
             this.lblIbanNumber = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
@@ -97,7 +96,6 @@
             this.gbpStudentRecord.Controls.Add(this.radioFemale);
             this.gbpStudentRecord.Controls.Add(this.radioMale);
             this.gbpStudentRecord.Controls.Add(this.lblGender);
-            this.gbpStudentRecord.Controls.Add(this.richTxtAdress);
             this.gbpStudentRecord.Controls.Add(this.lblIbanNumber);
             this.gbpStudentRecord.Controls.Add(this.lblAdress);
             this.gbpStudentRecord.Controls.Add(this.lblPhoneNumber);
@@ -452,14 +450,6 @@
             this.lblGender.TabIndex = 121;
             this.lblGender.Text = "Cinsiyet";
             // 
-            // richTxtAdress
-            // 
-            this.richTxtAdress.Location = new System.Drawing.Point(430, 11);
-            this.richTxtAdress.Name = "richTxtAdress";
-            this.richTxtAdress.Size = new System.Drawing.Size(349, 55);
-            this.richTxtAdress.TabIndex = 92;
-            this.richTxtAdress.Text = "";
-            // 
             // lblIbanNumber
             // 
             this.lblIbanNumber.AutoSize = true;
@@ -645,7 +635,6 @@
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.RichTextBox richTxtAdress;
         private System.Windows.Forms.Label lblIbanNumber;
         private System.Windows.Forms.Label lblAdress;
         private System.Windows.Forms.Label lblPhoneNumber;

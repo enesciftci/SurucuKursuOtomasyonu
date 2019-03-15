@@ -14,7 +14,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
         private string _gender,_haveLicenceType;
         
         private IRegistrationSeasonService _registrationSeasonService =new RegistrationSeasonManager(new EfRegistrationSeasonDal());
-        ucStudentRegulation ucStudentRegulation=new ucStudentRegulation();
+        UcStudentRegulation ucStudentRegulation=new UcStudentRegulation();
         private IStudentService _studentService = new StudentManager(new EfStudentDal());
         private ILicenceTypeService _licenceTypeService = new LicenceTypeManager(new EfLicenceTypeDal());
         private ICityService _cityService = new CityManager(new EfCityDal());
@@ -107,10 +107,11 @@ namespace SurucuKursuOtomasyonu.FormsUI
                 RegistrationDate = Convert.ToDateTime(dpcRegistrationDate.Value),
                 RegistrationSeason =Convert.ToInt32(cmbRegistrationSeason.SelectedValue),
                 StudentDebt = Convert.ToDouble(txtRegistrationDebt.Text),
+                StudentTotalDebt = Convert.ToDouble(txtRegistrationDebt.Text),
                 QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
                 StudentPlaceofBirth =Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
                 StudentPhoneNumber = txtPhoneNumber.Text,
-                StudentAdress = richTxtAdress.Text,
+                StudentAdress = txtAdress.Text,
                 StudentIbanNumber = txtIbanNumber.Text,
                 StudentWantLicenceType = cmbLicenceType.Text,
                 StudentHaveLicenceType =_haveLicenceType

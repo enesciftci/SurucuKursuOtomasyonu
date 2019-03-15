@@ -2,7 +2,11 @@
 using SurucuKursuOtomasyonu.Business.Concrete;
 using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using DevExpress.Utils.Extensions;
 
 namespace SurucuKursuOtomasyonu.FormsUI
 {
@@ -29,17 +33,22 @@ namespace SurucuKursuOtomasyonu.FormsUI
             InitializeComponent();
         }
 
-
+        void DgwRefresh()
+        {
+            dgwStudentSearch.DataSource = _studentService.GetAll();
+        }
 
        
 
         private void ucStudentSearch_Load(object sender, EventArgs e)
         {
-            dgwStudentSearch.DataSource = _studentService.GetAll();
+           
+           
            cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
             cmbRegistrationSeason.ValueMember = "RegistrationSeasonID";
             cmbRegistrationSeason.DisplayMember = "Season";
-           
+            cmbRegistrationSeason.SelectedIndex = -1;
+            dgwStudentSearch.DataSource = _studentService.GetAll();
         }
 
         private void cmbRegistrationSeason_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,15 +67,41 @@ namespace SurucuKursuOtomasyonu.FormsUI
      
 
 
-        private void txtStudentNationalNumber_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNationalNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            dgwStudentSearch.DataSource =
-                _studentService.GetByNationalNumber(txtStudentNationalNumber.Text);
+            cmbRegistrationSeason.SelectedIndex = -1;
+            if (!String.IsNullOrEmpty(txtNationalNumber.Text))
+            {
+                dgwStudentSearch.DataSource =
+                    _studentService.GetByNationalNumber(txtNationalNumber.Text);
+            }
+            else
+            {
+                DgwRefresh();
+            }
         }
 
         private void txtStudentName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            dgwStudentSearch.DataSource = _studentService.GetByName(txtStudentName.Text);
+            cmbRegistrationSeason.SelectedIndex = -1;
+            if (!String.IsNullOrEmpty(txtStudentName.Text))
+            {
+                dgwStudentSearch.DataSource = _studentService.GetByName(txtStudentName.Text);
+            }
+            else
+            {
+                DgwRefresh();
+            }
+           
+        }
+
+
+        private void cmbRegistrationSeason_Enter(object sender, EventArgs e)
+        {
+            txtNationalNumber.Text = "";
+            txtStudentName.Text = "";
+            DgwRefresh();
+            
         }
     }
 }
