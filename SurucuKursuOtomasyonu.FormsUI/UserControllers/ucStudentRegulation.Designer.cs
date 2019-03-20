@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcStudentRegulation));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbStudentRegulation = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbLicenceType = new System.Windows.Forms.ComboBox();
@@ -73,7 +73,6 @@
             this.dpcBirthdate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dgwStudentRegulation = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.txtSearchByNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +91,7 @@
             this.StudentIbanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentHaveLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentWantLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchByNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.gpbStudentRegulation.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
@@ -684,20 +684,20 @@
             // 
             this.dgwStudentRegulation.AllowUserToAddRows = false;
             this.dgwStudentRegulation.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgwStudentRegulation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgwStudentRegulation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwStudentRegulation.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgwStudentRegulation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwStudentRegulation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwStudentRegulation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgwStudentRegulation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudentRegulation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgwStudentRegulation.ColumnHeadersHeight = 55;
             this.dgwStudentRegulation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
             this.StudentName,
@@ -735,24 +735,6 @@
             this.dgwStudentRegulation.Size = new System.Drawing.Size(2029, 494);
             this.dgwStudentRegulation.TabIndex = 164;
             this.dgwStudentRegulation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwStudentRegulation_CellClick);
-            // 
-            // txtSearchByNationalNumber
-            // 
-            this.txtSearchByNationalNumber.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtSearchByNationalNumber.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchByNationalNumber.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtSearchByNationalNumber.BorderThickness = 2;
-            this.txtSearchByNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchByNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtSearchByNationalNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchByNationalNumber.isPassword = false;
-            this.txtSearchByNationalNumber.Location = new System.Drawing.Point(146, 423);
-            this.txtSearchByNationalNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchByNationalNumber.Name = "txtSearchByNationalNumber";
-            this.txtSearchByNationalNumber.Size = new System.Drawing.Size(248, 44);
-            this.txtSearchByNationalNumber.TabIndex = 163;
-            this.txtSearchByNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSearchByNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByNationalNumber_KeyPress);
             // 
             // StudentID
             // 
@@ -897,7 +879,25 @@
             this.StudentWantLicenceType.Name = "StudentWantLicenceType";
             this.StudentWantLicenceType.ReadOnly = true;
             // 
-            // ucStudentRegulation
+            // txtSearchByNationalNumber
+            // 
+            this.txtSearchByNationalNumber.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtSearchByNationalNumber.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchByNationalNumber.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtSearchByNationalNumber.BorderThickness = 2;
+            this.txtSearchByNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchByNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtSearchByNationalNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchByNationalNumber.isPassword = false;
+            this.txtSearchByNationalNumber.Location = new System.Drawing.Point(146, 423);
+            this.txtSearchByNationalNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchByNationalNumber.Name = "txtSearchByNationalNumber";
+            this.txtSearchByNationalNumber.Size = new System.Drawing.Size(248, 44);
+            this.txtSearchByNationalNumber.TabIndex = 163;
+            this.txtSearchByNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearchByNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByNationalNumber_KeyPress);
+            // 
+            // UcStudentRegulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

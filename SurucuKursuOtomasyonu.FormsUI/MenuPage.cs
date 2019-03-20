@@ -1,7 +1,7 @@
 ﻿using Bunifu.Framework.UI;
 using System;
 using System.Windows.Forms;
-using DevExpress.Utils.Filtering;
+using SurucuKursuOtomasyonu.FormsUI.UserControllers;
 
 namespace SurucuKursuOtomasyonu.FormsUI
 {
@@ -150,6 +150,20 @@ namespace SurucuKursuOtomasyonu.FormsUI
             {
                 UcStudentRegulation.InstanceStudentRegulation.BringToFront();
 
+            }
+        }
+
+        private void btnStudentDebt_Click(object sender, EventArgs e)
+        {
+            if (!panelMainMenu.Controls.Contains(UcStudentDebt.InstanceStudentDebt))
+            {
+                panelMainPage.Controls.Add(UcStudentDebt.InstanceStudentDebt);
+                UcStudentDebt.InstanceStudentDebt.Dock = DockStyle.Fill;
+                UcStudentDebt.InstanceStudentDebt.BringToFront();
+            }
+            else
+            {
+                UcStudentDebt.InstanceStudentDebt.BringToFront();
             }
         }
     }

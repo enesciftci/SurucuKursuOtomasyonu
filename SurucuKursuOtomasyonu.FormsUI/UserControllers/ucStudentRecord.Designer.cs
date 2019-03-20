@@ -467,7 +467,7 @@
             this.lblAdress.AutoSize = true;
             this.lblAdress.BackColor = System.Drawing.Color.White;
             this.lblAdress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAdress.ForeColor = System.Drawing.Color.Gray;
+            this.lblAdress.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblAdress.Location = new System.Drawing.Point(76, 446);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(53, 23);
@@ -551,7 +551,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.White;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Gray;
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblEmail.Location = new System.Drawing.Point(76, 559);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(59, 23);
@@ -563,7 +563,7 @@
             this.lblNationalNumber.AutoSize = true;
             this.lblNationalNumber.BackColor = System.Drawing.Color.White;
             this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNationalNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblNationalNumber.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblNationalNumber.Location = new System.Drawing.Point(76, 246);
             this.lblNationalNumber.Name = "lblNationalNumber";
             this.lblNationalNumber.Size = new System.Drawing.Size(161, 23);
@@ -575,7 +575,7 @@
             this.lblStudentName.AutoSize = true;
             this.lblStudentName.BackColor = System.Drawing.Color.White;
             this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStudentName.ForeColor = System.Drawing.Color.Gray;
+            this.lblStudentName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblStudentName.Location = new System.Drawing.Point(76, 31);
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(41, 23);
@@ -587,7 +587,7 @@
             this.lblStudentSurname.AutoSize = true;
             this.lblStudentSurname.BackColor = System.Drawing.Color.White;
             this.lblStudentSurname.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStudentSurname.ForeColor = System.Drawing.Color.Gray;
+            this.lblStudentSurname.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblStudentSurname.Location = new System.Drawing.Point(76, 137);
             this.lblStudentSurname.Name = "lblStudentSurname";
             this.lblStudentSurname.Size = new System.Drawing.Size(68, 23);

@@ -36,9 +36,6 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Desktop\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,8 +44,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MenuPage.cs">
@@ -60,22 +59,28 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucStudentRecord.cs">
+    <Compile Include="UserControllers\ucStudentDebt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucStudentRecord.Designer.cs">
+    <Compile Include="UserControllers\ucStudentDebt.Designer.cs">
+      <DependentUpon>ucStudentDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\ucStudentRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\ucStudentRecord.Designer.cs">
       <DependentUpon>ucStudentRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucStudentRegulation.cs">
+    <Compile Include="UserControllers\ucStudentRegulation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucStudentRegulation.Designer.cs">
+    <Compile Include="UserControllers\ucStudentRegulation.Designer.cs">
       <DependentUpon>ucStudentRegulation.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucStudentSearch.cs">
+    <Compile Include="UserControllers\ucStudentSearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucStudentSearch.Designer.cs">
+    <Compile Include="UserControllers\ucStudentSearch.Designer.cs">
       <DependentUpon>ucStudentSearch.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MenuPage.resx">
@@ -91,13 +96,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ucStudentRecord.resx">
+    <EmbeddedResource Include="UserControllers\ucStudentDebt.resx">
+      <DependentUpon>ucStudentDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\ucStudentRecord.resx">
       <DependentUpon>ucStudentRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucStudentRegulation.resx">
+    <EmbeddedResource Include="UserControllers\ucStudentRegulation.resx">
       <DependentUpon>ucStudentRegulation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucStudentSearch.resx">
+    <EmbeddedResource Include="UserControllers\ucStudentSearch.resx">
       <DependentUpon>ucStudentSearch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

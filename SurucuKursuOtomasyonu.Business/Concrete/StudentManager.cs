@@ -41,9 +41,9 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
             return _studentDal.GetAll(p => p.StudentName == name);
         }
 
-        public Student Get(int id)
+        public Student Get(string nationalNumber)
         {
-            return _studentDal.Get(p => p.RegistrationSeason == id);
+            return _studentDal.Get(p => p.StudentNationalNumber==nationalNumber);
         }
 
         public void Add(Student student)

@@ -3,6 +3,8 @@ using SurucuKursuOtomasyonu.Business.Concrete;
 using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -54,6 +56,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
             cmbRegistrationSeason.ValueMember = "RegistrationSeasonID";
             cmbRegistrationSeason.DisplayMember = "Season";
             cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
+
             LicenceLoader(cmbLicenceType);
             LicenceLoader(cmbHaveLicenceType);
            /* cmbLicenceType.DataSource = _licenceTypeService.GetLicenceTypes();
@@ -106,8 +109,8 @@ namespace SurucuKursuOtomasyonu.FormsUI
                 StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
                 RegistrationDate = Convert.ToDateTime(dpcRegistrationDate.Value),
                 RegistrationSeason =Convert.ToInt32(cmbRegistrationSeason.SelectedValue),
-                StudentDebt = Convert.ToDouble(txtRegistrationDebt.Text),
-                StudentTotalDebt = Convert.ToDouble(txtRegistrationDebt.Text),
+                StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                StudentTotalDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
                 QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
                 StudentPlaceofBirth =Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
                 StudentPhoneNumber = txtPhoneNumber.Text,

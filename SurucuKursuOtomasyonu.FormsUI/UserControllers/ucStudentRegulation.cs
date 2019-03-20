@@ -9,6 +9,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
 {
     public partial class UcStudentRegulation : UserControl
     {
+
         private readonly IStudentService _studentService = new StudentManager(new EfStudentDal());
        private readonly IRegistrationSeasonService _registrationSeasonService=new RegistrationSeasonManager(new EfRegistrationSeasonDal());
         private  readonly ILicenceTypeService _licenceTypeService=new LicenceTypeManager(new EfLicenceTypeDal());
@@ -16,6 +17,23 @@ namespace SurucuKursuOtomasyonu.FormsUI
         private static UcStudentRegulation _instanceStudentRegulation;
         private string _gender, _haveLicenceType;
         private string _haveLicence;
+
+        public static UcStudentRegulation InstanceStudentRegulation
+        {
+            get
+            {
+                if (_instanceStudentRegulation == null)
+                {
+
+                    _instanceStudentRegulation = new UcStudentRegulation();
+
+                }
+
+
+                return _instanceStudentRegulation;
+            }
+        }
+
         void ClearAll()
         {
             Action<Control.ControlCollection> func = null;
@@ -48,26 +66,6 @@ namespace SurucuKursuOtomasyonu.FormsUI
         {
             dgwStudentRegulation.DataSource = _studentService.GetAll();
         }
-
-        public static UcStudentRegulation InstanceStudentRegulation
-        {
-            get
-            {
-                if (_instanceStudentRegulation == null)
-                {
-                    
-                    _instanceStudentRegulation = new UcStudentRegulation();
-                   
-                }
-
-              
-                return _instanceStudentRegulation;
-            }
-             
-              
-            
-        }
-
      
         public UcStudentRegulation()
         {
@@ -281,8 +279,8 @@ namespace SurucuKursuOtomasyonu.FormsUI
                          StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
                          RegistrationDate = Convert.ToDateTime(dpcRegistrationDate.Value),
                          RegistrationSeason = Convert.ToInt32(cmbRegistrationSeason.SelectedValue),
-                         StudentDebt = Convert.ToDouble(txtRegistrationDebt.Text),
-                         StudentTotalDebt = Convert.ToDouble(dgwStudentRegulation.CurrentRow.Cells[13].Value),
+                         StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                         StudentTotalDebt = Convert.ToDecimal(dgwStudentRegulation.CurrentRow.Cells[13].Value),
                          QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
                          StudentPlaceofBirth = Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
                          StudentPhoneNumber = txtPhoneNumber.Text,
