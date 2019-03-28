@@ -1,37 +1,34 @@
 ﻿using SurucuKursuOtomasyonu.Business.Abstract;
-using SurucuKursuOtomasyonu.Business.Concrete;
-using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
+using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
-
-namespace SurucuKursuOtomasyonu.FormsUI
+namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
-    public partial class ucStudentRecord : UserControl
+    public partial class UcStudentRecord : UserControl
     {
    
         private string _gender,_haveLicenceType;
-        
-        private IRegistrationSeasonService _registrationSeasonService =new RegistrationSeasonManager(new EfRegistrationSeasonDal());
-        UcStudentRegulation ucStudentRegulation=new UcStudentRegulation();
-        private IStudentService _studentService = new StudentManager(new EfStudentDal());
-        private ILicenceTypeService _licenceTypeService = new LicenceTypeManager(new EfLicenceTypeDal());
-        private ICityService _cityService = new CityManager(new EfCityDal());
-        private static ucStudentRecord _instanceStudentRecord;
-        public ucStudentRecord()
+
+        private readonly IRegistrationSeasonService _registrationSeasonService =
+            InstanceFactory.GetInstance<IRegistrationSeasonService>();
+
+        private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
+        private readonly ILicenceTypeService _licenceTypeService = InstanceFactory.GetInstance<ILicenceTypeService>();
+        private readonly ICityService _cityService = InstanceFactory.GetInstance<ICityService>();
+        private static UcStudentRecord _instanceStudentRecord;
+        public UcStudentRecord()
         {
             InitializeComponent();
         }
-        public static ucStudentRecord InstanceStudentRecord
+        public static UcStudentRecord InstanceStudentRecord
         {
             get
             {
                 if (_instanceStudentRecord == null)
                 {
-                    _instanceStudentRecord = new ucStudentRecord();
+                    _instanceStudentRecord = new UcStudentRecord();
                     
                 }
                
@@ -39,45 +36,29 @@ namespace SurucuKursuOtomasyonu.FormsUI
             }
         }
 
-        void LicenceLoader(ComboBox combo)
+        void cmbLoader(ComboBox combo,ComboBox combo2,ComboBox combo3)
         {
             combo.DataSource = _licenceTypeService.GetLicenceTypes();
             combo.ValueMember = "LicenceTypeId";
             combo.DisplayMember = "LicenceName";
+            combo2.DataSource = _cityService.GetCities();
+            combo2.DisplayMember = "CityName";
+            combo2.ValueMember = "CityId";
+            combo3.DataSource = _licenceTypeService.GetLicenceTypes();
+            combo3.ValueMember = "LicenceTypeId";
+            combo3.DisplayMember = "LicenceName";
+         
         }
-
-     
 
         private void ucStudentRecord_Load(object sender, EventArgs e)
         {
-            
-            //  cmbRegistrationSeason.SelectedIndex = 0;
-            
-            cmbRegistrationSeason.ValueMember = "RegistrationSeasonID";
-            cmbRegistrationSeason.DisplayMember = "Season";
-            cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
-
-            LicenceLoader(cmbLicenceType);
-            LicenceLoader(cmbHaveLicenceType);
-           /* cmbLicenceType.DataSource = _licenceTypeService.GetLicenceTypes();
-            cmbLicenceType.ValueMember = "LicenceTypeId";
-            cmbLicenceType.DisplayMember = "LicenceName";
-
-            cmbHaveLicenceType.DataSource = _licenceTypeService.GetLicenceTypes();
-            cmbHaveLicenceType.ValueMember = "LicenceTypeId";
-            cmbHaveLicenceType.DisplayMember = "LicenceName";*/
-
-            cmbPlaceofBirth.DataSource = _cityService.GetCities();
-            cmbPlaceofBirth.DisplayMember = "CityName";
-            cmbPlaceofBirth.ValueMember = "CityId";
-          
-
+            cmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
         }
 
-     
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            
+          
             try
             {
                 if (radioFemale.Checked)
@@ -105,21 +86,21 @@ namespace SurucuKursuOtomasyonu.FormsUI
                 StudentSurname = txtStudentSurname.Text,
                 StudentNationalNumber = txtNationalNumber.Text,
                 StudentGender = _gender,
-                StudentEmail = txtEmail.Text,
+                StudentEmail = txtEmail.Text.Trim().ToLower(),
                 StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
-                RegistrationDate = Convert.ToDateTime(dpcRegistrationDate.Value),
-                RegistrationSeason =Convert.ToInt32(cmbRegistrationSeason.SelectedValue),
+                RegistrationDate = Convert.ToDateTime(DateTime.Today.ToShortDateString()),
+                RegistrationSeason =_registrationSeasonService.GetSeasons().Count,
                 StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
                 StudentTotalDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
                 QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
                 StudentPlaceofBirth =Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
                 StudentPhoneNumber = txtPhoneNumber.Text,
                 StudentAdress = txtAdress.Text,
-                StudentIbanNumber = txtIbanNumber.Text,
+                StudentIbanNumber = txtIbanNumber.Text.ToUpper().Trim(),
                 StudentWantLicenceType = cmbLicenceType.Text,
                 StudentHaveLicenceType =_haveLicenceType
             });
-                MessageBox.Show("Üye Kaydı Tamamlandı");
+                MessageBox.Show(@"Üye Kaydı Tamamlandı");
               
             }
             catch (Exception exception)
@@ -167,23 +148,12 @@ namespace SurucuKursuOtomasyonu.FormsUI
             };
 
             func(Controls);
-            foreach (Control c in gbpStudentRecord.Controls)
-            {
-                if (c is ComboBox)
-                {
-                    c.ResetText();
-                }
-
-                radioFemale.Checked = false;
+            cmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
+            cmbQuantityInstallment.SelectedIndex = 0;
+            radioFemale.Checked = false;
                 radioMale.Checked = false;
             }
-        }
+      
 
-        private void gbpStudentRecord_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-     
     }
 }

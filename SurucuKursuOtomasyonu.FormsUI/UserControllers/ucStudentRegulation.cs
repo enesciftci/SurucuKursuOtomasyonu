@@ -1,19 +1,21 @@
 ﻿using SurucuKursuOtomasyonu.Business.Abstract;
-using SurucuKursuOtomasyonu.Business.Concrete;
-using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
+using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 using System;
 using System.Windows.Forms;
 
-namespace SurucuKursuOtomasyonu.FormsUI
+namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
     public partial class UcStudentRegulation : UserControl
     {
 
-        private readonly IStudentService _studentService = new StudentManager(new EfStudentDal());
-       private readonly IRegistrationSeasonService _registrationSeasonService=new RegistrationSeasonManager(new EfRegistrationSeasonDal());
-        private  readonly ILicenceTypeService _licenceTypeService=new LicenceTypeManager(new EfLicenceTypeDal());
-        private readonly ICityService _cityService=new CityManager(new EfCityDal());
+        private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
+
+      /*  private readonly IRegistrationSeasonService _registrationSeasonService =
+            InstanceFactory.GetInstance<IRegistrationSeasonService>();*/
+
+        private readonly ILicenceTypeService _licenceTypeService = InstanceFactory.GetInstance<ILicenceTypeService>();
+        private readonly ICityService _cityService = InstanceFactory.GetInstance<ICityService>();
         private static UcStudentRegulation _instanceStudentRegulation;
         private string _gender, _haveLicenceType;
         private string _haveLicence;
@@ -100,10 +102,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
         
             dgwStudentRegulation.BorderStyle = BorderStyle.Fixed3D;
             dgwStudentRegulation.DataSource = _studentService.GetAll();
-            cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
-            cmbRegistrationSeason.ValueMember = "RegistrationSeasonID";
-            cmbRegistrationSeason.DisplayMember = "Season";
-
+          
             LicenceLoader(cmbLicenceType);
             LicenceLoader(cmbHaveLicenceType);
            
@@ -142,12 +141,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
                 cmbPlaceofBirth.SelectedValue = Convert.ToInt32(FillTextBox(7));
                 txtPhoneNumber.Text = FillTextBox(8);
                 txtAdress.Text = FillTextBox(9);
-                dpcRegistrationDate.Value = Convert.ToDateTime(FillTextBox(10));
-                if (dgwStudentRegulation.CurrentRow != null)
-                {
-                    cmbRegistrationSeason.SelectedValue = dgwStudentRegulation.CurrentRow.Cells[11].Value;
-                }
-
+              
                 txtRegistrationDebt.Text = FillTextBox(12);
                 cmbQuantityInstallment.Text = FillTextBox(14);
                 txtIbanNumber.Text = FillTextBox(15);
@@ -210,7 +204,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
                        if (dgwStudentRegulation.CurrentRow != null)
                            _studentService.Delete(new Student
                            {
-                               StudentID = Convert.ToInt32(dgwStudentRegulation.CurrentRow.Cells[0].Value)
+                               StudentId = Convert.ToInt32(dgwStudentRegulation.CurrentRow.Cells[0].Value)
                            });
 
                        DgwLoad();
@@ -239,6 +233,8 @@ namespace SurucuKursuOtomasyonu.FormsUI
                         _studentService.GetByNationalNumber(txtSearchByNationalNumber.Text);
                 }
             }
+
+     
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -270,15 +266,15 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
                      _studentService.Update(new Student
                      {
-                         StudentID = Convert.ToInt32(dgwStudentRegulation.CurrentRow.Cells[0].Value),
+                         StudentId = Convert.ToInt32(dgwStudentRegulation.CurrentRow.Cells[0].Value),
                          StudentName = txtStudentName.Text,
                          StudentSurname = txtStudentSurname.Text,
                          StudentNationalNumber = txtNationalNumber.Text,
                          StudentGender = _gender,
                          StudentEmail = txtEmail.Text,
                          StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
-                         RegistrationDate = Convert.ToDateTime(dpcRegistrationDate.Value),
-                         RegistrationSeason = Convert.ToInt32(cmbRegistrationSeason.SelectedValue),
+                         RegistrationDate = Convert.ToDateTime(FillTextBox(10)),
+                         RegistrationSeason = Convert.ToInt32(FillTextBox(11)),
                          StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
                          StudentTotalDebt = Convert.ToDecimal(dgwStudentRegulation.CurrentRow.Cells[13].Value),
                          QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
@@ -291,15 +287,15 @@ namespace SurucuKursuOtomasyonu.FormsUI
                      });
                      MessageBox.Show(@"Öğrenci Güncellendi");
                      ClearAll();
-                     comboClear(cmbRegistrationSeason);
+                
                      comboClear(cmbHaveLicenceType);
                      comboClear(cmbLicenceType);
                      comboClear(cmbPlaceofBirth);
                      comboClear(cmbQuantityInstallment);
                 }
-                 catch (Exception)
+                 catch (Exception exception)
                  {
-                     MessageBox.Show(@"Bir hata ile karşılaşıldı");
+                     MessageBox.Show(exception.Message);
                  }
 
                 DgwLoad();

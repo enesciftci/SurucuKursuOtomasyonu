@@ -5,7 +5,7 @@ namespace SurucuKursuOtomasyonu.Entities.Concrete
 {
     public class Student:IEntity
     {
-        public int StudentID { get; set; }
+        public int StudentId { get; set; }
         public string StudentName { get; set; }
         public string StudentSurname { get; set; }
         public string StudentNationalNumber { get; set; }

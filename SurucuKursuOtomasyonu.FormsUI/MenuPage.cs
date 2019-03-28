@@ -71,37 +71,23 @@ namespace SurucuKursuOtomasyonu.FormsUI
              }
         }
 
-        private void panelMainMenu_MouseHover(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void panelMainMenu_MouseEnter(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void PanelMainMenu_MouseUp(object sender, MouseEventArgs e)
-        {
-           
-        }
+        
 
         private void btnStudentRegister_Click(object sender, EventArgs e)
         {
             
            
-            if (!panelMainPage.Controls.Contains(ucStudentRecord.InstanceStudentRecord))
+            if (!panelMainPage.Controls.Contains(UcStudentRecord.InstanceStudentRecord))
             {
-                panelMainPage.Controls.Add(ucStudentRecord.InstanceStudentRecord);
-                ucStudentRecord.InstanceStudentRecord.Dock = DockStyle.Fill;
+                panelMainPage.Controls.Add(UcStudentRecord.InstanceStudentRecord);
+                UcStudentRecord.InstanceStudentRecord.Dock = DockStyle.Fill;
                
-                ucStudentRecord.InstanceStudentRecord.BringToFront();
+                UcStudentRecord.InstanceStudentRecord.BringToFront();
                  
              }
             else
             {
-                ucStudentRecord.InstanceStudentRecord.BringToFront();
+                UcStudentRecord.InstanceStudentRecord.BringToFront();
 
             }
            
@@ -120,19 +106,19 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
         private void btnStudentSearch_Click(object sender, EventArgs e)
         {
-            if (!panelMainPage.Controls.Contains(ucStudentSearch.InstanceStudentSearch))
+            if (!panelMainPage.Controls.Contains(UcStudentSearch.InstanceStudentSearch))
             {
-                panelMainPage.Controls.Add(ucStudentSearch.InstanceStudentSearch);
-                ucStudentSearch.InstanceStudentSearch.Dock = DockStyle.Fill;
+                panelMainPage.Controls.Add(UcStudentSearch.InstanceStudentSearch);
+                UcStudentSearch.InstanceStudentSearch.Dock = DockStyle.Fill;
 
-                ucStudentSearch.InstanceStudentSearch.Refresh();
-                ucStudentSearch.InstanceStudentSearch.BringToFront();
+                UcStudentSearch.InstanceStudentSearch.Refresh();
+                UcStudentSearch.InstanceStudentSearch.BringToFront();
 
             }
             else
             {
 
-                ucStudentSearch.InstanceStudentSearch.BringToFront();
+                UcStudentSearch.InstanceStudentSearch.BringToFront();
             }
         }
 
@@ -165,6 +151,11 @@ namespace SurucuKursuOtomasyonu.FormsUI
             {
                 UcStudentDebt.InstanceStudentDebt.BringToFront();
             }
+        }
+
+        private void btnDebtInformation_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

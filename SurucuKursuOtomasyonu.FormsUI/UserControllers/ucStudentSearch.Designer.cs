@@ -1,6 +1,6 @@
-﻿namespace SurucuKursuOtomasyonu.FormsUI
+﻿namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
-    partial class ucStudentSearch
+    partial class UcStudentSearch
     {
         /// <summary> 
         ///Gerekli tasarımcı değişkeni.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbpStudentSearch = new System.Windows.Forms.GroupBox();
             this.dgwStudentSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbRegistrationSeason = new System.Windows.Forms.ComboBox();
-            this.lblStudentName = new System.Windows.Forms.Label();
-            this.lblNationalNumber = new System.Windows.Forms.Label();
-            this.lblRegistrationSeason = new System.Windows.Forms.Label();
-            this.txtStudentName = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.txtNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +50,13 @@
             this.StudentIbanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentHaveLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentWantLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtStudentName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.lblRegistrationSeason = new System.Windows.Forms.Label();
+            this.lblNationalNumber = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.cmbRegistrationSeason = new System.Windows.Forms.ComboBox();
             this.gbpStudentSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudentSearch)).BeginInit();
             this.panel1.SuspendLayout();
@@ -78,19 +78,19 @@
             // 
             this.dgwStudentSearch.AllowUserToAddRows = false;
             this.dgwStudentSearch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgwStudentSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SeaShell;
+            this.dgwStudentSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwStudentSearch.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgwStudentSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgwStudentSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwStudentSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwStudentSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudentSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgwStudentSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwStudentSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
@@ -128,101 +128,6 @@
             this.dgwStudentSearch.RowTemplate.Height = 24;
             this.dgwStudentSearch.Size = new System.Drawing.Size(1740, 793);
             this.dgwStudentSearch.TabIndex = 165;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtNationalNumber);
-            this.panel1.Controls.Add(this.txtStudentName);
-            this.panel1.Controls.Add(this.lblRegistrationSeason);
-            this.panel1.Controls.Add(this.lblNationalNumber);
-            this.panel1.Controls.Add(this.lblStudentName);
-            this.panel1.Controls.Add(this.cmbRegistrationSeason);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 18);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1740, 91);
-            this.panel1.TabIndex = 0;
-            // 
-            // cmbRegistrationSeason
-            // 
-            this.cmbRegistrationSeason.FormattingEnabled = true;
-            this.cmbRegistrationSeason.Location = new System.Drawing.Point(28, 44);
-            this.cmbRegistrationSeason.Name = "cmbRegistrationSeason";
-            this.cmbRegistrationSeason.Size = new System.Drawing.Size(151, 24);
-            this.cmbRegistrationSeason.TabIndex = 2;
-            this.cmbRegistrationSeason.SelectedIndexChanged += new System.EventHandler(this.cmbRegistrationSeason_SelectedIndexChanged);
-            this.cmbRegistrationSeason.Enter += new System.EventHandler(this.cmbRegistrationSeason_Enter);
-            // 
-            // lblStudentName
-            // 
-            this.lblStudentName.AutoSize = true;
-            this.lblStudentName.BackColor = System.Drawing.SystemColors.Control;
-            this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStudentName.ForeColor = System.Drawing.Color.Gray;
-            this.lblStudentName.Location = new System.Drawing.Point(346, 8);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(41, 23);
-            this.lblStudentName.TabIndex = 148;
-            this.lblStudentName.Text = "İsim";
-            // 
-            // lblNationalNumber
-            // 
-            this.lblNationalNumber.AutoSize = true;
-            this.lblNationalNumber.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNationalNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblNationalNumber.Location = new System.Drawing.Point(871, 8);
-            this.lblNationalNumber.Name = "lblNationalNumber";
-            this.lblNationalNumber.Size = new System.Drawing.Size(161, 23);
-            this.lblNationalNumber.TabIndex = 149;
-            this.lblNationalNumber.Text = "T.C Kimlik Numarası";
-            // 
-            // lblRegistrationSeason
-            // 
-            this.lblRegistrationSeason.AutoSize = true;
-            this.lblRegistrationSeason.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRegistrationSeason.ForeColor = System.Drawing.Color.Gray;
-            this.lblRegistrationSeason.Location = new System.Drawing.Point(24, 8);
-            this.lblRegistrationSeason.Name = "lblRegistrationSeason";
-            this.lblRegistrationSeason.Size = new System.Drawing.Size(119, 23);
-            this.lblRegistrationSeason.TabIndex = 150;
-            this.lblRegistrationSeason.Text = "Eğitim Sezonu";
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
-            this.txtStudentName.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtStudentName.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
-            this.txtStudentName.BorderThickness = 2;
-            this.txtStudentName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtStudentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtStudentName.isPassword = false;
-            this.txtStudentName.Location = new System.Drawing.Point(350, 44);
-            this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(248, 43);
-            this.txtStudentName.TabIndex = 151;
-            this.txtStudentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtStudentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudentName_KeyPress);
-            // 
-            // txtNationalNumber
-            // 
-            this.txtNationalNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
-            this.txtNationalNumber.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtNationalNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
-            this.txtNationalNumber.BorderThickness = 2;
-            this.txtNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNationalNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNationalNumber.isPassword = false;
-            this.txtNationalNumber.Location = new System.Drawing.Point(875, 44);
-            this.txtNationalNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNationalNumber.Name = "txtNationalNumber";
-            this.txtNationalNumber.Size = new System.Drawing.Size(248, 43);
-            this.txtNationalNumber.TabIndex = 152;
-            this.txtNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationalNumber_KeyPress);
             // 
             // StudentID
             // 
@@ -367,12 +272,109 @@
             this.StudentWantLicenceType.Name = "StudentWantLicenceType";
             this.StudentWantLicenceType.ReadOnly = true;
             // 
-            // ucStudentSearch
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtNationalNumber);
+            this.panel1.Controls.Add(this.txtStudentName);
+            this.panel1.Controls.Add(this.lblRegistrationSeason);
+            this.panel1.Controls.Add(this.lblNationalNumber);
+            this.panel1.Controls.Add(this.lblStudentName);
+            this.panel1.Controls.Add(this.cmbRegistrationSeason);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1740, 91);
+            this.panel1.TabIndex = 0;
+            // 
+            // txtNationalNumber
+            // 
+            this.txtNationalNumber.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
+            this.txtNationalNumber.BorderColorIdle = System.Drawing.Color.Black;
+            this.txtNationalNumber.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
+            this.txtNationalNumber.BorderThickness = 2;
+            this.txtNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtNationalNumber.ForeColor = System.Drawing.Color.Black;
+            this.txtNationalNumber.isPassword = false;
+            this.txtNationalNumber.Location = new System.Drawing.Point(875, 44);
+            this.txtNationalNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNationalNumber.Name = "txtNationalNumber";
+            this.txtNationalNumber.Size = new System.Drawing.Size(248, 43);
+            this.txtNationalNumber.TabIndex = 152;
+            this.txtNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationalNumber_KeyPress);
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
+            this.txtStudentName.BorderColorIdle = System.Drawing.Color.Black;
+            this.txtStudentName.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
+            this.txtStudentName.BorderThickness = 2;
+            this.txtStudentName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStudentName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtStudentName.ForeColor = System.Drawing.Color.Black;
+            this.txtStudentName.isPassword = false;
+            this.txtStudentName.Location = new System.Drawing.Point(350, 44);
+            this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(248, 43);
+            this.txtStudentName.TabIndex = 151;
+            this.txtStudentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtStudentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudentName_KeyPress);
+            // 
+            // lblRegistrationSeason
+            // 
+            this.lblRegistrationSeason.AutoSize = true;
+            this.lblRegistrationSeason.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRegistrationSeason.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblRegistrationSeason.Location = new System.Drawing.Point(24, 8);
+            this.lblRegistrationSeason.Name = "lblRegistrationSeason";
+            this.lblRegistrationSeason.Size = new System.Drawing.Size(119, 23);
+            this.lblRegistrationSeason.TabIndex = 150;
+            this.lblRegistrationSeason.Text = "Eğitim Sezonu";
+            // 
+            // lblNationalNumber
+            // 
+            this.lblNationalNumber.AutoSize = true;
+            this.lblNationalNumber.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblNationalNumber.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblNationalNumber.Location = new System.Drawing.Point(871, 8);
+            this.lblNationalNumber.Name = "lblNationalNumber";
+            this.lblNationalNumber.Size = new System.Drawing.Size(161, 23);
+            this.lblNationalNumber.TabIndex = 149;
+            this.lblNationalNumber.Text = "T.C Kimlik Numarası";
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStudentName.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblStudentName.Location = new System.Drawing.Point(346, 8);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(41, 23);
+            this.lblStudentName.TabIndex = 148;
+            this.lblStudentName.Text = "İsim";
+            // 
+            // cmbRegistrationSeason
+            // 
+            this.cmbRegistrationSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRegistrationSeason.ForeColor = System.Drawing.Color.Black;
+            this.cmbRegistrationSeason.FormattingEnabled = true;
+            this.cmbRegistrationSeason.Location = new System.Drawing.Point(28, 44);
+            this.cmbRegistrationSeason.Name = "cmbRegistrationSeason";
+            this.cmbRegistrationSeason.Size = new System.Drawing.Size(151, 24);
+            this.cmbRegistrationSeason.TabIndex = 2;
+            this.cmbRegistrationSeason.SelectedIndexChanged += new System.EventHandler(this.cmbRegistrationSeason_SelectedIndexChanged);
+            this.cmbRegistrationSeason.Enter += new System.EventHandler(this.cmbRegistrationSeason_Enter);
+            // 
+            // UcStudentSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbpStudentSearch);
-            this.Name = "ucStudentSearch";
+            this.Name = "UcStudentSearch";
             this.Size = new System.Drawing.Size(1746, 955);
             this.Load += new System.EventHandler(this.ucStudentSearch_Load);
             this.gbpStudentSearch.ResumeLayout(false);

@@ -1,4 +1,4 @@
-﻿namespace SurucuKursuOtomasyonu.FormsUI
+﻿namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
     partial class UcStudentRegulation
     {
@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbStudentRegulation = new System.Windows.Forms.GroupBox();
+            this.txtSearchByNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbLicenceType = new System.Windows.Forms.ComboBox();
             this.lblLicenceType = new System.Windows.Forms.Label();
@@ -48,14 +49,10 @@
             this.cmbHaveLicenceType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.cmbRegistrationSeason = new System.Windows.Forms.ComboBox();
             this.txtPhoneNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblRegistrationSeason = new System.Windows.Forms.Label();
             this.txtEmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.lblRegistrationDate = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
-            this.dpcRegistrationDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtAdress = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtStudentName = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -91,7 +88,6 @@
             this.StudentIbanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentHaveLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentWantLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearchByNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.gpbStudentRegulation.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
@@ -104,12 +100,12 @@
             // gpbStudentRegulation
             // 
             this.gpbStudentRegulation.BackColor = System.Drawing.Color.White;
+            this.gpbStudentRegulation.Controls.Add(this.txtSearchByNationalNumber);
             this.gpbStudentRegulation.Controls.Add(this.groupBox3);
             this.gpbStudentRegulation.Controls.Add(this.groupBox2);
             this.gpbStudentRegulation.Controls.Add(this.groupBox1);
             this.gpbStudentRegulation.Controls.Add(this.label1);
             this.gpbStudentRegulation.Controls.Add(this.dgwStudentRegulation);
-            this.gpbStudentRegulation.Controls.Add(this.txtSearchByNationalNumber);
             this.gpbStudentRegulation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gpbStudentRegulation.Location = new System.Drawing.Point(0, 0);
             this.gpbStudentRegulation.Name = "gpbStudentRegulation";
@@ -118,8 +114,28 @@
             this.gpbStudentRegulation.TabStop = false;
             this.gpbStudentRegulation.Text = "Öğrenci Düzenle";
             // 
+            // txtSearchByNationalNumber
+            // 
+            this.txtSearchByNationalNumber.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearchByNationalNumber.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
+            this.txtSearchByNationalNumber.BorderColorIdle = System.Drawing.Color.Black;
+            this.txtSearchByNationalNumber.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
+            this.txtSearchByNationalNumber.BorderThickness = 2;
+            this.txtSearchByNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchByNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtSearchByNationalNumber.ForeColor = System.Drawing.Color.Black;
+            this.txtSearchByNationalNumber.isPassword = false;
+            this.txtSearchByNationalNumber.Location = new System.Drawing.Point(146, 432);
+            this.txtSearchByNationalNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchByNationalNumber.Name = "txtSearchByNationalNumber";
+            this.txtSearchByNationalNumber.Size = new System.Drawing.Size(248, 43);
+            this.txtSearchByNationalNumber.TabIndex = 169;
+            this.txtSearchByNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearchByNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByNationalNumber_KeyPress);
+            // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox3.Controls.Add(this.cmbLicenceType);
             this.groupBox3.Controls.Add(this.lblLicenceType);
             this.groupBox3.Controls.Add(this.lblRegistrationDebt);
@@ -142,7 +158,9 @@
             // 
             // cmbLicenceType
             // 
+            this.cmbLicenceType.BackColor = System.Drawing.SystemColors.Control;
             this.cmbLicenceType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLicenceType.ForeColor = System.Drawing.Color.Black;
             this.cmbLicenceType.FormattingEnabled = true;
             this.cmbLicenceType.ItemHeight = 20;
             this.cmbLicenceType.Location = new System.Drawing.Point(838, 65);
@@ -154,9 +172,9 @@
             // lblLicenceType
             // 
             this.lblLicenceType.AutoSize = true;
-            this.lblLicenceType.BackColor = System.Drawing.Color.White;
+            this.lblLicenceType.BackColor = System.Drawing.Color.Transparent;
             this.lblLicenceType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblLicenceType.ForeColor = System.Drawing.Color.Gray;
+            this.lblLicenceType.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblLicenceType.Location = new System.Drawing.Point(834, 30);
             this.lblLicenceType.Name = "lblLicenceType";
             this.lblLicenceType.Size = new System.Drawing.Size(93, 23);
@@ -166,9 +184,9 @@
             // lblRegistrationDebt
             // 
             this.lblRegistrationDebt.AutoSize = true;
-            this.lblRegistrationDebt.BackColor = System.Drawing.Color.White;
+            this.lblRegistrationDebt.BackColor = System.Drawing.Color.Transparent;
             this.lblRegistrationDebt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRegistrationDebt.ForeColor = System.Drawing.Color.Gray;
+            this.lblRegistrationDebt.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblRegistrationDebt.Location = new System.Drawing.Point(274, 30);
             this.lblRegistrationDebt.Name = "lblRegistrationDebt";
             this.lblRegistrationDebt.Size = new System.Drawing.Size(98, 23);
@@ -177,13 +195,13 @@
             // 
             // txtRegistrationDebt
             // 
-            this.txtRegistrationDebt.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtRegistrationDebt.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtRegistrationDebt.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtRegistrationDebt.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtRegistrationDebt.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtRegistrationDebt.BorderThickness = 2;
             this.txtRegistrationDebt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRegistrationDebt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtRegistrationDebt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtRegistrationDebt.ForeColor = System.Drawing.Color.Black;
             this.txtRegistrationDebt.isPassword = false;
             this.txtRegistrationDebt.Location = new System.Drawing.Point(278, 65);
             this.txtRegistrationDebt.Margin = new System.Windows.Forms.Padding(4);
@@ -195,9 +213,9 @@
             // lblQuantityInstallment
             // 
             this.lblQuantityInstallment.AutoSize = true;
-            this.lblQuantityInstallment.BackColor = System.Drawing.Color.White;
+            this.lblQuantityInstallment.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantityInstallment.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblQuantityInstallment.ForeColor = System.Drawing.Color.Gray;
+            this.lblQuantityInstallment.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblQuantityInstallment.Location = new System.Drawing.Point(558, 30);
             this.lblQuantityInstallment.Name = "lblQuantityInstallment";
             this.lblQuantityInstallment.Size = new System.Drawing.Size(99, 23);
@@ -206,7 +224,9 @@
             // 
             // cmbQuantityInstallment
             // 
+            this.cmbQuantityInstallment.BackColor = System.Drawing.SystemColors.Control;
             this.cmbQuantityInstallment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbQuantityInstallment.ForeColor = System.Drawing.Color.Black;
             this.cmbQuantityInstallment.FormattingEnabled = true;
             this.cmbQuantityInstallment.ItemHeight = 20;
             this.cmbQuantityInstallment.Items.AddRange(new object[] {
@@ -239,8 +259,8 @@
             // checkHaveLicence
             // 
             this.checkHaveLicence.AutoSize = true;
-            this.checkHaveLicence.BackColor = System.Drawing.Color.White;
-            this.checkHaveLicence.ForeColor = System.Drawing.Color.Black;
+            this.checkHaveLicence.BackColor = System.Drawing.Color.Transparent;
+            this.checkHaveLicence.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.checkHaveLicence.Location = new System.Drawing.Point(1090, 63);
             this.checkHaveLicence.Name = "checkHaveLicence";
             this.checkHaveLicence.Size = new System.Drawing.Size(141, 21);
@@ -268,9 +288,9 @@
             // lblIbanNumber
             // 
             this.lblIbanNumber.AutoSize = true;
-            this.lblIbanNumber.BackColor = System.Drawing.Color.White;
+            this.lblIbanNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblIbanNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblIbanNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblIbanNumber.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblIbanNumber.Location = new System.Drawing.Point(6, 30);
             this.lblIbanNumber.Name = "lblIbanNumber";
             this.lblIbanNumber.Size = new System.Drawing.Size(127, 23);
@@ -280,9 +300,9 @@
             // lblHaveLicenceType
             // 
             this.lblHaveLicenceType.AutoSize = true;
-            this.lblHaveLicenceType.BackColor = System.Drawing.Color.White;
+            this.lblHaveLicenceType.BackColor = System.Drawing.Color.Transparent;
             this.lblHaveLicenceType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblHaveLicenceType.ForeColor = System.Drawing.Color.Gray;
+            this.lblHaveLicenceType.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblHaveLicenceType.Location = new System.Drawing.Point(1254, 30);
             this.lblHaveLicenceType.Name = "lblHaveLicenceType";
             this.lblHaveLicenceType.Size = new System.Drawing.Size(156, 23);
@@ -292,13 +312,13 @@
             // 
             // txtIbanNumber
             // 
-            this.txtIbanNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtIbanNumber.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtIbanNumber.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtIbanNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtIbanNumber.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtIbanNumber.BorderThickness = 2;
             this.txtIbanNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIbanNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtIbanNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtIbanNumber.ForeColor = System.Drawing.Color.Black;
             this.txtIbanNumber.isPassword = false;
             this.txtIbanNumber.Location = new System.Drawing.Point(10, 65);
             this.txtIbanNumber.Margin = new System.Windows.Forms.Padding(4);
@@ -309,7 +329,9 @@
             // 
             // cmbHaveLicenceType
             // 
+            this.cmbHaveLicenceType.BackColor = System.Drawing.SystemColors.Control;
             this.cmbHaveLicenceType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbHaveLicenceType.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.cmbHaveLicenceType.FormattingEnabled = true;
             this.cmbHaveLicenceType.ItemHeight = 20;
             this.cmbHaveLicenceType.Location = new System.Drawing.Point(1258, 65);
@@ -320,17 +342,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.lblPhoneNumber);
-            this.groupBox2.Controls.Add(this.cmbRegistrationSeason);
             this.groupBox2.Controls.Add(this.txtPhoneNumber);
             this.groupBox2.Controls.Add(this.lblEmail);
-            this.groupBox2.Controls.Add(this.lblRegistrationSeason);
             this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.lblRegistrationDate);
             this.groupBox2.Controls.Add(this.lblAdress);
-            this.groupBox2.Controls.Add(this.dpcRegistrationDate);
             this.groupBox2.Controls.Add(this.txtAdress);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Location = new System.Drawing.Point(3, 164);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(2029, 121);
@@ -340,35 +360,24 @@
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.BackColor = System.Drawing.Color.White;
+            this.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPhoneNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblPhoneNumber.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblPhoneNumber.Location = new System.Drawing.Point(6, 28);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(143, 23);
             this.lblPhoneNumber.TabIndex = 155;
             this.lblPhoneNumber.Text = "Telefon Numarası";
             // 
-            // cmbRegistrationSeason
-            // 
-            this.cmbRegistrationSeason.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRegistrationSeason.FormattingEnabled = true;
-            this.cmbRegistrationSeason.ItemHeight = 20;
-            this.cmbRegistrationSeason.Location = new System.Drawing.Point(838, 69);
-            this.cmbRegistrationSeason.Name = "cmbRegistrationSeason";
-            this.cmbRegistrationSeason.Size = new System.Drawing.Size(216, 28);
-            this.cmbRegistrationSeason.TabIndex = 155;
-            this.cmbRegistrationSeason.Text = "Eğitim Sezonunu Seçiniz";
-            // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtPhoneNumber.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtPhoneNumber.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtPhoneNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtPhoneNumber.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtPhoneNumber.BorderThickness = 2;
             this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.txtPhoneNumber.isPassword = false;
             this.txtPhoneNumber.Location = new System.Drawing.Point(10, 69);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
@@ -380,35 +389,24 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.White;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Gray;
+            this.lblEmail.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblEmail.Location = new System.Drawing.Point(274, 28);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(59, 23);
             this.lblEmail.TabIndex = 149;
             this.lblEmail.Text = "E-Mail";
             // 
-            // lblRegistrationSeason
-            // 
-            this.lblRegistrationSeason.AutoSize = true;
-            this.lblRegistrationSeason.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRegistrationSeason.ForeColor = System.Drawing.Color.Gray;
-            this.lblRegistrationSeason.Location = new System.Drawing.Point(834, 28);
-            this.lblRegistrationSeason.Name = "lblRegistrationSeason";
-            this.lblRegistrationSeason.Size = new System.Drawing.Size(119, 23);
-            this.lblRegistrationSeason.TabIndex = 157;
-            this.lblRegistrationSeason.Text = "Eğitim Sezonu";
-            // 
             // txtEmail
             // 
-            this.txtEmail.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtEmail.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtEmail.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtEmail.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtEmail.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtEmail.BorderThickness = 2;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.isPassword = false;
             this.txtEmail.Location = new System.Drawing.Point(278, 69);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -417,53 +415,27 @@
             this.txtEmail.TabIndex = 132;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // lblRegistrationDate
-            // 
-            this.lblRegistrationDate.AutoSize = true;
-            this.lblRegistrationDate.BackColor = System.Drawing.Color.White;
-            this.lblRegistrationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRegistrationDate.ForeColor = System.Drawing.Color.Gray;
-            this.lblRegistrationDate.Location = new System.Drawing.Point(1086, 28);
-            this.lblRegistrationDate.Name = "lblRegistrationDate";
-            this.lblRegistrationDate.Size = new System.Drawing.Size(93, 23);
-            this.lblRegistrationDate.TabIndex = 151;
-            this.lblRegistrationDate.Text = "Kayıt Tarihi";
-            // 
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
-            this.lblAdress.BackColor = System.Drawing.Color.White;
+            this.lblAdress.BackColor = System.Drawing.Color.Transparent;
             this.lblAdress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAdress.ForeColor = System.Drawing.Color.Gray;
+            this.lblAdress.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblAdress.Location = new System.Drawing.Point(558, 28);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(53, 23);
             this.lblAdress.TabIndex = 156;
             this.lblAdress.Text = "Adres";
             // 
-            // dpcRegistrationDate
-            // 
-            this.dpcRegistrationDate.BackColor = System.Drawing.Color.SeaGreen;
-            this.dpcRegistrationDate.BorderRadius = 0;
-            this.dpcRegistrationDate.ForeColor = System.Drawing.Color.White;
-            this.dpcRegistrationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpcRegistrationDate.FormatCustom = null;
-            this.dpcRegistrationDate.Location = new System.Drawing.Point(1090, 63);
-            this.dpcRegistrationDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dpcRegistrationDate.Name = "dpcRegistrationDate";
-            this.dpcRegistrationDate.Size = new System.Drawing.Size(248, 33);
-            this.dpcRegistrationDate.TabIndex = 135;
-            this.dpcRegistrationDate.Value = new System.DateTime(2019, 3, 13, 22, 54, 58, 99);
-            // 
             // txtAdress
             // 
-            this.txtAdress.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtAdress.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtAdress.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtAdress.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtAdress.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtAdress.BorderThickness = 2;
             this.txtAdress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAdress.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAdress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdress.ForeColor = System.Drawing.Color.Black;
             this.txtAdress.isPassword = false;
             this.txtAdress.Location = new System.Drawing.Point(562, 69);
             this.txtAdress.Margin = new System.Windows.Forms.Padding(4);
@@ -474,6 +446,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.txtStudentName);
             this.groupBox1.Controls.Add(this.txtNationalNumber);
             this.groupBox1.Controls.Add(this.lblStudentName);
@@ -496,13 +469,13 @@
             // 
             // txtStudentName
             // 
-            this.txtStudentName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtStudentName.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtStudentName.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtStudentName.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtStudentName.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtStudentName.BorderThickness = 2;
             this.txtStudentName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtStudentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtStudentName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentName.ForeColor = System.Drawing.Color.Black;
             this.txtStudentName.isPassword = false;
             this.txtStudentName.Location = new System.Drawing.Point(10, 75);
             this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
@@ -513,13 +486,13 @@
             // 
             // txtNationalNumber
             // 
-            this.txtNationalNumber.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtNationalNumber.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtNationalNumber.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtNationalNumber.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtNationalNumber.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtNationalNumber.BorderThickness = 2;
             this.txtNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNationalNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNationalNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtNationalNumber.ForeColor = System.Drawing.Color.Black;
             this.txtNationalNumber.isPassword = false;
             this.txtNationalNumber.Location = new System.Drawing.Point(562, 75);
             this.txtNationalNumber.Margin = new System.Windows.Forms.Padding(4);
@@ -531,9 +504,9 @@
             // lblStudentName
             // 
             this.lblStudentName.AutoSize = true;
-            this.lblStudentName.BackColor = System.Drawing.Color.White;
+            this.lblStudentName.BackColor = System.Drawing.Color.Transparent;
             this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStudentName.ForeColor = System.Drawing.Color.Gray;
+            this.lblStudentName.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblStudentName.Location = new System.Drawing.Point(6, 30);
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(41, 23);
@@ -542,7 +515,9 @@
             // 
             // cmbPlaceofBirth
             // 
+            this.cmbPlaceofBirth.BackColor = System.Drawing.SystemColors.Control;
             this.cmbPlaceofBirth.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPlaceofBirth.ForeColor = System.Drawing.Color.Black;
             this.cmbPlaceofBirth.FormattingEnabled = true;
             this.cmbPlaceofBirth.ItemHeight = 20;
             this.cmbPlaceofBirth.Location = new System.Drawing.Point(838, 74);
@@ -553,13 +528,13 @@
             // 
             // txtStudentSurname
             // 
-            this.txtStudentSurname.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtStudentSurname.BorderColorFocused = System.Drawing.Color.MediumSlateBlue;
             this.txtStudentSurname.BorderColorIdle = System.Drawing.Color.Black;
-            this.txtStudentSurname.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.txtStudentSurname.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtStudentSurname.BorderThickness = 2;
             this.txtStudentSurname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentSurname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtStudentSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtStudentSurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentSurname.ForeColor = System.Drawing.Color.Black;
             this.txtStudentSurname.isPassword = false;
             this.txtStudentSurname.Location = new System.Drawing.Point(278, 75);
             this.txtStudentSurname.Margin = new System.Windows.Forms.Padding(4);
@@ -571,7 +546,7 @@
             // radioFemale
             // 
             this.radioFemale.AutoSize = true;
-            this.radioFemale.BackColor = System.Drawing.Color.White;
+            this.radioFemale.BackColor = System.Drawing.Color.Transparent;
             this.radioFemale.ForeColor = System.Drawing.Color.Black;
             this.radioFemale.Location = new System.Drawing.Point(1455, 74);
             this.radioFemale.Name = "radioFemale";
@@ -584,9 +559,9 @@
             // lblStudentSurname
             // 
             this.lblStudentSurname.AutoSize = true;
-            this.lblStudentSurname.BackColor = System.Drawing.Color.White;
+            this.lblStudentSurname.BackColor = System.Drawing.Color.Transparent;
             this.lblStudentSurname.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStudentSurname.ForeColor = System.Drawing.Color.Gray;
+            this.lblStudentSurname.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblStudentSurname.Location = new System.Drawing.Point(274, 30);
             this.lblStudentSurname.Name = "lblStudentSurname";
             this.lblStudentSurname.Size = new System.Drawing.Size(68, 23);
@@ -596,9 +571,9 @@
             // lblNationalNumber
             // 
             this.lblNationalNumber.AutoSize = true;
-            this.lblNationalNumber.BackColor = System.Drawing.Color.White;
+            this.lblNationalNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNationalNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblNationalNumber.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblNationalNumber.Location = new System.Drawing.Point(558, 30);
             this.lblNationalNumber.Name = "lblNationalNumber";
             this.lblNationalNumber.Size = new System.Drawing.Size(161, 23);
@@ -608,7 +583,7 @@
             // radioMale
             // 
             this.radioMale.AutoSize = true;
-            this.radioMale.BackColor = System.Drawing.Color.White;
+            this.radioMale.BackColor = System.Drawing.Color.Transparent;
             this.radioMale.ForeColor = System.Drawing.Color.Black;
             this.radioMale.Location = new System.Drawing.Point(1370, 74);
             this.radioMale.Name = "radioMale";
@@ -621,9 +596,9 @@
             // lblBirthdate
             // 
             this.lblBirthdate.AutoSize = true;
-            this.lblBirthdate.BackColor = System.Drawing.Color.White;
+            this.lblBirthdate.BackColor = System.Drawing.Color.Transparent;
             this.lblBirthdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBirthdate.ForeColor = System.Drawing.Color.Gray;
+            this.lblBirthdate.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblBirthdate.Location = new System.Drawing.Point(1086, 30);
             this.lblBirthdate.Name = "lblBirthdate";
             this.lblBirthdate.Size = new System.Drawing.Size(112, 23);
@@ -633,9 +608,9 @@
             // lblPlaceofBirth
             // 
             this.lblPlaceofBirth.AutoSize = true;
-            this.lblPlaceofBirth.BackColor = System.Drawing.Color.White;
+            this.lblPlaceofBirth.BackColor = System.Drawing.Color.Transparent;
             this.lblPlaceofBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPlaceofBirth.ForeColor = System.Drawing.Color.Gray;
+            this.lblPlaceofBirth.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblPlaceofBirth.Location = new System.Drawing.Point(834, 30);
             this.lblPlaceofBirth.Name = "lblPlaceofBirth";
             this.lblPlaceofBirth.Size = new System.Drawing.Size(99, 23);
@@ -645,9 +620,9 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.BackColor = System.Drawing.Color.White;
+            this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGender.ForeColor = System.Drawing.Color.Gray;
+            this.lblGender.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.lblGender.Location = new System.Drawing.Point(1366, 30);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(70, 23);
@@ -656,9 +631,10 @@
             // 
             // dpcBirthdate
             // 
-            this.dpcBirthdate.BackColor = System.Drawing.Color.SeaGreen;
+            this.dpcBirthdate.BackColor = System.Drawing.SystemColors.Control;
             this.dpcBirthdate.BorderRadius = 0;
-            this.dpcBirthdate.ForeColor = System.Drawing.Color.White;
+            this.dpcBirthdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dpcBirthdate.ForeColor = System.Drawing.Color.Black;
             this.dpcBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dpcBirthdate.FormatCustom = null;
             this.dpcBirthdate.Location = new System.Drawing.Point(1090, 74);
@@ -671,9 +647,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.label1.Location = new System.Drawing.Point(9, 432);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 23);
@@ -684,9 +660,11 @@
             // 
             this.dgwStudentRegulation.AllowUserToAddRows = false;
             this.dgwStudentRegulation.AllowUserToDeleteRows = false;
+            this.dgwStudentRegulation.AllowUserToResizeColumns = false;
+            this.dgwStudentRegulation.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgwStudentRegulation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgwStudentRegulation.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgwStudentRegulation.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgwStudentRegulation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwStudentRegulation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -697,7 +675,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgwStudentRegulation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgwStudentRegulation.ColumnHeadersHeight = 55;
+            this.dgwStudentRegulation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwStudentRegulation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
             this.StudentName,
@@ -720,13 +698,16 @@
             this.dgwStudentRegulation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgwStudentRegulation.DoubleBuffered = true;
             this.dgwStudentRegulation.EnableHeadersVisualStyles = false;
+            this.dgwStudentRegulation.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgwStudentRegulation.HeaderBgColor = System.Drawing.Color.SeaShell;
             this.dgwStudentRegulation.HeaderForeColor = System.Drawing.Color.SlateBlue;
             this.dgwStudentRegulation.Location = new System.Drawing.Point(3, 458);
+            this.dgwStudentRegulation.MultiSelect = false;
             this.dgwStudentRegulation.Name = "dgwStudentRegulation";
             this.dgwStudentRegulation.ReadOnly = true;
             this.dgwStudentRegulation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgwStudentRegulation.RowHeadersVisible = false;
+            this.dgwStudentRegulation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Red;
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -879,24 +860,6 @@
             this.StudentWantLicenceType.Name = "StudentWantLicenceType";
             this.StudentWantLicenceType.ReadOnly = true;
             // 
-            // txtSearchByNationalNumber
-            // 
-            this.txtSearchByNationalNumber.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtSearchByNationalNumber.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchByNationalNumber.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtSearchByNationalNumber.BorderThickness = 2;
-            this.txtSearchByNationalNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchByNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtSearchByNationalNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchByNationalNumber.isPassword = false;
-            this.txtSearchByNationalNumber.Location = new System.Drawing.Point(146, 423);
-            this.txtSearchByNationalNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchByNationalNumber.Name = "txtSearchByNationalNumber";
-            this.txtSearchByNationalNumber.Size = new System.Drawing.Size(248, 44);
-            this.txtSearchByNationalNumber.TabIndex = 163;
-            this.txtSearchByNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSearchByNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByNationalNumber_KeyPress);
-            // 
             // UcStudentRegulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -924,12 +887,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbStudentRegulation;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtSearchByNationalNumber;
         private Bunifu.Framework.UI.BunifuImageButton btnDelete;
         private Bunifu.Framework.UI.BunifuImageButton btnUpdate;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtIbanNumber;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtRegistrationDebt;
-        private Bunifu.Framework.UI.BunifuDatepicker dpcRegistrationDate;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtPhoneNumber;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtEmail;
         private Bunifu.Framework.UI.BunifuDatepicker dpcBirthdate;
@@ -943,7 +904,6 @@
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Label lblQuantityInstallment;
         private System.Windows.Forms.Label lblRegistrationDebt;
-        private System.Windows.Forms.Label lblRegistrationDate;
         private System.Windows.Forms.Label lblBirthdate;
         private System.Windows.Forms.Label lblEmail;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgwStudentRegulation;
@@ -952,8 +912,6 @@
         private System.Windows.Forms.ComboBox cmbLicenceType;
         private System.Windows.Forms.Label lblLicenceType;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cmbRegistrationSeason;
-        private System.Windows.Forms.Label lblRegistrationSeason;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtStudentName;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtNationalNumber;
@@ -984,5 +942,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentIbanNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentHaveLicenceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentWantLicenceType;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtSearchByNationalNumber;
     }
 }

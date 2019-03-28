@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SurucuKursuOtomasyonu.Business.Abstract;
-using SurucuKursuOtomasyonu.Business.Concrete;
-using SurucuKursuOtomasyonu.DataAccess.Abstract;
-using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
-using SurucuKursuOtomasyonu.Entities.Abstract;
+﻿using SurucuKursuOtomasyonu.Business.Abstract;
+using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 using SurucuKursuOtomasyonu.Entities.Concrete;
+using System;
+using System.Windows.Forms;
 
 namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
     public partial class UcStudentDebt : UserControl
     {
         private static UcStudentDebt _instanceStudentDebt;
-       private static IStudentService _studentService=new StudentManager(new EfStudentDal());
+        private static readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
         private decimal _pay=0,_remainingDebt;
         private decimal _mustPaid=0;
         private int _remainingInstallment;
@@ -153,7 +141,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             }
             _studentService.Update(new Student
             {
-                StudentID =Convert.ToInt32(txtStudentId.Text),
+                StudentId =Convert.ToInt32(txtStudentId.Text),
                 StudentName = FillTextBox(1),
                 StudentSurname = FillTextBox(2),
                 StudentNationalNumber = FillTextBox(3),

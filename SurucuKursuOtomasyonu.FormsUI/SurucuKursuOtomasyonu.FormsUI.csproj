@@ -42,6 +42,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -59,29 +62,35 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControllers\ucStudentDebt.cs">
+    <Compile Include="UserControllers\ucDebtInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControllers\ucStudentDebt.Designer.cs">
-      <DependentUpon>ucStudentDebt.cs</DependentUpon>
+    <Compile Include="UserControllers\ucDebtInformation.Designer.cs">
+      <DependentUpon>ucDebtInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControllers\ucStudentRecord.cs">
+    <Compile Include="UserControllers\UcStudentDebt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControllers\ucStudentRecord.Designer.cs">
-      <DependentUpon>ucStudentRecord.cs</DependentUpon>
+    <Compile Include="UserControllers\UcStudentDebt.Designer.cs">
+      <DependentUpon>UcStudentDebt.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControllers\ucStudentRegulation.cs">
+    <Compile Include="UserControllers\UcStudentRecord.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControllers\ucStudentRegulation.Designer.cs">
-      <DependentUpon>ucStudentRegulation.cs</DependentUpon>
+    <Compile Include="UserControllers\UcStudentRecord.Designer.cs">
+      <DependentUpon>UcStudentRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControllers\ucStudentSearch.cs">
+    <Compile Include="UserControllers\UcStudentRegulation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControllers\ucStudentSearch.Designer.cs">
-      <DependentUpon>ucStudentSearch.cs</DependentUpon>
+    <Compile Include="UserControllers\UcStudentRegulation.Designer.cs">
+      <DependentUpon>UcStudentRegulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\UcStudentSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\UcStudentSearch.Designer.cs">
+      <DependentUpon>UcStudentSearch.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MenuPage.resx">
       <DependentUpon>MenuPage.cs</DependentUpon>
@@ -96,17 +105,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControllers\ucStudentDebt.resx">
-      <DependentUpon>ucStudentDebt.cs</DependentUpon>
+    <EmbeddedResource Include="UserControllers\ucDebtInformation.resx">
+      <DependentUpon>ucDebtInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControllers\ucStudentRecord.resx">
-      <DependentUpon>ucStudentRecord.cs</DependentUpon>
+    <EmbeddedResource Include="UserControllers\UcStudentDebt.resx">
+      <DependentUpon>UcStudentDebt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControllers\ucStudentRegulation.resx">
-      <DependentUpon>ucStudentRegulation.cs</DependentUpon>
+    <EmbeddedResource Include="UserControllers\UcStudentRecord.resx">
+      <DependentUpon>UcStudentRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControllers\ucStudentSearch.resx">
-      <DependentUpon>ucStudentSearch.cs</DependentUpon>
+    <EmbeddedResource Include="UserControllers\UcStudentRegulation.resx">
+      <DependentUpon>UcStudentRegulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\UcStudentSearch.resx">
+      <DependentUpon>UcStudentSearch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

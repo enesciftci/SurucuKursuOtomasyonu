@@ -2,33 +2,33 @@
 using SurucuKursuOtomasyonu.Business.Concrete;
 using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
+using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 
-
-namespace SurucuKursuOtomasyonu.FormsUI
+namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
-    public partial class ucStudentSearch : UserControl
+    public partial class UcStudentSearch : UserControl
     {
-         private readonly IStudentService _studentService = new StudentManager(new EfStudentDal());
-        private IRegistrationSeasonService _registrationSeasonService = new RegistrationSeasonManager(new EfRegistrationSeasonDal());
-       
-        private static ucStudentSearch _instanceStudentSearch;
+        private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
 
-        public static ucStudentSearch InstanceStudentSearch
+        private readonly IRegistrationSeasonService _registrationSeasonService =
+            InstanceFactory.GetInstance<IRegistrationSeasonService>();
+
+       
+        private static UcStudentSearch _instanceStudentSearch;
+
+        public static UcStudentSearch InstanceStudentSearch
         {
             get
             {
                 if (_instanceStudentSearch == null)
                 {
-                    _instanceStudentSearch = new ucStudentSearch();
+                    _instanceStudentSearch = new UcStudentSearch();
                 }
                 return _instanceStudentSearch;
             }
         }
-        public ucStudentSearch()
+        public UcStudentSearch()
         {
             InitializeComponent();
         }
@@ -103,5 +103,7 @@ namespace SurucuKursuOtomasyonu.FormsUI
             DgwRefresh();
             
         }
+
+    
     }
 }

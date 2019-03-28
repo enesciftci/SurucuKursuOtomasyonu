@@ -14,9 +14,9 @@ namespace SurucuKursuOtomasyonu.Business.Abstract
         List<Student> GetBySeason(int registrationSeason);
 
         List<Student> GetByNationalNumber(string nationalNumber);
-        Student Get(string nationalNumber);
+
         List<Student> GetByName(string name);
-     
+        List<Student> GetDebtor();
         void Add(Student student);
         void Update(Student student);
         void Delete(Student student);

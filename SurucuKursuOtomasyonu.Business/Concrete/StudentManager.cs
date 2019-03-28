@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SurucuKursuOtomasyonu.Business.Abstract;
+﻿using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.DataAccess.Abstract;
-using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
 using SurucuKursuOtomasyonu.Entities.Concrete;
+using System.Collections.Generic;
+using SurucuKursuOtomasyonu.Business.Utilities;
+using SurucuKursuOtomasyonu.Business.ValidationRules.FluentValidation;
 
 namespace SurucuKursuOtomasyonu.Business.Concrete
 {
@@ -41,18 +38,16 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
             return _studentDal.GetAll(p => p.StudentName == name);
         }
 
-        public Student Get(string nationalNumber)
-        {
-            return _studentDal.Get(p => p.StudentNationalNumber==nationalNumber);
-        }
-
+       
         public void Add(Student student)
         {
+            ValidationTool.Validate(new StudentValidator(), student);
             _studentDal.Add(student);
         }
 
         public void Update(Student student)
         {
+            ValidationTool.Validate(new StudentValidator(), student);
             _studentDal.Update(student);
         }
 
@@ -61,6 +56,11 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
           
                 _studentDal.Delete(student);
            
+        }
+
+        public List<Student> GetDebtor()
+        {
+            return _studentDal.GetAll(p=>p.StudentDebt>0);
         }
     }
 }
