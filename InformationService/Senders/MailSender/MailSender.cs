@@ -14,17 +14,12 @@ namespace SurucuKursu.InformationService.Senders.MailSender
        static MailMessage mailMessage = new MailMessage();
         public static void SendMail(string mail,string mailContent)
         {
-            // _smtpClient.Port = 587;
-            /*  _smtpClient.Host = "smtp.gmail.com";
-              _smtpClient.UseDefaultCredentials = false;
-            //  _smtpClient.EnableSsl = true;
-              _smtpClient.Credentials=new NetworkCredential("ciftcienes23@gmail.com","anadolu11Aa.");
-             */
+         
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;
             _smtpClient.EnableSsl = true;
             _smtpClient.Host = "smtp.gmail.com";
             _smtpClient.UseDefaultCredentials = false;
-            _smtpClient.Credentials = new NetworkCredential("ciftcienes23@gmail.com","anadolu11Aa.");
+            _smtpClient.Credentials = new NetworkCredential("ciftcienes23@gmail.com","password.");
 
             mailMessage.From = new MailAddress("ciftcienes23@gmail.com");
             mailMessage.Subject = "Sürücü Kursu Otomasyonu";
