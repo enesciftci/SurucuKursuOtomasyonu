@@ -1,4 +1,4 @@
-﻿namespace InformationService
+﻿namespace SurucuKursu.InformationService
 {
     partial class Service1
     {

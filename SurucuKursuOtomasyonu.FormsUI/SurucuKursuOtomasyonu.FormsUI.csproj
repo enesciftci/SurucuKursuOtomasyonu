@@ -135,6 +135,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InformationService\SurucuKursu.InformationService.csproj">
+      <Project>{EB787AE8-17C1-4AFE-BE67-07181FD38B76}</Project>
+      <Name>SurucuKursu.InformationService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SurucuKursuOtomasyonu.Business\SurucuKursuOtomasyonu.Business.csproj">
       <Project>{4223C481-BF5F-42A9-96B5-4C10556770EE}</Project>
       <Name>SurucuKursuOtomasyonu.Business</Name>

@@ -39,8 +39,8 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "SUOInformationService";
-            this.serviceInstaller1.DisplayName = "SurucuKursuOtomasyonuBilgilendirmeServisi";
+            this.serviceInstaller1.Description = "SurucuKursuOtomasyonuBilgilendirmeServisi";
+            this.serviceInstaller1.DisplayName = "SUOInformationService";
             this.serviceInstaller1.ServiceName = "Service1";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 

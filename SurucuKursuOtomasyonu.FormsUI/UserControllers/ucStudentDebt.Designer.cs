@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcStudentDebt));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelDgw = new System.Windows.Forms.Panel();
@@ -102,10 +103,12 @@
             // 
             this.dgwStudentDebt.AllowUserToAddRows = false;
             this.dgwStudentDebt.AllowUserToDeleteRows = false;
+            this.dgwStudentDebt.AllowUserToResizeColumns = false;
+            this.dgwStudentDebt.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgwStudentDebt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwStudentDebt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgwStudentDebt.BackgroundColor = System.Drawing.Color.MediumPurple;
+            this.dgwStudentDebt.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgwStudentDebt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwStudentDebt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -132,6 +135,7 @@
             this.dgwStudentDebt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwStudentDebt.DoubleBuffered = true;
             this.dgwStudentDebt.EnableHeadersVisualStyles = false;
+            this.dgwStudentDebt.GridColor = System.Drawing.Color.SeaShell;
             this.dgwStudentDebt.HeaderBgColor = System.Drawing.Color.SeaShell;
             this.dgwStudentDebt.HeaderForeColor = System.Drawing.Color.SlateBlue;
             this.dgwStudentDebt.Location = new System.Drawing.Point(0, 0);
@@ -139,6 +143,14 @@
             this.dgwStudentDebt.Name = "dgwStudentDebt";
             this.dgwStudentDebt.ReadOnly = true;
             this.dgwStudentDebt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudentDebt.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwStudentDebt.RowHeadersVisible = false;
             this.dgwStudentDebt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwStudentDebt.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
@@ -146,6 +158,7 @@
             this.dgwStudentDebt.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.dgwStudentDebt.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgwStudentDebt.RowTemplate.Height = 24;
+            this.dgwStudentDebt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgwStudentDebt.Size = new System.Drawing.Size(1394, 566);
             this.dgwStudentDebt.TabIndex = 167;
             this.dgwStudentDebt.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwStudentDebt_CellClick);
@@ -263,6 +276,7 @@
             this.btnPrint.TabIndex = 169;
             this.btnPrint.TabStop = false;
             this.btnPrint.Zoom = 10;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // txtMustPaidAmount
             // 
@@ -308,6 +322,7 @@
             this.btnExportPdf.TabIndex = 168;
             this.btnExportPdf.TabStop = false;
             this.btnExportPdf.Zoom = 10;
+            this.btnExportPdf.Click += new System.EventHandler(this.btnExportPdf_Click);
             // 
             // label2
             // 
@@ -492,6 +507,7 @@
             this.txtNationalNumber.Size = new System.Drawing.Size(248, 43);
             this.txtNationalNumber.TabIndex = 154;
             this.txtNationalNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNationalNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationalNumber_KeyPress);
             // 
             // lblNationalNumber
             // 
@@ -541,6 +557,7 @@
             this.Name = "UcStudentDebt";
             this.Size = new System.Drawing.Size(1400, 900);
             this.Load += new System.EventHandler(this.UcStudentDebt_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UcStudentDebt_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.panelDgw.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudentDebt)).EndInit();

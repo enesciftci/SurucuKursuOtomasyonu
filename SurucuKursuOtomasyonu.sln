@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.Busin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.FormsUI", "SurucuKursuOtomasyonu.FormsUI\SurucuKursuOtomasyonu.FormsUI.csproj", "{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InformationService", "InformationService\InformationService.csproj", "{EB787AE8-17C1-4AFE-BE67-07181FD38B76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursu.InformationService", "InformationService\SurucuKursu.InformationService.csproj", "{EB787AE8-17C1-4AFE-BE67-07181FD38B76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

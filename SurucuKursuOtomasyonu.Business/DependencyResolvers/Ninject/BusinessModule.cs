@@ -3,6 +3,8 @@ using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.Concrete;
 using SurucuKursuOtomasyonu.DataAccess.Abstract;
 using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
+using SurucuKursuOtomasyonu.Entities.Abstract;
+using SurucuKursuOtomasyonu.Entities.Concrete;
 
 namespace SurucuKursuOtomasyonu.Business.DependencyResolvers.Ninject
 {
@@ -18,8 +20,7 @@ namespace SurucuKursuOtomasyonu.Business.DependencyResolvers.Ninject
             Bind<ILicenceTypeDal>().To<EfLicenceTypeDal>().InSingletonScope();
             Bind<ICityService>().To<CityManager>().InSingletonScope();
             Bind<ICityDal>().To<EfCityDal>().InSingletonScope();
-
-
+          
         }
     }
 }

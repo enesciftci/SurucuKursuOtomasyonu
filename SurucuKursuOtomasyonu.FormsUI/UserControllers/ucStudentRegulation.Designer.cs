@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcStudentRegulation));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbStudentRegulation = new System.Windows.Forms.GroupBox();
             this.txtSearchByNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -664,7 +665,8 @@
             this.dgwStudentRegulation.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgwStudentRegulation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgwStudentRegulation.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgwStudentRegulation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwStudentRegulation.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgwStudentRegulation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwStudentRegulation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -698,7 +700,7 @@
             this.dgwStudentRegulation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgwStudentRegulation.DoubleBuffered = true;
             this.dgwStudentRegulation.EnableHeadersVisualStyles = false;
-            this.dgwStudentRegulation.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgwStudentRegulation.GridColor = System.Drawing.Color.SeaShell;
             this.dgwStudentRegulation.HeaderBgColor = System.Drawing.Color.SeaShell;
             this.dgwStudentRegulation.HeaderForeColor = System.Drawing.Color.SlateBlue;
             this.dgwStudentRegulation.Location = new System.Drawing.Point(3, 458);
@@ -706,6 +708,14 @@
             this.dgwStudentRegulation.Name = "dgwStudentRegulation";
             this.dgwStudentRegulation.ReadOnly = true;
             this.dgwStudentRegulation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudentRegulation.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwStudentRegulation.RowHeadersVisible = false;
             this.dgwStudentRegulation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Black;

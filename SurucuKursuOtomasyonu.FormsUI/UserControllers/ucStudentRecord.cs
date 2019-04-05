@@ -103,10 +103,11 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                 MessageBox.Show(@"Üye Kaydı Tamamlandı");
               
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                MessageBox.Show(exception.Message);
-   
+                MessageBox.Show(@"Lütfen Alanları Kontrol Ediniz.", @"Uyarı", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
             }
            
            
