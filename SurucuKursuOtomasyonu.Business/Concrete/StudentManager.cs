@@ -33,6 +33,7 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
         }
 
+     
         public List<Student> GetByName(string name)
         {
             return _studentDal.GetAll(p => p.StudentName == name);
@@ -60,7 +61,7 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
         public List<Student> GetDebtor()
         {
-            return _studentDal.GetAll(p=>p.StudentDebt>0);
+            return _studentDal.GetAll(p=>p.StudentTotalDebt>0);
         }
     }
 }

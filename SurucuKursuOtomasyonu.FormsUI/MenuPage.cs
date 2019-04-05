@@ -155,7 +155,16 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
         private void btnDebtInformation_Click(object sender, EventArgs e)
         {
-           
+            if (!panelMainMenu.Controls.Contains(UcDebtInformation.InstanceDebtInformation))
+            {
+                panelMainPage.Controls.Add(UcDebtInformation.InstanceDebtInformation);
+                UcDebtInformation.InstanceDebtInformation.Dock = DockStyle.Fill;
+                UcDebtInformation.InstanceDebtInformation.BringToFront();
+            }
+            else
+            {
+                UcDebtInformation.InstanceDebtInformation.BringToFront();
+            }
         }
 
         private void btnBankData_Click(object sender, EventArgs e)

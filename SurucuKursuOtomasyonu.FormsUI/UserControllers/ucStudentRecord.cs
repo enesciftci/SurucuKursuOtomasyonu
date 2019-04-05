@@ -2,6 +2,7 @@
 using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
@@ -36,7 +37,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             }
         }
 
-        void cmbLoader(ComboBox combo,ComboBox combo2,ComboBox combo3)
+        void CmbLoader(ComboBox combo,ComboBox combo2,ComboBox combo3)
         {
             combo.DataSource = _licenceTypeService.GetLicenceTypes();
             combo.ValueMember = "LicenceTypeId";
@@ -52,7 +53,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void ucStudentRecord_Load(object sender, EventArgs e)
         {
-            cmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
+            CmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
         }
 
 
@@ -82,8 +83,8 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
             _studentService.Add(new Student
             {
-                StudentName = txtStudentName.Text,
-                StudentSurname = txtStudentSurname.Text,
+                StudentName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentName.Text),
+                StudentSurname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentSurname.Text),
                 StudentNationalNumber = txtNationalNumber.Text,
                 StudentGender = _gender,
                 StudentEmail = txtEmail.Text.Trim().ToLower(),
@@ -103,10 +104,11 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                 MessageBox.Show(@"Üye Kaydı Tamamlandı");
               
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                MessageBox.Show(@"Lütfen Alanları Kontrol Ediniz.", @"Uyarı", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show(exception.Message);
+                /* MessageBox.Show(@"Lütfen Alanları Kontrol Ediniz.", @"Uyarı", MessageBoxButtons.OK,
+                     MessageBoxIcon.Information);*/
 
             }
            
@@ -149,7 +151,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             };
 
             func(Controls);
-            cmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
+            CmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
             cmbQuantityInstallment.SelectedIndex = 0;
             radioFemale.Checked = false;
                 radioMale.Checked = false;

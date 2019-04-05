@@ -62,11 +62,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControllers\ucDebtInformation.cs">
+    <Compile Include="UserControllers\UcDebtInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControllers\ucDebtInformation.Designer.cs">
-      <DependentUpon>ucDebtInformation.cs</DependentUpon>
+    <Compile Include="UserControllers\UcDebtInformation.Designer.cs">
+      <DependentUpon>UcDebtInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControllers\UcStudentDebt.cs">
       <SubType>UserControl</SubType>
@@ -105,8 +105,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControllers\ucDebtInformation.resx">
-      <DependentUpon>ucDebtInformation.cs</DependentUpon>
+    <EmbeddedResource Include="UserControllers\UcDebtInformation.resx">
+      <DependentUpon>UcDebtInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControllers\UcStudentDebt.resx">
       <DependentUpon>UcStudentDebt.cs</DependentUpon>
