@@ -64,11 +64,9 @@
             this.panelMainMenu.Name = "panelMainMenu";
             this.panelMainMenu.Size = new System.Drawing.Size(87, 981);
             this.panelMainMenu.TabIndex = 0;
-
-            //
-            // btnDebtInformations
             // 
-
+            // btnDebtInformation
+            // 
             this.btnDebtInformation.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(36)))), ((int)(((byte)(88)))));
             this.btnDebtInformation.BackColor = System.Drawing.Color.Black;
             this.btnDebtInformation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -143,6 +141,7 @@
             this.btnBankData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBankData.Textcolor = System.Drawing.Color.White;
             this.btnBankData.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBankData.Click += new System.EventHandler(this.btnBankData_Click);
             // 
             // btnStudentDebt
             // 

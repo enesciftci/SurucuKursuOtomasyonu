@@ -157,5 +157,10 @@ namespace SurucuKursuOtomasyonu.FormsUI
         {
            
         }
+
+        private void btnBankData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
