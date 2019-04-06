@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using FluentValidation;
-using SurucuKursuOtomasyonu.Business.Concrete;
 using SurucuKursuOtomasyonu.Business.Utilities;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 
@@ -26,7 +20,8 @@ namespace SurucuKursuOtomasyonu.Business.ValidationRules.FluentValidation
 
             RuleFor(p => p.StudentGender).NotEmpty().WithMessage("Cinsiyet Boş Olamaz");
 
-            RuleFor(p => p.StudentEmail).NotEmpty().Must(SubValidator.EmailValidator).WithMessage("EMaili Doğru Giriniz");
+            RuleFor(p => p.StudentEmail).NotEmpty().Must(SubValidator.EmailValidator)
+                .WithMessage("EMaili Doğru Giriniz");
 
             RuleFor(p => p.StudentBirthdate).NotEmpty().LessThanOrEqualTo(DateTime.Today.AddYears(-16))
                 .WithMessage("16 Yaşından Küçük Öğrenci Kaydı Yapılamaz.");
@@ -54,10 +49,6 @@ namespace SurucuKursuOtomasyonu.Business.ValidationRules.FluentValidation
                 .WithMessage("IBAN Numarası Geçersiz örn:TR560006200000012990022604 Formatında Olmalı");
 
             RuleFor(p => p.StudentWantLicenceType).NotEmpty().WithMessage("Lisans Türü Boş Olamaz");
-
- 
-
         }
-
     }
 }
