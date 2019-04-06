@@ -45,6 +45,12 @@
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -135,10 +141,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InformationService\SurucuKursu.InformationService.csproj">
-      <Project>{EB787AE8-17C1-4AFE-BE67-07181FD38B76}</Project>
-      <Name>SurucuKursu.InformationService</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SurucuKursuOtomasyonu.Business\SurucuKursuOtomasyonu.Business.csproj">
       <Project>{4223C481-BF5F-42A9-96B5-4C10556770EE}</Project>
       <Name>SurucuKursuOtomasyonu.Business</Name>
@@ -150,6 +152,10 @@
     <ProjectReference Include="..\SurucuKursuOtomasyonu.Entities\SurucuKursuOtomasyonu.Entities.csproj">
       <Project>{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}</Project>
       <Name>SurucuKursuOtomasyonu.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SurucuKursuOtomasyonu.Information\SurucuKursuOtomasyonu.Information.csproj">
+      <Project>{9A7C29E0-DBF9-43ED-B9EE-28E073D8F91E}</Project>
+      <Name>SurucuKursuOtomasyonu.Information</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

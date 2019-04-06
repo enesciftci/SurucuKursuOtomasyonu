@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbpStudentSearch = new System.Windows.Forms.GroupBox();
             this.dgwStudentSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,8 +85,9 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SeaShell;
             this.dgwStudentSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwStudentSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgwStudentSearch.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgwStudentSearch.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgwStudentSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgwStudentSearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgwStudentSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
@@ -115,29 +117,40 @@
             this.StudentIbanNumber,
             this.StudentHaveLicenceType,
             this.StudentWantLicenceType});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwStudentSearch.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgwStudentSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgwStudentSearch.DoubleBuffered = true;
             this.dgwStudentSearch.EnableHeadersVisualStyles = false;
+            this.dgwStudentSearch.GridColor = System.Drawing.Color.Gray;
             this.dgwStudentSearch.HeaderBgColor = System.Drawing.Color.SeaShell;
             this.dgwStudentSearch.HeaderForeColor = System.Drawing.Color.SlateBlue;
             this.dgwStudentSearch.Location = new System.Drawing.Point(3, 159);
             this.dgwStudentSearch.Name = "dgwStudentSearch";
             this.dgwStudentSearch.ReadOnly = true;
             this.dgwStudentSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwStudentSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudentSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgwStudentSearch.RowHeadersVisible = false;
+            this.dgwStudentSearch.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwStudentSearch.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
             this.dgwStudentSearch.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Red;
             this.dgwStudentSearch.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.dgwStudentSearch.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgwStudentSearch.RowTemplate.Height = 24;
+            this.dgwStudentSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwStudentSearch.Size = new System.Drawing.Size(1740, 793);
             this.dgwStudentSearch.TabIndex = 165;
             // 

@@ -32,13 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.8.2.0\lib\net45\FluentValidation.dll</HintPath>
-    </Reference>
-    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <HintPath>..\packages\FluentValidation.8.2.2\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="SurucuKursuOtomasyonu.Information">
+      <HintPath>..\SurucuKursuOtomasyonu.Information\obj\Debug\SurucuKursuOtomasyonu.Information.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -73,7 +73,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SurucuKursuOtomasyonu.DataAccess\SurucuKursuOtomasyonu.DataAccess.csproj">
-      <Project>{4EAAA248-7413-4619-996E-DB6311B66DBD}</Project>
+      <Project>{4eaaa248-7413-4619-996e-db6311b66dbd}</Project>
       <Name>SurucuKursuOtomasyonu.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\SurucuKursuOtomasyonu.Entities\SurucuKursuOtomasyonu.Entities.csproj">

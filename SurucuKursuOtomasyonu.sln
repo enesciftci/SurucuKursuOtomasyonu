@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.Busin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.FormsUI", "SurucuKursuOtomasyonu.FormsUI\SurucuKursuOtomasyonu.FormsUI.csproj", "{EE5770A8-275C-4FD4-8B2F-A37F7CE3DA59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursu.InformationService", "InformationService\SurucuKursu.InformationService.csproj", "{EB787AE8-17C1-4AFE-BE67-07181FD38B76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.Disable", "SurucuKursuOtomasyonu.Disable\SurucuKursuOtomasyonu.Disable.csproj", "{EB787AE8-17C1-4AFE-BE67-07181FD38B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurucuKursuOtomasyonu.Information", "SurucuKursuOtomasyonu.Information\SurucuKursuOtomasyonu.Information.csproj", "{9A7C29E0-DBF9-43ED-B9EE-28E073D8F91E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EB787AE8-17C1-4AFE-BE67-07181FD38B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB787AE8-17C1-4AFE-BE67-07181FD38B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB787AE8-17C1-4AFE-BE67-07181FD38B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7C29E0-DBF9-43ED-B9EE-28E073D8F91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7C29E0-DBF9-43ED-B9EE-28E073D8F91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7C29E0-DBF9-43ED-B9EE-28E073D8F91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7C29E0-DBF9-43ED-B9EE-28E073D8F91E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

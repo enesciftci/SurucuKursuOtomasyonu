@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.DataAccess.Abstract;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 
 namespace SurucuKursuOtomasyonu.Business.Concrete
 {
-   public class RegistrationSeasonManager:IRegistrationSeasonService
+    public class RegistrationSeasonManager : IRegistrationSeasonService
     {
-        private IRegistrationSeasonDal _registrationSeasonDal;
+        private readonly IRegistrationSeasonDal _registrationSeasonDal;
 
         public RegistrationSeasonManager(IRegistrationSeasonDal registrationSeasonDal)
         {

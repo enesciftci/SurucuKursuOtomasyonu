@@ -1,43 +1,41 @@
-﻿using SurucuKursuOtomasyonu.Business.Abstract;
-using SurucuKursuOtomasyonu.Business.DependencyResolvers;
-using SurucuKursuOtomasyonu.Entities.Concrete;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
+using SurucuKursuOtomasyonu.Business.Abstract;
+using SurucuKursuOtomasyonu.Business.DependencyResolvers;
+using SurucuKursuOtomasyonu.Entities.Concrete;
 
 namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
     public partial class UcStudentRecord : UserControl
     {
-   
-        private string _gender,_haveLicenceType;
+        private static UcStudentRecord _instanceStudentRecord;
+        private readonly ICityService _cityService = InstanceFactory.GetInstance<ICityService>();
+        private readonly ILicenceTypeService _licenceTypeService = InstanceFactory.GetInstance<ILicenceTypeService>();
 
         private readonly IRegistrationSeasonService _registrationSeasonService =
             InstanceFactory.GetInstance<IRegistrationSeasonService>();
 
         private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
-        private readonly ILicenceTypeService _licenceTypeService = InstanceFactory.GetInstance<ILicenceTypeService>();
-        private readonly ICityService _cityService = InstanceFactory.GetInstance<ICityService>();
-        private static UcStudentRecord _instanceStudentRecord;
+
+        private string _gender, _haveLicenceType;
+
         public UcStudentRecord()
         {
             InitializeComponent();
         }
+
         public static UcStudentRecord InstanceStudentRecord
         {
             get
             {
-                if (_instanceStudentRecord == null)
-                {
-                    _instanceStudentRecord = new UcStudentRecord();
-                    
-                }
-               
+                if (_instanceStudentRecord == null) _instanceStudentRecord = new UcStudentRecord();
+
                 return _instanceStudentRecord;
             }
         }
 
-        void CmbLoader(ComboBox combo,ComboBox combo2,ComboBox combo3)
+        private void CmbLoader(ComboBox combo, ComboBox combo2, ComboBox combo3)
         {
             combo.DataSource = _licenceTypeService.GetLicenceTypes();
             combo.ValueMember = "LicenceTypeId";
@@ -48,7 +46,6 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             combo3.DataSource = _licenceTypeService.GetLicenceTypes();
             combo3.ValueMember = "LicenceTypeId";
             combo3.DisplayMember = "LicenceName";
-         
         }
 
         private void ucStudentRecord_Load(object sender, EventArgs e)
@@ -59,63 +56,47 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-          
             try
             {
-                if (radioFemale.Checked)
-            {
-                _gender = "Kadın";
-            }
+                if (radioFemale.Checked) _gender = "Kadın";
 
-            if (radioMale.Checked)
-            {
-                _gender = "Erkek";
-            }
+                if (radioMale.Checked) _gender = "Erkek";
 
-            if (cmbHaveLicenceType.Visible == false)
-            {
-                _haveLicenceType = "Null";
-            }
-            else
-            {
-                _haveLicenceType = cmbHaveLicenceType.Text;
-            }
+                if (cmbHaveLicenceType.Visible == false)
+                    _haveLicenceType = "Null";
+                else
+                    _haveLicenceType = cmbHaveLicenceType.Text;
 
-            _studentService.Add(new Student
-            {
-                StudentName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentName.Text),
-                StudentSurname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentSurname.Text),
-                StudentNationalNumber = txtNationalNumber.Text,
-                StudentGender = _gender,
-                StudentEmail = txtEmail.Text.Trim().ToLower(),
-                StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
-                RegistrationDate = Convert.ToDateTime(DateTime.Today.ToShortDateString()),
-                RegistrationSeason =_registrationSeasonService.GetSeasons().Count,
-                StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
-                StudentTotalDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
-                QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
-                StudentPlaceofBirth =Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
-                StudentPhoneNumber = txtPhoneNumber.Text,
-                StudentAdress = txtAdress.Text,
-                StudentIbanNumber = txtIbanNumber.Text.ToUpper().Trim(),
-                StudentWantLicenceType = cmbLicenceType.Text,
-                StudentHaveLicenceType =_haveLicenceType
-            });
+                _studentService.Add(new Student
+                {
+                    StudentName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentName.Text),
+                    StudentSurname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentSurname.Text),
+                    StudentNationalNumber = txtNationalNumber.Text,
+                    StudentGender = _gender,
+                    StudentEmail = txtEmail.Text.Trim().ToLower(),
+                    StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
+                    RegistrationDate = Convert.ToDateTime(DateTime.Today.ToShortDateString()),
+                    RegistrationSeason = _registrationSeasonService.GetSeasons().Count,
+                    StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                    StudentTotalDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                    QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
+                    StudentPlaceofBirth = Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
+                    StudentPhoneNumber = txtPhoneNumber.Text,
+                    StudentAdress = txtAdress.Text,
+                    StudentIbanNumber = txtIbanNumber.Text.ToUpper().Trim(),
+                    StudentWantLicenceType = cmbLicenceType.Text,
+                    StudentHaveLicenceType = _haveLicenceType
+                });
                 MessageBox.Show(@"Üye Kaydı Tamamlandı");
-              
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
                 /* MessageBox.Show(@"Lütfen Alanları Kontrol Ediniz.", @"Uyarı", MessageBoxButtons.OK,
                      MessageBoxIcon.Information);*/
-
             }
-           
-           
         }
 
-       
 
         private void checkHaveLicence_CheckedChanged(object sender, EventArgs e)
         {
@@ -123,21 +104,19 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             {
                 cmbHaveLicenceType.Visible = true;
                 lblHaveLicenceType.Visible = true;
-
             }
             else
             {
                 cmbHaveLicenceType.Visible = false;
                 lblHaveLicenceType.Visible = false;
-
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
+            Action<ControlCollection> func = null;
 
-            func = (controls) =>
+            func = controls =>
             {
                 foreach (Control control in controls)
                     if (control is TextBox || control is MaskedTextBox || control is RichTextBox)
@@ -147,16 +126,16 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                         (control as RichTextBox)?.Clear();
                     }
                     else
+                    {
                         func(control.Controls);
+                    }
             };
 
             func(Controls);
             CmbLoader(cmbLicenceType, cmbPlaceofBirth, cmbHaveLicenceType);
             cmbQuantityInstallment.SelectedIndex = 0;
             radioFemale.Checked = false;
-                radioMale.Checked = false;
-            }
-      
-
+            radioMale.Checked = false;
+        }
     }
 }

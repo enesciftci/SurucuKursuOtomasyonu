@@ -3,12 +3,13 @@ using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.Concrete;
 using SurucuKursuOtomasyonu.DataAccess.Abstract;
 using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
-using SurucuKursuOtomasyonu.Entities.Abstract;
-using SurucuKursuOtomasyonu.Entities.Concrete;
+using SurucuKursuOtomasyonu.Information.Abstract;
+using SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter;
+using SurucuKursuOtomasyonu.Information.Concrete.Senders.MailSender;
 
 namespace SurucuKursuOtomasyonu.Business.DependencyResolvers.Ninject
 {
-    public class BusinessModule:NinjectModule
+    public class BusinessModule : NinjectModule
     {
         public override void Load()
         {
@@ -20,7 +21,10 @@ namespace SurucuKursuOtomasyonu.Business.DependencyResolvers.Ninject
             Bind<ILicenceTypeDal>().To<EfLicenceTypeDal>().InSingletonScope();
             Bind<ICityService>().To<CityManager>().InSingletonScope();
             Bind<ICityDal>().To<EfCityDal>().InSingletonScope();
-          
+
+            Bind<IExportByPdfService>().To<ExportByPdf>().InSingletonScope();
+            Bind<IMailService>().To<MailSender>().InSingletonScope();
+            Bind<IExportWithPrinterService>().To<ExportWithPrinter>().InSingletonScope();
         }
     }
 }

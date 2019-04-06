@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbStudentRegulation = new System.Windows.Forms.GroupBox();
             this.txtSearchByNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -634,7 +635,6 @@
             // 
             this.dpcBirthdate.BackColor = System.Drawing.SystemColors.Control;
             this.dpcBirthdate.BorderRadius = 0;
-            this.dpcBirthdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dpcBirthdate.ForeColor = System.Drawing.Color.Black;
             this.dpcBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dpcBirthdate.FormatCustom = null;
@@ -666,8 +666,9 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgwStudentRegulation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwStudentRegulation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgwStudentRegulation.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgwStudentRegulation.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgwStudentRegulation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgwStudentRegulation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgwStudentRegulation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
@@ -697,10 +698,18 @@
             this.StudentIbanNumber,
             this.StudentHaveLicenceType,
             this.StudentWantLicenceType});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwStudentRegulation.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgwStudentRegulation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgwStudentRegulation.DoubleBuffered = true;
             this.dgwStudentRegulation.EnableHeadersVisualStyles = false;
-            this.dgwStudentRegulation.GridColor = System.Drawing.Color.SeaShell;
+            this.dgwStudentRegulation.GridColor = System.Drawing.Color.Gray;
             this.dgwStudentRegulation.HeaderBgColor = System.Drawing.Color.SeaShell;
             this.dgwStudentRegulation.HeaderForeColor = System.Drawing.Color.SlateBlue;
             this.dgwStudentRegulation.Location = new System.Drawing.Point(3, 458);
@@ -708,14 +717,14 @@
             this.dgwStudentRegulation.Name = "dgwStudentRegulation";
             this.dgwStudentRegulation.ReadOnly = true;
             this.dgwStudentRegulation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwStudentRegulation.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudentRegulation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgwStudentRegulation.RowHeadersVisible = false;
             this.dgwStudentRegulation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
@@ -723,6 +732,7 @@
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.dgwStudentRegulation.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgwStudentRegulation.RowTemplate.Height = 24;
+            this.dgwStudentRegulation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwStudentRegulation.Size = new System.Drawing.Size(2029, 494);
             this.dgwStudentRegulation.TabIndex = 164;
             this.dgwStudentRegulation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwStudentRegulation_CellClick);

@@ -1,9 +1,9 @@
-﻿using SurucuKursuOtomasyonu.Entities.Abstract;
-using System;
+﻿using System;
+using SurucuKursuOtomasyonu.Entities.Abstract;
 
 namespace SurucuKursuOtomasyonu.Entities.Concrete
 {
-    public class Student:IEntity
+    public class Student : IEntity
     {
         public int StudentId { get; set; }
         public string StudentName { get; set; }
@@ -16,18 +16,18 @@ namespace SurucuKursuOtomasyonu.Entities.Concrete
         public string StudentPhoneNumber { get; set; }
         public string StudentAdress { get; set; }
 
-        public DateTime RegistrationDate { get; set; }//öğrenci kayıt tarihi
-        public int RegistrationSeason { get; set; }//kayıtlı bulunduğu sezon bu alana göre bulunacak
-        public decimal StudentDebt { get; set; }//Öğrencinin borcu
+        public DateTime RegistrationDate { get; set; } //öğrenci kayıt tarihi
+        public int RegistrationSeason { get; set; } //kayıtlı bulunduğu sezon bu alana göre bulunacak
+        public decimal StudentDebt { get; set; } //Öğrencinin borcu
         public decimal StudentTotalDebt { get; set; }
-        public int QuantityInstallment { get; set; }//Taksit miktarı 
+
+        public int QuantityInstallment { get; set; } //Taksit miktarı 
         /*Her ayın öğrencinin kayıt olduğu günde borç miktarı taksit sayısına bölünüp
          mail olarak öğrenciye gönderilecek öğrenci borcu ödediğinde ödenen miktar borç toplamından
          düşülecek */
-       
+
         public string StudentIbanNumber { get; set; }
         public string StudentHaveLicenceType { get; set; }
         public string StudentWantLicenceType { get; set; }
-        
     }
 }

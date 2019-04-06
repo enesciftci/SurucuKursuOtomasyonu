@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SurucuKursuOtomasyonu.Entities.Concrete;
 
 namespace SurucuKursuOtomasyonu.Business.Abstract
 {
-   public interface IStudentService
+    public interface IStudentService
     {
         List<Student> GetAll();
 
@@ -20,6 +16,5 @@ namespace SurucuKursuOtomasyonu.Business.Abstract
         void Add(Student student);
         void Update(Student student);
         void Delete(Student student);
-     
     }
 }

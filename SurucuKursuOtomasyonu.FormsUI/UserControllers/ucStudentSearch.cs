@@ -1,50 +1,42 @@
-﻿using SurucuKursuOtomasyonu.Business.Abstract;
-using SurucuKursuOtomasyonu.Business.Concrete;
-using SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 
 namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
     public partial class UcStudentSearch : UserControl
     {
-        private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
+        private static UcStudentSearch _instanceStudentSearch;
 
         private readonly IRegistrationSeasonService _registrationSeasonService =
             InstanceFactory.GetInstance<IRegistrationSeasonService>();
 
-       
-        private static UcStudentSearch _instanceStudentSearch;
+        private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
 
-        public static UcStudentSearch InstanceStudentSearch
-        {
-            get
-            {
-                if (_instanceStudentSearch == null)
-                {
-                    _instanceStudentSearch = new UcStudentSearch();
-                }
-                return _instanceStudentSearch;
-            }
-        }
         public UcStudentSearch()
         {
             InitializeComponent();
         }
 
-        void DgwRefresh()
+        public static UcStudentSearch InstanceStudentSearch
+        {
+            get
+            {
+                if (_instanceStudentSearch == null) _instanceStudentSearch = new UcStudentSearch();
+                return _instanceStudentSearch;
+            }
+        }
+
+        private void DgwRefresh()
         {
             dgwStudentSearch.DataSource = _studentService.GetAll();
         }
 
-       
 
         private void ucStudentSearch_Load(object sender, EventArgs e)
         {
-           
-           
-           cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
+            cmbRegistrationSeason.DataSource = _registrationSeasonService.GetSeasons();
             cmbRegistrationSeason.ValueMember = "RegistrationSeasonID";
             cmbRegistrationSeason.DisplayMember = "Season";
             cmbRegistrationSeason.SelectedIndex = -1;
@@ -60,39 +52,27 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             }
             catch (Exception)
             {
-                
             }
         }
-
-     
 
 
         private void txtNationalNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             cmbRegistrationSeason.SelectedIndex = -1;
-            if (!String.IsNullOrEmpty(txtNationalNumber.Text))
-            {
+            if (!string.IsNullOrEmpty(txtNationalNumber.Text))
                 dgwStudentSearch.DataSource =
                     _studentService.GetByNationalNumber(txtNationalNumber.Text);
-            }
             else
-            {
                 DgwRefresh();
-            }
         }
 
         private void txtStudentName_KeyPress(object sender, KeyPressEventArgs e)
         {
             cmbRegistrationSeason.SelectedIndex = -1;
-            if (!String.IsNullOrEmpty(txtStudentName.Text))
-            {
+            if (!string.IsNullOrEmpty(txtStudentName.Text))
                 dgwStudentSearch.DataSource = _studentService.GetByName(txtStudentName.Text);
-            }
             else
-            {
                 DgwRefresh();
-            }
-           
         }
 
 
@@ -101,9 +81,6 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             txtNationalNumber.Text = "";
             txtStudentName.Text = "";
             DgwRefresh();
-            
         }
-
-    
     }
 }

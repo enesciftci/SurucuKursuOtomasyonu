@@ -1,13 +1,13 @@
 ﻿using System.ServiceProcess;
 
-namespace SurucuKursu.InformationService
+namespace SurucuKursuOtomasyonu.Information
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
-        /// Uygulamanın ana girdi noktası.
+        ///     Uygulamanın ana girdi noktası.
         /// </summary>
-        static void Main()
+        private static void Main()
         {
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]

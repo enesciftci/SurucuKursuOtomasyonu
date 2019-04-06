@@ -47,6 +47,8 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IExportByPdfService.cs" />
+    <Compile Include="Abstract\IExportWithPrinterService.cs" />
     <Compile Include="DocumentExporter\ExportByPdf.cs" />
     <Compile Include="DocumentExporter\ExportWithPrinter.cs" />
     <Compile Include="InnerOperation.cs" />
@@ -91,6 +93,9 @@
       <Project>{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}</Project>
       <Name>SurucuKursuOtomasyonu.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

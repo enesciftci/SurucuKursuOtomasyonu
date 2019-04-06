@@ -1,15 +1,15 @@
-﻿using SurucuKursuOtomasyonu.Business.Abstract;
-using SurucuKursuOtomasyonu.DataAccess.Abstract;
-using SurucuKursuOtomasyonu.Entities.Concrete;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.Utilities;
 using SurucuKursuOtomasyonu.Business.ValidationRules.FluentValidation;
+using SurucuKursuOtomasyonu.DataAccess.Abstract;
+using SurucuKursuOtomasyonu.Entities.Concrete;
 
 namespace SurucuKursuOtomasyonu.Business.Concrete
 {
     public class StudentManager : IStudentService
     {
-        private IStudentDal _studentDal;
+        private readonly IStudentDal _studentDal;
 
         public StudentManager(IStudentDal studentDal)
         {
@@ -18,7 +18,6 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
         public List<Student> GetAll()
         {
-
             return _studentDal.GetAll();
         }
 
@@ -29,17 +28,16 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
         public List<Student> GetByNationalNumber(string nationalNumber)
         {
-            return _studentDal.GetAll(p=>p.StudentNationalNumber==nationalNumber);
-
+            return _studentDal.GetAll(p => p.StudentNationalNumber == nationalNumber);
         }
 
-     
+
         public List<Student> GetByName(string name)
         {
             return _studentDal.GetAll(p => p.StudentName == name);
         }
 
-       
+
         public void Add(Student student)
         {
             ValidationTool.Validate(new StudentValidator(), student);
@@ -54,14 +52,12 @@ namespace SurucuKursuOtomasyonu.Business.Concrete
 
         public void Delete(Student student)
         {
-          
-                _studentDal.Delete(student);
-           
+            _studentDal.Delete(student);
         }
 
         public List<Student> GetDebtor()
         {
-            return _studentDal.GetAll(p=>p.StudentTotalDebt>0);
+            return _studentDal.GetAll(p => p.StudentTotalDebt > 0);
         }
     }
 }

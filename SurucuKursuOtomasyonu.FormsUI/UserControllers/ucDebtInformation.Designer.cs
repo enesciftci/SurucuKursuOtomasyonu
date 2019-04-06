@@ -51,8 +51,13 @@
             this.cbxInfoWithEmail = new System.Windows.Forms.CheckBox();
             this.cmbInfoWithSMS = new System.Windows.Forms.CheckBox();
             this.lblStudentState = new System.Windows.Forms.Label();
+            this.lbxDebtorStudents = new System.Windows.Forms.ListBox();
+            this.gbpInformationSettings = new System.Windows.Forms.GroupBox();
+            this.lblTotalRecord = new System.Windows.Forms.Label();
+            this.lblSuccessfulRecord = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnSendInformation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwDebtInformation)).BeginInit();
+            this.gbpInformationSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSendInformation
@@ -62,9 +67,9 @@
             this.btnSendInformation.Image = ((System.Drawing.Image)(resources.GetObject("btnSendInformation.Image")));
             this.btnSendInformation.ImageActive = null;
             this.btnSendInformation.InitialImage = null;
-            this.btnSendInformation.Location = new System.Drawing.Point(594, 504);
+            this.btnSendInformation.Location = new System.Drawing.Point(462, 9);
             this.btnSendInformation.Name = "btnSendInformation";
-            this.btnSendInformation.Size = new System.Drawing.Size(87, 85);
+            this.btnSendInformation.Size = new System.Drawing.Size(123, 114);
             this.btnSendInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSendInformation.TabIndex = 171;
             this.btnSendInformation.TabStop = false;
@@ -80,8 +85,9 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgwDebtInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwDebtInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgwDebtInformation.BackgroundColor = System.Drawing.Color.Gray;
+            this.dgwDebtInformation.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgwDebtInformation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgwDebtInformation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgwDebtInformation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
@@ -107,7 +113,7 @@
             this.StudentEmail});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -139,8 +145,8 @@
             this.dgwDebtInformation.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dgwDebtInformation.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgwDebtInformation.RowTemplate.Height = 24;
-            this.dgwDebtInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgwDebtInformation.Size = new System.Drawing.Size(1431, 476);
+            this.dgwDebtInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgwDebtInformation.Size = new System.Drawing.Size(1521, 606);
             this.dgwDebtInformation.TabIndex = 172;
             this.dgwDebtInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwDebtInformation_CellClick);
             // 
@@ -233,15 +239,15 @@
             // prgDebtInformation
             // 
             this.prgDebtInformation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.prgDebtInformation.Location = new System.Drawing.Point(0, 683);
+            this.prgDebtInformation.Location = new System.Drawing.Point(0, 1031);
             this.prgDebtInformation.Name = "prgDebtInformation";
-            this.prgDebtInformation.Size = new System.Drawing.Size(1431, 32);
+            this.prgDebtInformation.Size = new System.Drawing.Size(1521, 32);
             this.prgDebtInformation.TabIndex = 173;
             // 
             // cbxAuto
             // 
             this.cbxAuto.AutoSize = true;
-            this.cbxAuto.Location = new System.Drawing.Point(377, 531);
+            this.cbxAuto.Location = new System.Drawing.Point(207, 26);
             this.cbxAuto.Name = "cbxAuto";
             this.cbxAuto.Size = new System.Drawing.Size(151, 21);
             this.cbxAuto.TabIndex = 175;
@@ -251,7 +257,7 @@
             // cbxInfoWithEmail
             // 
             this.cbxInfoWithEmail.AutoSize = true;
-            this.cbxInfoWithEmail.Location = new System.Drawing.Point(12, 521);
+            this.cbxInfoWithEmail.Location = new System.Drawing.Point(20, 26);
             this.cbxInfoWithEmail.Name = "cbxInfoWithEmail";
             this.cbxInfoWithEmail.Size = new System.Drawing.Size(152, 21);
             this.cbxInfoWithEmail.TabIndex = 176;
@@ -261,7 +267,7 @@
             // cmbInfoWithSMS
             // 
             this.cmbInfoWithSMS.AutoSize = true;
-            this.cmbInfoWithSMS.Location = new System.Drawing.Point(12, 568);
+            this.cmbInfoWithSMS.Location = new System.Drawing.Point(20, 73);
             this.cmbInfoWithSMS.Name = "cmbInfoWithSMS";
             this.cmbInfoWithSMS.Size = new System.Drawing.Size(140, 21);
             this.cmbInfoWithSMS.TabIndex = 177;
@@ -276,22 +282,62 @@
             this.lblStudentState.Size = new System.Drawing.Size(0, 17);
             this.lblStudentState.TabIndex = 178;
             // 
+            // lbxDebtorStudents
+            // 
+            this.lbxDebtorStudents.FormattingEnabled = true;
+            this.lbxDebtorStudents.ItemHeight = 16;
+            this.lbxDebtorStudents.Location = new System.Drawing.Point(12, 841);
+            this.lbxDebtorStudents.Name = "lbxDebtorStudents";
+            this.lbxDebtorStudents.Size = new System.Drawing.Size(451, 84);
+            this.lbxDebtorStudents.TabIndex = 179;
+            // 
+            // gbpInformationSettings
+            // 
+            this.gbpInformationSettings.Controls.Add(this.cmbInfoWithSMS);
+            this.gbpInformationSettings.Controls.Add(this.cbxInfoWithEmail);
+            this.gbpInformationSettings.Controls.Add(this.cbxAuto);
+            this.gbpInformationSettings.Controls.Add(this.btnSendInformation);
+            this.gbpInformationSettings.Location = new System.Drawing.Point(12, 643);
+            this.gbpInformationSettings.Name = "gbpInformationSettings";
+            this.gbpInformationSettings.Size = new System.Drawing.Size(591, 152);
+            this.gbpInformationSettings.TabIndex = 180;
+            this.gbpInformationSettings.TabStop = false;
+            this.gbpInformationSettings.Text = "Bilgilendirme Ayarları";
+            // 
+            // lblTotalRecord
+            // 
+            this.lblTotalRecord.AutoSize = true;
+            this.lblTotalRecord.Location = new System.Drawing.Point(532, 956);
+            this.lblTotalRecord.Name = "lblTotalRecord";
+            this.lblTotalRecord.Size = new System.Drawing.Size(0, 17);
+            this.lblTotalRecord.TabIndex = 181;
+            // 
+            // lblSuccessfulRecord
+            // 
+            this.lblSuccessfulRecord.AutoSize = true;
+            this.lblSuccessfulRecord.Location = new System.Drawing.Point(532, 898);
+            this.lblSuccessfulRecord.Name = "lblSuccessfulRecord";
+            this.lblSuccessfulRecord.Size = new System.Drawing.Size(0, 17);
+            this.lblSuccessfulRecord.TabIndex = 182;
+            // 
             // UcDebtInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblSuccessfulRecord);
+            this.Controls.Add(this.lblTotalRecord);
+            this.Controls.Add(this.gbpInformationSettings);
+            this.Controls.Add(this.lbxDebtorStudents);
             this.Controls.Add(this.lblStudentState);
-            this.Controls.Add(this.cmbInfoWithSMS);
-            this.Controls.Add(this.cbxInfoWithEmail);
-            this.Controls.Add(this.cbxAuto);
             this.Controls.Add(this.prgDebtInformation);
             this.Controls.Add(this.dgwDebtInformation);
-            this.Controls.Add(this.btnSendInformation);
             this.Name = "UcDebtInformation";
-            this.Size = new System.Drawing.Size(1431, 715);
+            this.Size = new System.Drawing.Size(1521, 1063);
             this.Load += new System.EventHandler(this.UcDebtInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnSendInformation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwDebtInformation)).EndInit();
+            this.gbpInformationSettings.ResumeLayout(false);
+            this.gbpInformationSettings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +362,9 @@
         private System.Windows.Forms.CheckBox cbxInfoWithEmail;
         private System.Windows.Forms.CheckBox cmbInfoWithSMS;
         private System.Windows.Forms.Label lblStudentState;
+        private System.Windows.Forms.ListBox lbxDebtorStudents;
+        private System.Windows.Forms.GroupBox gbpInformationSettings;
+        private System.Windows.Forms.Label lblTotalRecord;
+        private System.Windows.Forms.Label lblSuccessfulRecord;
     }
 }

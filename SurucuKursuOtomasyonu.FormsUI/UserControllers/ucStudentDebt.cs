@@ -1,9 +1,9 @@
-﻿using SurucuKursuOtomasyonu.Business.Abstract;
+﻿using System;
+using System.Windows.Forms;
+using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 using SurucuKursuOtomasyonu.Entities.Concrete;
-using System;
-using System.Windows.Forms;
-using SurucuKursu.InformationService.DocumentExporter;
+using SurucuKursuOtomasyonu.Information.Abstract;
 
 namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
@@ -11,30 +11,29 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
     {
         private static UcStudentDebt _instanceStudentDebt;
         private static readonly IStudentService StudentService = InstanceFactory.GetInstance<IStudentService>();
-        private decimal _pay = 0, _remainingDebt;
-        private decimal _mustPaid = 0;
+        private readonly IExportByPdfService _exportByPdfService = InstanceFactory.GetInstance<IExportByPdfService>();
+
+        private readonly IExportWithPrinterService _exportWithPrinterService =
+            InstanceFactory.GetInstance<IExportWithPrinterService>();
+
+        private decimal _mustPaid;
+        private decimal _pay, _remainingDebt;
         private int _remainingInstallment;
-
-        public static UcStudentDebt InstanceStudentDebt
-        {
-
-            get
-            {
-                if (_instanceStudentDebt == null)
-                {
-
-                    _instanceStudentDebt = new UcStudentDebt();
-
-                }
-
-
-                return _instanceStudentDebt;
-            }
-        }
 
         public UcStudentDebt()
         {
             InitializeComponent();
+        }
+
+        public static UcStudentDebt InstanceStudentDebt
+        {
+            get
+            {
+                if (_instanceStudentDebt == null) _instanceStudentDebt = new UcStudentDebt();
+
+
+                return _instanceStudentDebt;
+            }
         }
 
         private void fillTxt()
@@ -50,31 +49,22 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                 _remainingDebt = Convert.ToDecimal(txtRemainingDebt.Text);
             }
 
-           
-            if (_remainingInstallment <= 0)
-            {
-               
-                _mustPaid = 0;
-            }
-            else
-            {
-                _mustPaid = _remainingDebt / _remainingInstallment;
-            }
 
-            txtMustPaidAmount.Text = Math.Round(_mustPaid,2).ToString();
+            if (_remainingInstallment <= 0)
+                _mustPaid = 0;
+            else
+                _mustPaid = _remainingDebt / _remainingInstallment;
+
+            txtMustPaidAmount.Text = Math.Round(_mustPaid, 2).ToString();
         }
 
-        string FillTextBox(int i)
+        private string FillTextBox(int i)
         {
             var fill = "";
             if (dgwStudentDebt.CurrentRow == null)
-            {
                 MessageBox.Show(@"Kayıt Seçimi Yapınız.", @"Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
-            {
                 fill = dgwStudentDebt.CurrentRow.Cells[i].Value.ToString();
-            }
 
             return fill;
         }
@@ -86,14 +76,11 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void dgwStudentDebt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
             fillTxt();
         }
 
         private void UcStudentDebt_Load(object sender, EventArgs e)
         {
-
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -101,18 +88,12 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
             if (!string.IsNullOrEmpty(txtNationalNumber.Text))
             {
                 dgwStudentDebt.DataSource = StudentService.GetByNationalNumber(txtNationalNumber.Text);
-                for (int i = 4; i <= 9; i++)
-                {
-                    dgwStudentDebt.Columns[i].Visible = false;
-                }
+                for (var i = 4; i <= 9; i++) dgwStudentDebt.Columns[i].Visible = false;
 
                 dgwStudentDebt.Columns[16].Visible = false;
                 dgwStudentDebt.Columns[11].Visible = false;
                 if (dgwStudentDebt.RowCount <= 0)
-                {
                     MessageBox.Show(@"Kayıt Bulunamadı", @"Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
             }
             else
             {
@@ -124,22 +105,20 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void UcStudentDebt_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
 
         private void btnExportPdf_Click(object sender, EventArgs e)
         {
-            if (dgwStudentDebt.CurrentRow != null && !String.IsNullOrEmpty(txtStudentId.Text))
+            if (dgwStudentDebt.CurrentRow != null && !string.IsNullOrEmpty(txtStudentId.Text))
             {
-                string studentNationalNumber = dgwStudentDebt.CurrentRow.Cells[3].Value.ToString();
-                string registrationDate = dgwStudentDebt.CurrentRow.Cells[10].Value.ToString();
-                string studentDebt = dgwStudentDebt.CurrentRow.Cells[12].Value.ToString();
-                string ibanNumber = dgwStudentDebt.CurrentRow.Cells[15].Value.ToString();
-                string studentWantLicenceType = dgwStudentDebt.CurrentRow.Cells[17].Value.ToString();
-                ExportByPdf.CreatDebtPdf(txtStudentId.Text, txtStudentNameSurname.Text, studentNationalNumber,
+                var studentNationalNumber = dgwStudentDebt.CurrentRow.Cells[3].Value.ToString();
+                var registrationDate = dgwStudentDebt.CurrentRow.Cells[10].Value.ToString();
+                var studentDebt = dgwStudentDebt.CurrentRow.Cells[12].Value.ToString();
+                var ibanNumber = dgwStudentDebt.CurrentRow.Cells[15].Value.ToString();
+                var studentWantLicenceType = dgwStudentDebt.CurrentRow.Cells[17].Value.ToString();
+                _exportByPdfService.CreateDebtPdf(txtStudentId.Text, txtStudentNameSurname.Text, studentNationalNumber,
                     registrationDate, studentDebt, txtRemainingDebt.Text, txtRemainingInstallment.Text, ibanNumber,
                     studentWantLicenceType);
-
             }
             else
             {
@@ -149,7 +128,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            ExportWithPrinter.PrintPdf();
+            _exportWithPrinterService.PrintPdf();
         }
 
         private void txtNationalNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -159,9 +138,9 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (dgwStudentDebt.Rows.Count>0)
+            if (dgwStudentDebt.Rows.Count > 0)
             {
-                if (!String.IsNullOrWhiteSpace(txtPaidAmount.Text) && Convert.ToDecimal(txtPaidAmount.Text) > 0)
+                if (!string.IsNullOrWhiteSpace(txtPaidAmount.Text) && Convert.ToDecimal(txtPaidAmount.Text) > 0)
                 {
                     _pay = Convert.ToDecimal(txtPaidAmount.Text);
 
@@ -170,16 +149,14 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                     {
                         MessageBox.Show(@"Öğrencinin Borcu Bulunmamaktadır.", @"Uyarı", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-                       
-                        _mustPaid = 0;
 
+                        _mustPaid = 0;
                     }
 
                     if (_mustPaid == _pay)
                     {
                         _remainingDebt = _remainingDebt - _pay;
                         _remainingInstallment--;
-
                     }
                     else if (_mustPaid < _pay)
                     {
@@ -212,9 +189,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                         StudentWantLicenceType = FillTextBox(17),
                         StudentHaveLicenceType = FillTextBox(16),
                         StudentDebt = Convert.ToDecimal(FillTextBox(13))
-
                     });
-
                 }
                 else
                 {

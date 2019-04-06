@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using SurucuKursuOtomasyonu.Entities.Abstract;
+﻿using SurucuKursuOtomasyonu.Entities.Abstract;
 
 namespace SurucuKursuOtomasyonu.Entities.Concrete
 {
-   public class City:IEntity
+    public class City : IEntity
     {
         public int CityId { get; set; }
-        public string CityName{ get; set; }
+        public string CityName { get; set; }
     }
 }

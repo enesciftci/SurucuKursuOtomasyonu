@@ -1,107 +1,92 @@
-﻿using Bunifu.Framework.UI;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 using SurucuKursuOtomasyonu.FormsUI.UserControllers;
 
 namespace SurucuKursuOtomasyonu.FormsUI
 {
     public partial class MenuPage : Form
     {
+        private bool _menuExpanded;
+
         public MenuPage()
         {
             InitializeComponent();
-            
         }
 
-        private bool _menuExpanded = false;
-    
-        void texthide(BunifuFlatButton bunifu)
-     {       
-            bunifu.Text = "";
-         
-        }
-      
-        void textShow()
+        private void texthide(BunifuFlatButton bunifu)
         {
-          
-            btnStudentRegister.Text= @"Kayıt";
-            btnStudentSearch.Text=@"       Sorgulama";
-            btnStudentRegulation.Text= @"      Düzenleme";
-            btnStudentDebt.Text= @"Ödeme";
-            btnBankData.Text= @"         Banka Bilgileri";
-            btnDebtInformation.Text=@"       Bilgilendirme";
-            //   MessageBox.Show(dizi.Length.ToString());
-
+            bunifu.Text = "";
         }
-     
+
+        private void textShow()
+        {
+            btnStudentRegister.Text = @"Kayıt";
+            btnStudentSearch.Text = @"       Sorgulama";
+            btnStudentRegulation.Text = @"      Düzenleme";
+            btnStudentDebt.Text = @"Ödeme";
+            btnBankData.Text = @"         Banka Bilgileri";
+            btnDebtInformation.Text = @"       Bilgilendirme";
+            //   MessageBox.Show(dizi.Length.ToString());
+        }
+
         private void MouseDetecter_Tick(object sender, EventArgs e)
         {
-           
-          /*  if (bunifuTransition1.IsCompleted) return;
-            {
-               
-            }*/
-             if (panelMainMenu.ClientRectangle.Contains(PointToClient(Control.MousePosition)))
-             {
-                 if (!_menuExpanded)
-                 {
-                     textShow();
-                     _menuExpanded = true;
-
-                     panelMainMenu.Width = 255;
+            /*  if (bunifuTransition1.IsCompleted) return;
+              {
                  
-                 }
+              }*/
+            if (panelMainMenu.ClientRectangle.Contains(PointToClient(MousePosition)))
+            {
+                if (!_menuExpanded)
+                {
+                    textShow();
+                    _menuExpanded = true;
 
-             }
-             else
-             {
-                 if (_menuExpanded)
-                 {
-                     texthide(btnStudentRegister);
+                    panelMainMenu.Width = 255;
+                }
+            }
+            else
+            {
+                if (_menuExpanded)
+                {
+                    texthide(btnStudentRegister);
                     texthide(btnStudentSearch);
-                     texthide(btnStudentRegulation);
-                     texthide(btnStudentDebt);
-                     texthide(btnBankData);
-                     texthide(btnDebtInformation);
+                    texthide(btnStudentRegulation);
+                    texthide(btnStudentDebt);
+                    texthide(btnBankData);
+                    texthide(btnDebtInformation);
                     _menuExpanded = false;
-                     panelMainMenu.Visible =false;
-                     panelMainMenu.Width = 95;
-                     bunifuTransition1.Show(panelMainMenu);
-                 }
-             }
+                    panelMainMenu.Visible = false;
+                    panelMainMenu.Width = 95;
+                    bunifuTransition1.Show(panelMainMenu);
+                }
+            }
         }
 
-        
 
         private void btnStudentRegister_Click(object sender, EventArgs e)
         {
-            
-           
             if (!panelMainPage.Controls.Contains(UcStudentRecord.InstanceStudentRecord))
             {
                 panelMainPage.Controls.Add(UcStudentRecord.InstanceStudentRecord);
                 UcStudentRecord.InstanceStudentRecord.Dock = DockStyle.Fill;
-               
+
                 UcStudentRecord.InstanceStudentRecord.BringToFront();
-                 
-             }
+            }
             else
             {
                 UcStudentRecord.InstanceStudentRecord.BringToFront();
-
             }
-           
-
         }
 
         private void MenuPage_SizeChanged(object sender, EventArgs e)
         {
-           //this.Text = "Yükselik" + this.Height + "Genişlik" + this.Width;
+            //this.Text = "Yükselik" + this.Height + "Genişlik" + this.Width;
         }
 
         private void MenuPage_Load(object sender, EventArgs e)
         {
-           
         }
 
         private void btnStudentSearch_Click(object sender, EventArgs e)
@@ -113,11 +98,9 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
                 UcStudentSearch.InstanceStudentSearch.Refresh();
                 UcStudentSearch.InstanceStudentSearch.BringToFront();
-
             }
             else
             {
-
                 UcStudentSearch.InstanceStudentSearch.BringToFront();
             }
         }
@@ -130,12 +113,10 @@ namespace SurucuKursuOtomasyonu.FormsUI
                 UcStudentRegulation.InstanceStudentRegulation.Dock = DockStyle.Fill;
 
                 UcStudentRegulation.InstanceStudentRegulation.BringToFront();
-
             }
             else
             {
                 UcStudentRegulation.InstanceStudentRegulation.BringToFront();
-
             }
         }
 
@@ -169,7 +150,6 @@ namespace SurucuKursuOtomasyonu.FormsUI
 
         private void btnBankData_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

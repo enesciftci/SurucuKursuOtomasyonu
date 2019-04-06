@@ -3,10 +3,7 @@ using SurucuKursuOtomasyonu.Entities.Concrete;
 
 namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
 {
-  public class EfStudentDal:EfEntityRepositoryBase<Student,SurucuKursuContext>,IStudentDal
+    public class EfStudentDal : EfEntityRepositoryBase<Student, SurucuKursuContext>, IStudentDal
     {
-
-       
-     
     }
 }

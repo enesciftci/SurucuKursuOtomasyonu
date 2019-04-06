@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using SurucuKursuOtomasyonu.DataAccess.Abstract;
 using SurucuKursuOtomasyonu.Entities.Abstract;
-using  System.ComponentModel.DataAnnotations;
 
 namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
-    where TEntity:class ,IEntity,new ()
-    where TContext:DbContext,new()
+        where TEntity : class, IEntity, new()
+        where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
         {
-            using (TContext context=new  TContext())
+            using (var context = new TContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
@@ -27,7 +24,7 @@ namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
 
         public void Update(TEntity entity)
         {
-            using (TContext context = new TContext())
+            using (var context = new TContext())
             {
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
@@ -37,7 +34,7 @@ namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
 
         public void Delete(TEntity entity)
         {
-            using (TContext context = new TContext())
+            using (var context = new TContext())
             {
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
@@ -47,17 +44,15 @@ namespace SurucuKursuOtomasyonu.DataAccess.Concrete.EntityFramework
 
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
-            using (TContext context = new TContext())
+            using (var context = new TContext())
             {
-              return filter == null ?
-                       context.Set<TEntity>().ToList() :
-                       context.Set<TEntity>().Where(filter).ToList();
+                return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
             }
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
-            using (TContext context=new TContext())
+            using (var context = new TContext())
             {
                 return context.Set<TEntity>().SingleOrDefault(filter);
             }
