@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcDebtInformation));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSendInformation = new Bunifu.Framework.UI.BunifuImageButton();
             this.dgwDebtInformation = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +53,8 @@
             this.lblStudentState = new System.Windows.Forms.Label();
             this.lbxDebtorStudents = new System.Windows.Forms.ListBox();
             this.gbpInformationSettings = new System.Windows.Forms.GroupBox();
-            this.lblTotalRecord = new System.Windows.Forms.Label();
             this.lblSuccessfulRecord = new System.Windows.Forms.Label();
+            this.lblTotalDebt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnSendInformation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwDebtInformation)).BeginInit();
             this.gbpInformationSettings.SuspendLayout();
@@ -82,21 +82,21 @@
             this.dgwDebtInformation.AllowUserToDeleteRows = false;
             this.dgwDebtInformation.AllowUserToResizeColumns = false;
             this.dgwDebtInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgwDebtInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgwDebtInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgwDebtInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwDebtInformation.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgwDebtInformation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwDebtInformation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgwDebtInformation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwDebtInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwDebtInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgwDebtInformation.ColumnHeadersHeight = 55;
             this.dgwDebtInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgwDebtInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,14 +111,14 @@
             this.StudentIbanNumber,
             this.StudentWantLicenceType,
             this.StudentEmail});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwDebtInformation.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwDebtInformation.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgwDebtInformation.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgwDebtInformation.DoubleBuffered = true;
             this.dgwDebtInformation.EnableHeadersVisualStyles = false;
@@ -130,14 +130,14 @@
             this.dgwDebtInformation.Name = "dgwDebtInformation";
             this.dgwDebtInformation.ReadOnly = true;
             this.dgwDebtInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwDebtInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwDebtInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgwDebtInformation.RowHeadersVisible = false;
             this.dgwDebtInformation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwDebtInformation.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -304,28 +304,28 @@
             this.gbpInformationSettings.TabStop = false;
             this.gbpInformationSettings.Text = "Bilgilendirme Ayarları";
             // 
-            // lblTotalRecord
-            // 
-            this.lblTotalRecord.AutoSize = true;
-            this.lblTotalRecord.Location = new System.Drawing.Point(532, 956);
-            this.lblTotalRecord.Name = "lblTotalRecord";
-            this.lblTotalRecord.Size = new System.Drawing.Size(0, 17);
-            this.lblTotalRecord.TabIndex = 181;
-            // 
             // lblSuccessfulRecord
             // 
             this.lblSuccessfulRecord.AutoSize = true;
-            this.lblSuccessfulRecord.Location = new System.Drawing.Point(532, 898);
+            this.lblSuccessfulRecord.Location = new System.Drawing.Point(548, 863);
             this.lblSuccessfulRecord.Name = "lblSuccessfulRecord";
             this.lblSuccessfulRecord.Size = new System.Drawing.Size(0, 17);
-            this.lblSuccessfulRecord.TabIndex = 182;
+            this.lblSuccessfulRecord.TabIndex = 181;
+            // 
+            // lblTotalDebt
+            // 
+            this.lblTotalDebt.AutoSize = true;
+            this.lblTotalDebt.Location = new System.Drawing.Point(548, 908);
+            this.lblTotalDebt.Name = "lblTotalDebt";
+            this.lblTotalDebt.Size = new System.Drawing.Size(0, 17);
+            this.lblTotalDebt.TabIndex = 182;
             // 
             // UcDebtInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTotalDebt);
             this.Controls.Add(this.lblSuccessfulRecord);
-            this.Controls.Add(this.lblTotalRecord);
             this.Controls.Add(this.gbpInformationSettings);
             this.Controls.Add(this.lbxDebtorStudents);
             this.Controls.Add(this.lblStudentState);
@@ -364,7 +364,7 @@
         private System.Windows.Forms.Label lblStudentState;
         private System.Windows.Forms.ListBox lbxDebtorStudents;
         private System.Windows.Forms.GroupBox gbpInformationSettings;
-        private System.Windows.Forms.Label lblTotalRecord;
         private System.Windows.Forms.Label lblSuccessfulRecord;
+        private System.Windows.Forms.Label lblTotalDebt;
     }
 }

@@ -104,7 +104,8 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                 }
 
                 lblSuccessfulRecord.Text = @"İletilen Borçlu Sayısı: " + lbxDebtorStudents.Items.Count;
-                lbxDebtorStudents.Text = @"Borçlu Sayısı: " + dgwDebtInformation.RowCount;
+                lblTotalDebt.Text= @"Borçlu Sayısı: " + dgwDebtInformation.RowCount;
+               
                 MessageBox.Show(dgwDebtInformation.RowCount.ToString());
             }
         }
