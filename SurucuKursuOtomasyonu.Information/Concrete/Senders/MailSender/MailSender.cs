@@ -6,25 +6,25 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.Senders.MailSender
 {
     public class MailSender : IMailService
     {
-        private static readonly SmtpClient _smtpClient = new SmtpClient();
-        private static readonly MailMessage mailMessage = new MailMessage();
+        private static readonly SmtpClient SmtpClient = new SmtpClient();
+        private static readonly MailMessage MailMessage = new MailMessage();
 
         public void SendMail(string mail, string mailContent)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;
-            _smtpClient.EnableSsl = true;
-            _smtpClient.Host = "smtp.gmail.com";
-            _smtpClient.UseDefaultCredentials = false;
-            _smtpClient.Credentials = new NetworkCredential("ciftcienes23@gmail.com", "anadolu11Aa.");
+            SmtpClient.EnableSsl = true;
+            SmtpClient.Host = "smtp.gmail.com";
+            SmtpClient.UseDefaultCredentials = false;
+            SmtpClient.Credentials = new NetworkCredential("ciftcienes23@gmail.com", "anadolu11Aa.");
 
-            mailMessage.From = new MailAddress("ciftcienes23@gmail.com");
-            mailMessage.Subject = "Sürücü Kursu Otomasyonu";
-            mailMessage.IsBodyHtml = true;
-            mailMessage.Body = mailContent;
-            mailMessage.To.Add(mail);
+            MailMessage.From = new MailAddress("ciftcienes23@gmail.com");
+            MailMessage.Subject = "Sürücü Kursu Otomasyonu";
+            MailMessage.IsBodyHtml = true;
+            MailMessage.Body = mailContent;
+            MailMessage.To.Add(mail);
 
 
-            _smtpClient.Send(mailMessage);
+            SmtpClient.Send(MailMessage);
         }
     }
 }
