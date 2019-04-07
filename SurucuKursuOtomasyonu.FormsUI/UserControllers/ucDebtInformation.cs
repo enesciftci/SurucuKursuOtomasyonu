@@ -9,9 +9,9 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
     public partial class UcDebtInformation : UserControl
     {
         private static UcDebtInformation _instanceDebtInformation;
-        private string _email, _name, _surname, _debt, _message;
         private readonly IMailService _mailService = InstanceFactory.GetInstance<IMailService>();
         private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
+        private string _email, _name, _surname, _debt, _message;
         private int i;
 
         public UcDebtInformation()
@@ -104,8 +104,8 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                 }
 
                 lblSuccessfulRecord.Text = @"İletilen Borçlu Sayısı: " + lbxDebtorStudents.Items.Count;
-                lblTotalDebt.Text= @"Borçlu Sayısı: " + dgwDebtInformation.RowCount;
-               
+                lblTotalDebt.Text = @"Borçlu Sayısı: " + dgwDebtInformation.RowCount;
+
                 MessageBox.Show(dgwDebtInformation.RowCount.ToString());
             }
         }
