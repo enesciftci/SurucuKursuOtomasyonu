@@ -212,27 +212,28 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                     else
                         _haveLicenceType = cmbHaveLicenceType.Text;
 
-                    _studentService.Update(new Student
-                    {
-                        StudentId = Convert.ToInt32(dgwStudentRegulation.CurrentRow.Cells[0].Value),
-                        StudentName = txtStudentName.Text,
-                        StudentSurname = txtStudentSurname.Text,
-                        StudentNationalNumber = txtNationalNumber.Text,
-                        StudentGender = _gender,
-                        StudentEmail = txtEmail.Text,
-                        StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
-                        RegistrationDate = Convert.ToDateTime(FillTextBox(10)),
-                        RegistrationSeason = Convert.ToInt32(FillTextBox(11)),
-                        StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
-                        StudentTotalDebt = Convert.ToDecimal(dgwStudentRegulation.CurrentRow.Cells[13].Value),
-                        QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
-                        StudentPlaceofBirth = Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
-                        StudentPhoneNumber = txtPhoneNumber.Text,
-                        StudentAdress = txtAdress.Text,
-                        StudentIbanNumber = txtIbanNumber.Text,
-                        StudentWantLicenceType = cmbLicenceType.Text,
-                        StudentHaveLicenceType = _haveLicenceType
-                    });
+                    if (dgwStudentRegulation.CurrentRow != null)
+                        _studentService.Update(new Student
+                        {
+                            StudentId = Convert.ToInt32(dgwStudentRegulation.CurrentRow.Cells[0].Value),
+                            StudentName = txtStudentName.Text,
+                            StudentSurname = txtStudentSurname.Text,
+                            StudentNationalNumber = txtNationalNumber.Text,
+                            StudentGender = _gender,
+                            StudentEmail = txtEmail.Text,
+                            StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
+                            RegistrationDate = Convert.ToDateTime(FillTextBox(10)),
+                            RegistrationSeason = Convert.ToInt32(FillTextBox(11)),
+                            StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                            StudentTotalDebt = Convert.ToDecimal(dgwStudentRegulation.CurrentRow.Cells[13].Value),
+                            QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
+                            StudentPlaceofBirth = Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
+                            StudentPhoneNumber = txtPhoneNumber.Text,
+                            StudentAdress = txtAdress.Text,
+                            StudentIbanNumber = txtIbanNumber.Text,
+                            StudentWantLicenceType = cmbLicenceType.Text,
+                            StudentHaveLicenceType = _haveLicenceType
+                        });
                     MessageBox.Show(@"Öğrenci Güncellendi");
                     ClearAll();
 

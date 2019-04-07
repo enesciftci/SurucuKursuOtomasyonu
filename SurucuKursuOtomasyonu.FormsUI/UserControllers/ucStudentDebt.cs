@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.DependencyResolvers;
@@ -16,6 +17,7 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
         private readonly IExportWithPrinterService _exportWithPrinterService =
             InstanceFactory.GetInstance<IExportWithPrinterService>();
 
+       // private string _nameSurname;
         private decimal _mustPaid;
         private decimal _pay, _remainingDebt;
         private int _remainingInstallment;
@@ -109,21 +111,35 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private void btnExportPdf_Click(object sender, EventArgs e)
         {
+            string nameSurname = string.Format(dgwStudentDebt.CurrentRow.Cells[1].Value+ " " +
+                                               dgwStudentDebt.CurrentRow.Cells[2].Value);
             if (dgwStudentDebt.CurrentRow != null && !string.IsNullOrEmpty(txtStudentId.Text))
             {
-                var studentNationalNumber = dgwStudentDebt.CurrentRow.Cells[3].Value.ToString();
-                var registrationDate = dgwStudentDebt.CurrentRow.Cells[10].Value.ToString();
-                var studentDebt = dgwStudentDebt.CurrentRow.Cells[12].Value.ToString();
-                var ibanNumber = dgwStudentDebt.CurrentRow.Cells[15].Value.ToString();
-                var studentWantLicenceType = dgwStudentDebt.CurrentRow.Cells[17].Value.ToString();
-                _exportByPdfService.CreateDebtPdf(txtStudentId.Text, txtStudentNameSurname.Text, studentNationalNumber,
-                    registrationDate, studentDebt, txtRemainingDebt.Text, txtRemainingInstallment.Text, ibanNumber,
-                    studentWantLicenceType);
+                var student=new Student
+                {
+                    StudentId = Convert.ToInt32(dgwStudentDebt.CurrentRow.Cells[0].Value),
+                    StudentName = nameSurname,
+                  //  StudentSurname = dgwStudentDebt.CurrentRow.Cells[2].Value.ToString(),
+                     StudentNationalNumber = dgwStudentDebt.CurrentRow.Cells[3].Value.ToString(),
+                   RegistrationDate = Convert.ToDateTime(dgwStudentDebt.CurrentRow.Cells[10].Value),
+                   StudentDebt = Convert.ToDecimal(dgwStudentDebt.CurrentRow.Cells[12].Value),
+                   StudentTotalDebt = Convert.ToDecimal(dgwStudentDebt.CurrentRow.Cells[13].Value),
+                   QuantityInstallment = Convert.ToInt32(dgwStudentDebt.CurrentRow.Cells[14].Value),
+                    StudentIbanNumber = dgwStudentDebt.CurrentRow.Cells[15].Value.ToString(),
+                   StudentWantLicenceType =dgwStudentDebt.CurrentRow.Cells[17].Value.ToString()
+            };
+              
+                PdfCreator(student);
             }
             else
             {
                 MessageBox.Show(@"Öğrenci Seçimi Yapınız.", @"Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void PdfCreator(Student student)
+        {
+            _exportByPdfService.CreateDebtPdf(student);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

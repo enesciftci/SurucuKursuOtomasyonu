@@ -59,6 +59,14 @@
       <Project>{4223c481-bf5f-42a9-96b5-4c10556770ee}</Project>
       <Name>SurucuKursuOtomasyonu.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SurucuKursuOtomasyonu.DataAccess\SurucuKursuOtomasyonu.DataAccess.csproj">
+      <Project>{4EAAA248-7413-4619-996E-DB6311B66DBD}</Project>
+      <Name>SurucuKursuOtomasyonu.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SurucuKursuOtomasyonu.Entities\SurucuKursuOtomasyonu.Entities.csproj">
+      <Project>{D8C15FCC-4A68-4DE5-ADA6-E53DD143E202}</Project>
+      <Name>SurucuKursuOtomasyonu.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

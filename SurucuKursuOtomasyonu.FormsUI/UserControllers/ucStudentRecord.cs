@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
 using SurucuKursuOtomasyonu.Business.Abstract;
 using SurucuKursuOtomasyonu.Business.DependencyResolvers;
 using SurucuKursuOtomasyonu.Entities.Concrete;
+using SurucuKursuOtomasyonu.Information.Abstract;
 
 namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 {
@@ -18,6 +20,10 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
 
         private readonly IStudentService _studentService = InstanceFactory.GetInstance<IStudentService>();
 
+        private IExportWithPrinterService _exportWithPrinterService =
+            InstanceFactory.GetInstance<IExportWithPrinterService>();
+
+        private IExportByPdfService _exportByPdfService = InstanceFactory.GetInstance<IExportByPdfService>();
         private string _gender, _haveLicenceType;
 
         public UcStudentRecord()
@@ -66,28 +72,36 @@ namespace SurucuKursuOtomasyonu.FormsUI.UserControllers
                     _haveLicenceType = "Null";
                 else
                     _haveLicenceType = cmbHaveLicenceType.Text;
-
-                _studentService.Add(new Student
-                {
-                    StudentName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentName.Text),
-                    StudentSurname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentSurname.Text),
-                    StudentNationalNumber = txtNationalNumber.Text,
-                    StudentGender = _gender,
-                    StudentEmail = txtEmail.Text.Trim().ToLower(),
-                    StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
-                    RegistrationDate = Convert.ToDateTime(DateTime.Today.ToShortDateString()),
-                    RegistrationSeason = _registrationSeasonService.GetSeasons().Count,
-                    StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
-                    StudentTotalDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
-                    QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
-                    StudentPlaceofBirth = Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
-                    StudentPhoneNumber = txtPhoneNumber.Text,
-                    StudentAdress = txtAdress.Text,
-                    StudentIbanNumber = txtIbanNumber.Text.ToUpper().Trim(),
-                    StudentWantLicenceType = cmbLicenceType.Text,
-                    StudentHaveLicenceType = _haveLicenceType
-                });
+              var student=new Student
+              {
+                  StudentName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentName.Text),
+                  StudentSurname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtStudentSurname.Text),
+                  StudentNationalNumber = txtNationalNumber.Text,
+                  StudentGender = _gender,
+                  StudentEmail = txtEmail.Text.Trim().ToLower(),
+                  StudentBirthdate = Convert.ToDateTime(dpcBirthdate.Value),
+                  RegistrationDate = Convert.ToDateTime(DateTime.Today.ToShortDateString()),
+                  RegistrationSeason = _registrationSeasonService.GetSeasons().Count,
+                  StudentDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                  StudentTotalDebt = Convert.ToDecimal(txtRegistrationDebt.Text),
+                  QuantityInstallment = Convert.ToInt32(cmbQuantityInstallment.Text),
+                  StudentPlaceofBirth = Convert.ToInt32(cmbPlaceofBirth.SelectedValue),
+                  StudentPhoneNumber = txtPhoneNumber.Text,
+                  StudentAdress = txtAdress.Text,
+                  StudentIbanNumber = txtIbanNumber.Text.ToUpper().Trim(),
+                  StudentWantLicenceType = cmbLicenceType.Text,
+                  StudentHaveLicenceType = _haveLicenceType
+              };
+                _studentService.Add(student);
+               
                 MessageBox.Show(@"Üye Kaydı Tamamlandı");
+                var dialog = MessageBox.Show(@"Öğrenci Bilgilerini Yazdırmak İster Misiniz ?", @"Uyarı",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    _exportByPdfService.CreateRecordPdf(student);
+                   _exportWithPrinterService.PrintPdf();
+                }
             }
             catch (Exception exception)
             {
