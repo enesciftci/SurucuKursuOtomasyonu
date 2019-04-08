@@ -9,9 +9,10 @@ namespace SurucuKursuOtomasyonu.Information.Abstract
     {
         void CreateDebtPdf(Student student);
 
-        void CreateDebtPdf(string studentNumber,string nameSurname,string studentNationalNumber, string registrationDate, string studentDebt,string remainingDebt,string remainingInstallment, string ibanNumber,
-            string studentWantLicenceType);
+      /*  void CreateDebtPdf(string studentNumber,string nameSurname,string studentNationalNumber, string registrationDate, string studentDebt,string remainingDebt,string remainingInstallment, string ibanNumber,
+            string studentWantLicenceType);*/
         void CreateRecordPdf(Student student);
+        void CreateForAllStudent(List<Student> students);
 
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -15,11 +16,18 @@ using SurucuKursuOtomasyonu.Information.Abstract;
 
 namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
 {
+    enum Managers
+    {
+      İbrahimEnesÇiftçi,
+      KursMüdürü
+    }
     public class ExportByPdf : IExportByPdfService
     {
+        private Managers _managers=Managers.İbrahimEnesÇiftçi;
         private static Student _student = InstanceFactory.GetInstance<Student>();
-      
-       
+
+     
+        private int studentNumber = 0;
         public void CreateDebtPdf(Student student)
         {
           CreateForDebtPdf(student);
@@ -27,18 +35,31 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
         public void CreateRecordPdf(Student student)
         {
          CreateForRecordPdf(student);
-        }
-        public void CreateDebtPdf(string studentNumber, string nameSurname, string studentNationalNumber, string registrationDate, string studentDebt, string remainingDebt, string remainingInstallment, string ibanNumber, string studentWantLicenceType)
+        }  
+        public void CreateForAllStudent(List<Student> students)
         {
-          
+            foreach (var student in students)
+            {
+                studentNumber = student.StudentId;
+            }
+            ChooseDirectory();
+            var fontArial = ChooseFont(out var fontArialHeader, out var fontArialbold, out var fontArialboldgeneral);
+            var pdfFile = CreatePdf(studentNumber);
+            pdfFile.Open();
+            Author(pdfFile,_managers= Managers.İbrahimEnesÇiftçi,"Öğrenci Bilgileri");
+            var pdfTableHeader = CreateLogoAndDate(fontArialHeader, fontArial);
+            var p = new Phrase("\n");
+            var pdfTable = CreateTableForAllStudents(students, fontArial);
+            WritePdfAndCloseFile(pdfFile, pdfTableHeader, p, pdfTable);
         }
-        private static void CreateForRecordPdf(Student student)//for record pdf
+
+        private  void CreateForRecordPdf(Student student)//for record pdf
         {
             ChooseDirectory();
             var fontArial = ChooseFont(out var fontArialHeader, out var fontArialbold, out var fontArialboldgeneral);
-            var pdfFile = CreatePdf(student.StudentName+" "+student.StudentSurname);
+            var pdfFile = CreatePdf(studentNumber);
             pdfFile.Open();
-            Author(pdfFile);
+            Author(pdfFile,_managers = Managers.KursMüdürü,"Öğrenci Kayıt Bilgileri");
             var pdfTableHeader = CreateLogoAndDate(fontArialHeader, fontArial);
             var p = new Phrase("\n");
             var pdfTable = CreateTable(student, fontArial);
@@ -48,7 +69,7 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
            
             WritePdfAndCloseFile(pdfFile, pdfTableHeader, p, pdfTable);
         }
-        private static void CreateForDebtPdf(Student student)//for debt pdf
+        private void CreateForDebtPdf(Student student)//for debt pdf
         {
             try
             {
@@ -58,10 +79,10 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
                var fontArial = ChooseFont(out var fontArialHeader, out var fontArialbold, out var fontArialboldgeneral);
            
               // pdf oluştur
-                var pdfFile = CreatePdf(student.StudentName+" "+student.StudentSurname);
+                var pdfFile = CreatePdf(studentNumber);
                 pdfFile.Open();
                // Borç pdf oluşturan bilgileri
-                Author(pdfFile);
+                Author(pdfFile,_managers = Managers.İbrahimEnesÇiftçi,"Öğrenci Borç Bilgileri");
                 //firma resmi ve tarihi oluştur
                 var pdfTableHeader = CreateLogoAndDate(fontArialHeader, fontArial);
                 var p = new Phrase("\n");
@@ -142,16 +163,16 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
             return fontArial;
         }
 
-        private static Document CreatePdf(string studentNameSurname)
+        private static Document CreatePdf(int studentNumber)
         {
+         
             var pdfFile = new Document();
            try
             {
                 
                 PdfWriter.GetInstance(pdfFile,
                     new FileStream(
-                        @"C:\Users\İbrahim Enes Çiftçi\Desktop\surcukursuresimler\pdf\" + studentNameSurname +
-                        ".pdf", FileMode.CreateNew));
+                        @"C:\Users\İbrahim Enes Çiftçi\Desktop\surcukursuresimler\pdf\"+studentNumber+".pdf", FileMode.CreateNew));
             }
             catch (Exception)
             {
@@ -159,10 +180,10 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialog == DialogResult.Yes)
                 {
+                   
                     PdfWriter.GetInstance(pdfFile,
                         new FileStream(
-                            @"C:\Users\İbrahim Enes Çiftçi\Desktop\surcukursuresimler\pdf\" + studentNameSurname +
-                            ".pdf", FileMode.Append));
+                            @"C:\Users\İbrahim Enes Çiftçi\Desktop\surcukursuresimler\pdf\"+studentNumber+".pdf", FileMode.Append));
                     MessageBox.Show(@"İşlem Başarılı", @"Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -170,13 +191,13 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
             return pdfFile;
         }
 
-        private static void Author(Document pdfFile)
+        private static void Author(Document pdfFile,Enum authorName, string title)
         { 
-            pdfFile.AddCreator("Yönetici"); //Oluşturan kişinin isminin eklenmesi
+            pdfFile.AddCreator(authorName.ToString()); //Oluşturan kişinin isminin eklenmesi
             pdfFile.AddCreationDate(); //Oluşturulma tarihinin eklenmesi
-            pdfFile.AddAuthor("Yönetici"); //Yazarın isiminin eklenmesi
+            pdfFile.AddAuthor(authorName.ToString()); //Yazarın isiminin eklenmesi
             pdfFile.AddHeader("Başlık", "Sürücü Kursu Otomasyonu");
-            pdfFile.AddTitle("Öğrenci Borç Bilgileri"); //Başlık ve title eklenmesi
+            pdfFile.AddTitle(title); //Başlık ve title eklenmesi
         }
       
         private static PdfPTable CreateTable(Student student, Font fontArial)
@@ -202,6 +223,45 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
             
         }
 
+        private static PdfPTable CreateTableForAllStudents(List<Student> students, Font fontArial)
+        {
+
+            var pdfTable=new PdfPTable(2);
+            foreach (var student in students)
+            {
+                pdfTable = new PdfPTable(2)
+                {
+                    TotalWidth = 500f,
+                    LockedWidth = true
+                };
+                pdfTable.DefaultCell.Padding = 5;
+                pdfTable.DefaultCell.BorderColor = BaseColor.GRAY;
+
+
+                AddCell("Öğrenci Numarası", student.StudentId.ToString(), fontArial, pdfTable);
+                AddCell("Öğrenci Adı Soyadı", student.StudentName + " " + student.StudentSurname, fontArial,
+                    pdfTable);
+                AddCell("Öğrenci Kimlik Numarası", student.StudentNationalNumber, fontArial, pdfTable);
+                AddCell("Cinsiyet", student.StudentGender, fontArial, pdfTable);
+                AddCell("Öğrenci Email", student.StudentEmail, fontArial, pdfTable);
+                AddCell("Öğrenci Doğum Tarihi", student.StudentBirthdate.ToShortDateString(), fontArial, pdfTable);
+                AddCell("Öğrenci Kayıt Tarihi", student.RegistrationDate.ToShortDateString(), fontArial, pdfTable);
+                AddCell("Kayıt Ücreti", student.StudentDebt.ToString(CultureInfo.InvariantCulture), fontArial,
+                    pdfTable);
+                //  AddCell("Kalan Borç", _student.StudentTotalDebt.ToString(CultureInfo.InvariantCulture), fontArial, pdfTable);
+                AddCell("Taksit Sayısı", student.QuantityInstallment.ToString(), fontArial, pdfTable);
+                AddCell("Doğum Yeri", student.StudentPlaceofBirth.ToString(), fontArial, pdfTable);
+                AddCell("Telefon Numarası", student.StudentPhoneNumber, fontArial, pdfTable);
+                AddCell("Öğrenci Iban Numarası", student.StudentIbanNumber, fontArial, pdfTable);
+                AddCell("İstenen Belge Tipi", student.StudentWantLicenceType, fontArial, pdfTable);
+
+
+            }
+            return pdfTable;
+
+
+        }
+
         private static void AddCell(string title,string studentProp, Font fontArial, PdfPTable pdfTable)
         {
           
@@ -219,6 +279,6 @@ namespace SurucuKursuOtomasyonu.Information.Concrete.DocumentExporter
             }
         }
 
-        
+      
     }
 }

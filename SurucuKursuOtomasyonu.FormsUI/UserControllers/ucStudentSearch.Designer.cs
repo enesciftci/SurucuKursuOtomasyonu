@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcStudentSearch));
             this.gbpStudentSearch = new System.Windows.Forms.GroupBox();
             this.dgwStudentSearch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +54,9 @@
             this.StudentHaveLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentWantLicenceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExportPdf = new System.Windows.Forms.Label();
+            this.btnSingularPdf = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnPluralPdf = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtNationalNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtStudentName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblRegistrationSeason = new System.Windows.Forms.Label();
@@ -62,6 +66,8 @@
             this.gbpStudentSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudentSearch)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSingularPdf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPluralPdf)).BeginInit();
             this.SuspendLayout();
             // 
             // gbpStudentSearch
@@ -74,7 +80,8 @@
             this.gbpStudentSearch.Size = new System.Drawing.Size(1746, 955);
             this.gbpStudentSearch.TabIndex = 0;
             this.gbpStudentSearch.TabStop = false;
-            this.gbpStudentSearch.Text = "Öğrenci Sorgulama";
+            this.gbpStudentSearch.Text = "Öğrenci Arama";
+            this.gbpStudentSearch.Enter += new System.EventHandler(this.gbpStudentSearch_Enter);
             // 
             // dgwStudentSearch
             // 
@@ -131,7 +138,7 @@
             this.dgwStudentSearch.GridColor = System.Drawing.Color.Gray;
             this.dgwStudentSearch.HeaderBgColor = System.Drawing.Color.SeaShell;
             this.dgwStudentSearch.HeaderForeColor = System.Drawing.Color.SlateBlue;
-            this.dgwStudentSearch.Location = new System.Drawing.Point(3, 159);
+            this.dgwStudentSearch.Location = new System.Drawing.Point(3, 182);
             this.dgwStudentSearch.Name = "dgwStudentSearch";
             this.dgwStudentSearch.ReadOnly = true;
             this.dgwStudentSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -151,8 +158,9 @@
             this.dgwStudentSearch.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgwStudentSearch.RowTemplate.Height = 24;
             this.dgwStudentSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwStudentSearch.Size = new System.Drawing.Size(1740, 793);
+            this.dgwStudentSearch.Size = new System.Drawing.Size(1740, 770);
             this.dgwStudentSearch.TabIndex = 165;
+            this.dgwStudentSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwStudentSearch_CellClick);
             // 
             // StudentID
             // 
@@ -299,6 +307,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblExportPdf);
+            this.panel1.Controls.Add(this.btnSingularPdf);
+            this.panel1.Controls.Add(this.btnPluralPdf);
             this.panel1.Controls.Add(this.txtNationalNumber);
             this.panel1.Controls.Add(this.txtStudentName);
             this.panel1.Controls.Add(this.lblRegistrationSeason);
@@ -308,8 +319,52 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1740, 91);
+            this.panel1.Size = new System.Drawing.Size(1740, 148);
             this.panel1.TabIndex = 0;
+            // 
+            // lblExportPdf
+            // 
+            this.lblExportPdf.AutoSize = true;
+            this.lblExportPdf.BackColor = System.Drawing.SystemColors.Control;
+            this.lblExportPdf.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblExportPdf.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblExportPdf.Location = new System.Drawing.Point(1235, 11);
+            this.lblExportPdf.Name = "lblExportPdf";
+            this.lblExportPdf.Size = new System.Drawing.Size(154, 23);
+            this.lblExportPdf.TabIndex = 171;
+            this.lblExportPdf.Text = "Kayıtları Dışa Aktar";
+            // 
+            // btnSingularPdf
+            // 
+            this.btnSingularPdf.BackColor = System.Drawing.Color.Transparent;
+            this.btnSingularPdf.ErrorImage = null;
+            this.btnSingularPdf.Image = ((System.Drawing.Image)(resources.GetObject("btnSingularPdf.Image")));
+            this.btnSingularPdf.ImageActive = null;
+            this.btnSingularPdf.InitialImage = null;
+            this.btnSingularPdf.Location = new System.Drawing.Point(1359, 50);
+            this.btnSingularPdf.Name = "btnSingularPdf";
+            this.btnSingularPdf.Size = new System.Drawing.Size(87, 78);
+            this.btnSingularPdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSingularPdf.TabIndex = 170;
+            this.btnSingularPdf.TabStop = false;
+            this.btnSingularPdf.Zoom = 10;
+            this.btnSingularPdf.Click += new System.EventHandler(this.btnSingularPdf_Click);
+            // 
+            // btnPluralPdf
+            // 
+            this.btnPluralPdf.BackColor = System.Drawing.Color.Transparent;
+            this.btnPluralPdf.ErrorImage = null;
+            this.btnPluralPdf.Image = ((System.Drawing.Image)(resources.GetObject("btnPluralPdf.Image")));
+            this.btnPluralPdf.ImageActive = null;
+            this.btnPluralPdf.InitialImage = null;
+            this.btnPluralPdf.Location = new System.Drawing.Point(1239, 50);
+            this.btnPluralPdf.Name = "btnPluralPdf";
+            this.btnPluralPdf.Size = new System.Drawing.Size(87, 78);
+            this.btnPluralPdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPluralPdf.TabIndex = 169;
+            this.btnPluralPdf.TabStop = false;
+            this.btnPluralPdf.Zoom = 10;
+            this.btnPluralPdf.Click += new System.EventHandler(this.btnPluralPdf_Click);
             // 
             // txtNationalNumber
             // 
@@ -321,7 +376,7 @@
             this.txtNationalNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtNationalNumber.ForeColor = System.Drawing.Color.Black;
             this.txtNationalNumber.isPassword = false;
-            this.txtNationalNumber.Location = new System.Drawing.Point(875, 44);
+            this.txtNationalNumber.Location = new System.Drawing.Point(872, 86);
             this.txtNationalNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtNationalNumber.Name = "txtNationalNumber";
             this.txtNationalNumber.Size = new System.Drawing.Size(248, 43);
@@ -339,7 +394,7 @@
             this.txtStudentName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtStudentName.ForeColor = System.Drawing.Color.Black;
             this.txtStudentName.isPassword = false;
-            this.txtStudentName.Location = new System.Drawing.Point(350, 44);
+            this.txtStudentName.Location = new System.Drawing.Point(347, 86);
             this.txtStudentName.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(248, 43);
@@ -352,7 +407,7 @@
             this.lblRegistrationSeason.AutoSize = true;
             this.lblRegistrationSeason.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRegistrationSeason.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblRegistrationSeason.Location = new System.Drawing.Point(24, 8);
+            this.lblRegistrationSeason.Location = new System.Drawing.Point(21, 50);
             this.lblRegistrationSeason.Name = "lblRegistrationSeason";
             this.lblRegistrationSeason.Size = new System.Drawing.Size(119, 23);
             this.lblRegistrationSeason.TabIndex = 150;
@@ -364,7 +419,7 @@
             this.lblNationalNumber.BackColor = System.Drawing.SystemColors.Control;
             this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblNationalNumber.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblNationalNumber.Location = new System.Drawing.Point(871, 8);
+            this.lblNationalNumber.Location = new System.Drawing.Point(868, 50);
             this.lblNationalNumber.Name = "lblNationalNumber";
             this.lblNationalNumber.Size = new System.Drawing.Size(161, 23);
             this.lblNationalNumber.TabIndex = 149;
@@ -376,7 +431,7 @@
             this.lblStudentName.BackColor = System.Drawing.SystemColors.Control;
             this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblStudentName.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblStudentName.Location = new System.Drawing.Point(346, 8);
+            this.lblStudentName.Location = new System.Drawing.Point(343, 50);
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(41, 23);
             this.lblStudentName.TabIndex = 148;
@@ -387,7 +442,7 @@
             this.cmbRegistrationSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRegistrationSeason.ForeColor = System.Drawing.Color.Black;
             this.cmbRegistrationSeason.FormattingEnabled = true;
-            this.cmbRegistrationSeason.Location = new System.Drawing.Point(28, 44);
+            this.cmbRegistrationSeason.Location = new System.Drawing.Point(25, 104);
             this.cmbRegistrationSeason.Name = "cmbRegistrationSeason";
             this.cmbRegistrationSeason.Size = new System.Drawing.Size(151, 24);
             this.cmbRegistrationSeason.TabIndex = 2;
@@ -406,6 +461,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudentSearch)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSingularPdf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPluralPdf)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +496,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentIbanNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentHaveLicenceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentWantLicenceType;
+        private Bunifu.Framework.UI.BunifuImageButton btnPluralPdf;
+        private Bunifu.Framework.UI.BunifuImageButton btnSingularPdf;
+        private System.Windows.Forms.Label lblExportPdf;
     }
 }
